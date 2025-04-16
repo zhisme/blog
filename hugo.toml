@@ -1,0 +1,13 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = '@zhisme :: signal over noise'
+theme = 'zhisme-blog'
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+  unsafe = true

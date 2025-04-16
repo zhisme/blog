@@ -1,0 +1,102 @@
+<main class="page">
+  <div class="container">
+    <div class="main-page">
+      <div class="sidebar">
+        <div class="sidebar-person">
+          <div class="sidebar-person__container">
+            <div class="sidebar-person__container-info">
+              <div class="sidebar-person__avatar mb-16">
+                <a href="/"><img src="/img/avatar.jpg" alt="avatar"></a>
+              </div>
+              <div>
+                <div class="text-size-24 fw-700 family-mono mb-8 letter-1">Evgeny Zhdanov</div>
+                <div class="text-size-16 mb-24 letter-0-5">
+                  Software engineer, musician, writer. <br/> I write about technology, programming philosophy, and life.
+                </div>
+              </div>
+            </div>
+            <div class="sidebar-person__container-event">
+              <a href="#" class="button button-green mb-8" data-popup="#subscribe">Subscribe</a>
+              <div class="sidebar-person__events">
+                <a href="#" class="button button-white sidebar-person__see">See CV ↗</a>
+                <a href="#" class="button button-white icon button-message"
+                            style="--icon: url('../img/icon/icon-mail.svg');" data-popup="#message"></a>
+              </div>
+            </div>
+          </div>
+          <div class="social-items">
+            {{ partial "socials.html" . }}
+          </div>
+        </div>
+        <div class="sidebar-posts">
+          <div class="sidebar-posts__head">
+            <div class="fw-700 letter-0-5">Pinned posts</div>
+            <span class="icon" style="--icon: url('../img/icon/icon-pin.svg');"></span>
+          </div>
+          <div class="sidebar-articles swiper">
+            <div class="swiper-wrapper">
+              {{ range where .Site.RegularPages "Params.pinned" true }}
+              {{ partial "pinned-article-card.html" . }}
+              {{ end }}
+            </div>
+            <button type="button" class="swiper-arrow swiper-button-next swiper-button-next-article">
+              <span class="icon" style="--icon: url('../img/icon/icon-arrow-right.svg');"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="main-block">
+        <div class="categories swiper">
+          <div class="swiper-wrapper">
+            <div class="categories-item swiper-slide">
+              <a href="/" class="categories-link {{ if not (eq .Section "categories") }}active{{ end }}">All</a>
+            </div>
+            {{ range $name, $taxonomy := site.Taxonomies.categories }}
+            <div class="categories-item swiper-slide">
+              <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}/"
+                 class="categories-link {{ if eq (lower $.Title) (lower $name) }}active{{ end }}">
+                {{ $name | title }}
+              </a>
+            </div>
+            {{ end }}
+          </div>
+
+          {{ $categories := .Site.Taxonomies.categories }}
+          {{ if gt (len $categories) 5 }}
+          <button type="button" class="swiper-arrow swiper-button-next swiper-button-next-category">
+            <span class="icon" style="--icon: url('../img/icon/icon-arrow-right.svg');"></span>
+          </button>
+          {{ end }}
+        </div>
+
+        {{ $term := .Title }}
+        {{ $taxonomy := .Data.Singular }} {{/* "tag" or "category" */}}
+        {{ $posts := where .Site.RegularPages "Section" "articles" }}
+
+        {{ $filtered := slice }}
+        {{ if eq $taxonomy "tag" }}
+        {{ $filtered = where $posts "Params.tags" "intersect" (slice (lower $term)) }}
+        {{ else if eq $taxonomy "category" }}
+        {{ $filtered = where $posts "Params.categories" "intersect" (slice $term) }}
+        {{ end }}
+
+        {{ $pag := .Paginate $filtered 20 }}
+
+        <div class="main-posts">
+          <div class="main-posts__top">
+            <h2 class="main-posts__h2">{{ $taxonomy | title }}: {{ .Title | lower }} posts</h2>
+          </div>
+
+          {{ range $pag.Pages }}
+          {{ partial "article-card.html" . }}
+          {{ end }}
+        </div>
+
+        <div class="article-event">
+          <div class="count-page"></div>
+          {{ partial "pagination.html" $pag }}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

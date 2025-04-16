@@ -1,0 +1,30 @@
+body {
+  letter-spacing: -.48px;
+  &::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--greyWhte);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--green);
+  }
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+  .loaded & {
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+
+  > main {
+    flex: 1 1 auto;
+  }
+  > * {
+    min-width: 0;
+  }
+}

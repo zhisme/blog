@@ -1,0 +1,12 @@
+name = 'zhisme-blog'
+license = 'MIT'
+licenselink = 'https://github.com/zhisme/blog/blob/main/LICENSE'
+description = 'Minimalistic theme for Hugo, designed for personal blogs and portfolios. It is simple, clean, and easy to use.'
+
+homepage = 'https://github.com/zhisme/blog'
+
+tags = ['blog', 'personal']
+
+[author]
+  name = 'Evgeny Zhdanov'
+  homepage = 'Your website'

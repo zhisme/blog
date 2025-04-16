@@ -1,0 +1,389 @@
+{{ define "main" }}
+  <main class="page">
+    <div class="container">
+      <div class="page-block">
+        <div class="back mb-40">
+          <a href="/" class="back-btn">
+            <span class="icon" style="--icon: url('../img/icon/icon-arrow-left.svg');"></span>
+            Back to homepage
+          </a>
+        </div>
+        <div class="mb-16 family-mono text-uppercase">
+          {{ printf "%s" (delimit .Params.categories ", ") }}
+        </div>
+        <h1 class="mb-16">Brown Researchers Create Tool
+          to Simplify Human-Robot Communication</h1>
+        <div class="article-info">
+          <time class="article-info__date" datetime="2023-11-22">
+            <span class="icon-head icon" style="--icon: url('../img/icon/icon-calendar.svg');"></span>
+            {{ .Date.Format "Jan 2, 2006" }}
+          </time>
+          <time class="article-info__date" datetime="20:00">
+            <span class="icon-head icon" style="--icon: url('../img/icon/icon-time.svg');"></span>
+            {{ with .Params.readingTime }}{{ . }} minutes to read{{ end }}
+          </time>
+          <div class="article-info__comment">
+            <span class="icon-head icon" style="--icon: url('../img/icon/icon-comment.svg');"></span>
+            16 comments
+          </div>
+        </div>
+        <div class="article-block">
+          <div class="article-author">
+            <div class="article-author__pic mb-16">
+              <img src="/img/avatar.jpg" alt="avatar">
+            </div>
+            <div class="article-name mb-8">Written by Evgeny Zhdanov</div>
+            <div class="article-description mb-16 text-size-16 letter-0-5">
+              Pragmatic software engineer. <br/> Signal over noise.
+            </div>
+            <a href="#" class="button button-green" data-popup="#subscribe">Subscribe</a>
+          </div>
+          <div class="content">
+            <p class="text-size-24">
+              {{ .Description }}
+            </p>
+            <figure>
+              <img src="/img/article-index.jpg" alt="">
+              <figcaption>Photo caption here</figcaption>
+            </figure>
+            <h2>H2 Headline goes here</h2>
+            <p>
+            The EAV is designed to aid first responders and emergency personnel in reaching Australians
+            living
+            in regional and remote areas.
+            </p>
+            <p>
+            “AMSL’s aircraft could become an important tool for emergency services personnel,
+            particularly
+            as we
+            face more frequent natural disasters,” said Chris Bower, minister for climate change and
+            energy.
+            “Green hydrogen and other sustainable aviation fuels are vital to help decarbonize the
+            hard-to-abate
+            aviation sector, now accounting for around 2.5% of global emissions.”
+            </p>
+            <p>
+            This is not the only EAV targeted at first responders, expected to be among the earliest use
+            cases
+            for the new electric flying vehicles.
+            </p>
+            <h3>H3 Headline goes here</h3>
+            <p>
+            The previous record for both the largest aerial image of a flag and the largest aerial image
+            of
+            a
+            logo was set in March this year as part of the Dubai World Cup closing ceremony. The former
+            was
+            achieved with 988 drones, while the latter was set using 1,500 drones
+            </p>
+            <h4>H4 Headline goes here</h4>
+            <p>
+            The EAV is designed to aid first responders and emergency personnel in reaching Australians
+            living
+            in regional and remote areas.
+            </p>
+            <p>
+            “AMSL’s aircraft could become an important tool for emergency services personnel,
+            particularly
+            as we
+            face more frequent natural disasters,” said Chris Bower, minister for climate change and
+            energy.
+            “Green hydrogen and other sustainable aviation fuels are vital to help decarbonize the
+            hard-to-abate
+            aviation sector, now accounting for around 2.5% of global emissions.”
+            </p>
+            <p>
+            This is not the only EAV targeted at first responders, expected to be among the earliest use
+            cases
+            for the new electric flying vehicles.
+            </p>
+            <h5> H5 Headline goes here</h5>
+            <p>
+            The previous record for both the largest aerial image of a flag and the largest aerial image
+            of
+            a
+            logo was set in March this year as part of the Dubai World Cup closing ceremony. The former
+            was
+            achieved with 988 drones, while the latter was set using 1,500 drones
+            </p>
+            <h6>H6 Headline goes here</h6>
+            <p>
+            The two record-breaking displays came at the end of three nights of smaller, 400-drone
+            shows,
+            where
+            the drones were programmed to create displays of “heroic figures throughout history.”
+            </p>
+            <h6>H6 Headline goes here</h6>
+            <p>
+            An email, a document, a research paper, a presentation, and even a JavaDoc code block
+            consist of
+            paragraphs, <a href="#">which are</a> “self-contained units of discourse in writing dealing
+            with
+            a particular
+            point
+            or idea.” Visually, paragraphs are supposed to be separated by a vertical space that is a
+            bit
+            larger
+            than a vertical spacing between lines. To achieve this, for example, in HTML, we wrap
+            paragraphs
+            in
+            the
+            &lt;p&gt; tag, while in LaTeX, we use \par or just an empty line between them. However, some
+            people
+            insert what <a href="#">are called</a> “soft line breaks” inside paragraphs—this is a bad
+            practice that I
+            suggest
+            you stay away from.
+            </p>
+            <ul>
+              <li>Low-code data ingest</li>
+              <li> Intelligent data preparation</li>
+              <li>ML-powered data matching</li>
+            </ul>
+            <p>
+            To achieve this, for example, in HTML, we wrap paragraphs in the
+            tag, while in LaTeX, we use \par or just an empty line between them. However, some people
+            insert
+            what <a href="#">are called</a> “soft line breaks” inside paragraphs—this is a bad practice
+            that I suggest you
+            stay away from.
+            </p>
+            <div class="picture-container">
+              <figure>
+                <img src="/img/article-1.jpg" alt="">
+                <figcaption>Photo caption here</figcaption>
+              </figure>
+              <figure>
+                <img src="/img/article-2.jpg" alt="">
+                <figcaption>Photo caption here</figcaption>
+              </figure>
+            </div>
+            <h6>H6 Headline goes here</h6>
+            <p>
+            An email, a document, a research paper, a presentation, and even a JavaDoc code block
+            consist of
+            paragraphs, <a href="#">which are</a> “self-contained units of discourse in writing dealing
+            with
+            a particular
+            point
+            or idea.” Visually, paragraphs are supposed to be separated by a vertical space that is a
+            bit
+            larger
+            than a vertical spacing between lines. To achieve this, for example, in HTML, we wrap
+            paragraphs
+            in
+            the
+            &lt;p&gt; tag, while in LaTeX, we use \par or just an empty line between them. However, some
+            people
+            insert what <a href="#">are called</a> “soft line breaks” inside paragraphs—this is a bad
+            practice that I
+            suggest
+            you stay away from.
+            </p>
+            <ul>
+              <li>Low-code data ingest</li>
+              <li> Intelligent data preparation</li>
+              <li>ML-powered data matching</li>
+            </ul>
+            <p>
+            To achieve this, for example, in HTML, we wrap paragraphs in the
+            tag, while in LaTeX, we use \par or just an empty line between them. However, some people
+            insert
+            what <a href="#">are called</a> “soft line breaks” inside paragraphs—this is a bad practice
+            that I suggest you
+            stay away from.
+            </p>
+            <!-- <div class="slider-container"> -->
+            <!--   <div class="slider-top swiper"> -->
+            <!--     <div class="swiper-wrapper"> -->
+            <!--       <a href="/img/article-index.jpg" data-fancybox="slider" class="swiper-slide"> -->
+            <!--         <img src="/img/article-index.jpg" alt=""> -->
+            <!--       </a> -->
+            <!--       <a href="/img/index-2.jpg" data-fancybox="slider" class="swiper-slide"> -->
+            <!--         <img src="/img/index-2.jpg" alt=""> -->
+            <!--       </a> -->
+            <!--       <a href="/img/index-3.jpg" data-fancybox="slider" class="swiper-slide"> -->
+            <!--         <img src="/img/index-3.jpg" alt=""> -->
+            <!--       </a> -->
+            <!--       <a href="/img/article-index.jpg" data-fancybox="slider" class="swiper-slide"> -->
+            <!--         <img src="/img/article-index.jpg" alt=""> -->
+            <!--       </a> -->
+            <!--       <a href="/img/article-index.jpg" data-fancybox="slider" class="swiper-slide"> -->
+            <!--         <img src="/img/article-index.jpg" alt=""> -->
+            <!--       </a> -->
+            <!--       <a href="/img/article-index.jpg" data-fancybox="slider" class="swiper-slide"> -->
+            <!--         <img src="/img/article-index.jpg" alt=""> -->
+            <!--       </a> -->
+            <!--       <a href="/img/article-index.jpg" data-fancybox="slider" class="swiper-slide"> -->
+            <!--         <img src="/img/article-index.jpg" alt=""> -->
+            <!--       </a> -->
+            <!--       <a href="/img/article-index.jpg" data-fancybox="slider" class="swiper-slide"> -->
+            <!--         <img src="/img/article-index.jpg" alt=""> -->
+            <!--       </a> -->
+            <!--     </div> -->
+            <!--     <div class="swiper-arrow swiper-arrow-left icon" style="--icon: url('../img/icon/icon-arrow-left.svg');"></div> -->
+            <!--     <div class="swiper-arrow swiper-arrow-right icon" style="--icon: url('../img/icon/icon-arrow-right.svg');"></div> -->
+            <!--   </div> -->
+            <!--   <div class="slider-bottom swiper"> -->
+            <!--     <div class="swiper-wrapper"> -->
+            <!--       <div class="swiper-slide"> -->
+            <!--         <img src="/img/slide-1.jpg" alt=""> -->
+            <!--       </div> -->
+            <!--       <div class="swiper-slide"> -->
+            <!--         <img src="/img/slide-2.jpg" alt=""> -->
+            <!--       </div> -->
+            <!--       <div class="swiper-slide"> -->
+            <!--         <img src="/img/slide-3.jpg" alt=""> -->
+            <!--       </div> -->
+            <!--       <div class="swiper-slide"> -->
+            <!--         <img src="/img/slide-4.jpg" alt=""> -->
+            <!--       </div> -->
+            <!--       <div class="swiper-slide"> -->
+            <!--         <img src="/img/slide-1.jpg" alt=""> -->
+            <!--       </div> -->
+            <!--       <div class="swiper-slide"> -->
+            <!--         <img src="/img/slide-2.jpg" alt=""> -->
+            <!--       </div> -->
+            <!--       <div class="swiper-slide"> -->
+            <!--         <img src="/img/slide-3.jpg" alt=""> -->
+            <!--       </div> -->
+            <!--       <div class="swiper-slide"> -->
+            <!--         <img src="/img/slide-4.jpg" alt=""> -->
+            <!--       </div> -->
+            <!--     </div> -->
+            <!--   </div> -->
+            <!-- </div> -->
+            <h6>H6 Headline goes here</h6>
+            <p>
+            An email, a document, a research paper, a presentation, and even a JavaDoc code block
+            consist of
+            paragraphs, <a href="#">which are</a> “self-contained units of discourse in writing dealing
+            with
+            a particular
+            point
+            or idea.” Visually, paragraphs are supposed to be separated by a vertical space that is a
+            bit
+            larger
+            than a vertical spacing between lines. To achieve this, for example, in HTML, we wrap
+            paragraphs
+            in
+            the
+            &lt;p&gt; tag, while in LaTeX, we use \par or just an empty line between them. However, some
+            people
+            insert what <a href="#">are called</a> “soft line breaks” inside paragraphs—this is a bad
+            practice that I
+            suggest
+            you stay away from.
+            </p>
+            <ul>
+              <li>Low-code data ingest</li>
+              <li> Intelligent data preparation</li>
+              <li>ML-powered data matching</li>
+            </ul>
+            <p>
+            To achieve this, for example, in HTML, we wrap paragraphs in the
+            tag, while in LaTeX, we use \par or just an empty line between them. However, some people
+            insert
+            what <a href="#">are called</a> “soft line breaks” inside paragraphs—this is a bad practice
+            that I suggest you
+            stay away from.
+            </p>
+            <div class="blockquote">
+              <div class="blockquote-text">
+                Please don't bully me about fish, I'm allergic to it.
+              </div>
+              <div class="blockquote-author">
+                <div class="blockquote-author__pic">
+                  <img src="/img/avatar.jpg" alt="">
+                </div>
+                <div class="blockquote-author__content">
+                  <div class="blockquote-author__name">Evgeny Zhdanov</div>
+                  <div class="blockquote-author__position">Fish allergic man</div>
+                </div>
+              </div>
+            </div>
+            <h6>H6 Headline goes here</h6>
+            <p>
+            An email, a document, a research paper, a presentation, and even a JavaDoc code block
+            consist of
+            paragraphs, <a href="#">which are</a> “self-contained units of discourse in writing dealing
+            with
+            a particular
+            point
+            or idea.” Visually, paragraphs are supposed to be separated by a vertical space that is a
+            bit
+            larger
+            than a vertical spacing between lines. To achieve this, for example, in HTML, we wrap
+            paragraphs
+            in
+            the
+            &lt;p&gt; tag, while in LaTeX, we use \par or just an empty line between them. However, some
+            people
+            insert what <a href="#">are called</a> “soft line breaks” inside paragraphs—this is a bad
+            practice that I
+            suggest
+            you stay away from.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Column headline</th>
+                  <th>Column headline</th>
+                  <th>Column headline</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                </tr>
+                <tr>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                </tr>
+                <tr>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                </tr>
+              </tbody>
+            </table>
+            <h6>H6 Headline goes here</h6>
+            <p>
+            An email, a document, a research paper, a presentation, and even a JavaDoc code block
+            consist of
+            paragraphs, <a href="#">which are</a> “self-contained units of discourse in writing dealing
+            with
+            a particular
+            point
+            or idea.” Visually, paragraphs are supposed to be separated by a vertical space that is a
+            bit
+            larger
+            than a vertical spacing between lines. To achieve this, for example, in HTML, we wrap
+            paragraphs
+            in
+            the
+            &lt;p&gt; tag, while in LaTeX, we use \par or just an empty line between them. However, some
+            people
+            insert what <a href="#">are called</a> “soft line breaks” inside paragraphs—this is a bad
+            practice that I
+            suggest
+            you stay away from.
+            </p>
+            <code>
+              &lt;script language='javascript' type='text/javascript'
+              src='http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js'&gt;&lt;/script&gt;
+              <br>
+              &lt;script language='javascript' type='text/javascript'
+              src='http://google-code-prettify.googlecode.com/svn/trunk/src/lang-css.js'&gt;&lt;/script&gt;
+            </code>
+            <div class="figcaption"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+{{ end }}

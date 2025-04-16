@@ -1,0 +1,33 @@
+<article class="article-item">
+  <div class="category-tab">{{ index .Params.categories 0 }}</div>
+  <h2 class="article-item__h2">
+    <a href="{{ .RelPermalink }}">
+      {{ .Title }}
+    </a>
+  </h2>
+  <div class="article-info">
+    <time class="article-info__date" datetime="{{ .Date.Format "2006-01-02" }}">
+      <span class="icon-head icon" style="--icon: url('../img/icon/icon-calendar.svg');"></span>
+      {{ .Date.Format "Jan 2, 2006" }}
+    </time>
+    <time class="article-info__date">
+      <span class="icon-head icon" style="--icon: url('../img/icon/icon-time.svg');"></span>
+      {{ with .Params.readingTime }}{{ . }} minutes to read{{ end }}
+    </time>
+    <!-- Comments stubbed or pulled from external if needed -->
+  </div>
+  {{ with .Params.featuredImage }}
+    <img src="{{ . }}" alt="" class="article-pic">
+  {{ end }}
+
+  <p class="article-content">
+    {{ .Description | safeHTML }}
+  </p>
+
+  <div class="article-tag">
+    {{ range .Params.tags }}
+      <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="article-tag__item">#{{ . }}</a>
+    {{ end }}
+  </div>
+  <a href="{{ .RelPermalink }}" class="more-link">Read More →</a>
+</article>

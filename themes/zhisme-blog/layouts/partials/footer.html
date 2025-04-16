@@ -1,0 +1,37 @@
+<footer>
+	<div class="container">
+		<div class="footer-container">
+			<div class="footer-info">
+				<div class="footer-info__top">
+					<div class="text-size-24 fw-700 family-mono mb-8 letter-1">Evgeny Zhdanov</div>
+					<div class="text-size-16 mb-24 letter-0-5">
+            Thanks for reading. Stay tuned! <br/> <a href="#" class="link-black">Privacy policy</a>
+					</div>
+				</div>
+				<div class="social-items footer-social-items">
+          {{ partial "socials.html" . }}
+				</div>
+			</div>
+			<form action="#" class="form-subscribe">
+				<fieldset>
+					<div class="form-item">
+						<input type="text" class="input" placeholder="Enter your name">
+					</div>
+					<div class="form-item">
+						<input type="text" class="input" placeholder="Enter your email">
+					</div>
+				</fieldset>
+				<div class="agreed">
+					<div class="agreed-icon">
+						<input type="checkbox" id="agreed">
+						<span class="agreed-icon__square icon" style="--icon: url('../img/icon/icon-check.svg');"></span>
+					</div>
+					<label for="agreed" class="agreed-label">By subscribing, you agree to our Privacy Policy</label>
+				</div>
+				<button class="button button-green button-subscribe" type="submit">
+					Subscribe
+				</button>
+			</form>
+		</div>
+	</div>
+</footer>

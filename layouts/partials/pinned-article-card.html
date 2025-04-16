@@ -1,0 +1,8 @@
+<a href="{{ .RelPermalink }}" class="swiper-slide sidebar-article">
+  <time datetime="{{ .Date.Format "2006-01-02" }}" class="sidebar-article__date">
+    <span class="icon icon-head"
+          style="--icon: url('../img/icon/icon-calendar.svg');"></span>
+    {{ .Date.Format "Jan 2, 2006" }}
+  </time>
+  <span class="sidebar-article__title">{{ .Title }}</span>
+</a>
