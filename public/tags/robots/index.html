@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="sidebar-person__container-event">
-        <a href="#" class="button button-green mb-8" title="I welcome you in my subscriber's list" data-popup="#subscribe">Subscribe</a>
+        <a href="void(0)" class="button button-green mb-8" title="I welcome you in my subscriber's list" data-popup="#subscribe">Subscribe</a>
         <div class="sidebar-person__events">
           <a href="https://resume.io/r/scqe2XFZl" title="What I'm proud of" target="_blank" class="button button-white sidebar-person__see">See CV ↗</a>
           <a href="https://t.me/zhisme_dev" title="Reach me out by telegram message. The fastest way" target="_blank" class="button button-white icon button-message"
@@ -244,6 +244,62 @@ Testing the blog with a simple post. [Latex](http://google.com/)
 
 
 
+  </div>
+</div>
+
+        <div id="subscribe" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <button data-close type="button" class="popup__close icon" style="--icon: url('../img/icon/icon-close.svg');"></button>
+      <div class="zhdanov-head">
+        <div class="zhdanov-pic">
+          <picture><source srcset="/img/avatar.jpg" type="image/jpg"><img src="/img/avatar.jpg" alt=""></picture>
+        </div>
+        <div class="zhdanov-content">
+          <div class="zhdanov-name">Evgeny Zhdanov</div>
+          <div class="zhdanov-position">Pragmatic software engineer</div>
+        </div>
+      </div>
+      <h2 class="mb-16">Subscribe to the newsletter</h2>
+      <p class="mb-24 text-size-16 letter-0-5">
+      I send out a monthly email summarizing new posts and insights on software engineering, developer life, and programmer philosophy. <br/>
+        If you’d like to stay updated, drop your name and email below — I’d love to keep you in the loop.
+      </p>
+      
+      <form action="#">
+        <fieldset>
+          <div class="form-item mb-16">
+            <input type="text" class="input" placeholder="Enter your name" min="2">
+          </div>
+          <div class="form-item mb-16">
+            <input type="email" class="input" placeholder="Enter your email">
+          </div>
+        </fieldset>
+        <div class="agreed">
+          <div class="agreed-icon">
+            <input type="checkbox" id="agreed2">
+            <span class="agreed-icon__square icon" style="--icon: url('../img/icon/icon-check.svg');"></span>
+          </div>
+          <label for="agreed2" class="agreed-label">By subscribing, you agree to our Privacy Policy</label>
+        </div>
+        <button class="button button-green" type="submit">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="subscribe-success" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content text-center">
+      <button data-close type="button" class="popup__close icon" style="--icon: url('../img/icon/icon-close.svg');"></button>
+      <div class="popup__content-thanks">
+        <h2 class="mb-16">Thanks for the subscription!</h2>
+        <p class="mb-24 text-size-16 letter-0-5">Look forward to the next newsletter.</p>
+        <a href="#" class="button button-green" data-close>Close</a>
+      </div>
+    </div>
   </div>
 </div>
 
