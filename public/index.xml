@@ -6,8 +6,15 @@
     <description>Recent content on @zhisme :: signal over noise</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Privacy Policy</title>
+      <link>http://localhost:1313/privacy-policy/</link>
+      <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/privacy-policy/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Last updated: April 15, 2025&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;This blog (&amp;ldquo;Site&amp;rdquo;) is operated by &lt;strong&gt;zhisme&lt;/strong&gt; (&amp;ldquo;I&amp;rdquo;, &amp;ldquo;me&amp;rdquo;, &amp;ldquo;my&amp;rdquo;). Your privacy matters, and this policy explains what data is collected, how it’s used, and your rights as a visitor.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-information-i-collect&#34;&gt;1. Information I Collect&lt;/h2&gt;&#xA;&lt;h3 id=&#34;a-analytics&#34;&gt;a. Analytics&lt;/h3&gt;&#xA;&lt;p&gt;This site uses third-party analytics services such as &lt;strong&gt;Google Analytics&lt;/strong&gt; to collect anonymized data about how users interact with the site. This includes:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Pages visited&lt;/li&gt;&#xA;&lt;li&gt;Browser and device type&lt;/li&gt;&#xA;&lt;li&gt;Referring site or link&lt;/li&gt;&#xA;&lt;li&gt;Approximate geolocation (country-level)&lt;/li&gt;&#xA;&lt;li&gt;Time spent on the site&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This helps me understand what content performs well and how to improve the blog.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Second post</title>
       <link>http://localhost:1313/articles/second-post/</link>

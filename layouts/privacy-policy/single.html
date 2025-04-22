@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <main class="page">
+    <div class="container">
+      <div class="page-block">
+        <div class="back">
+          <a href="/" class="back-btn">
+            <span class="icon" style="--icon: url('../img/icon/icon-arrow-left.svg');"></span>
+            Back to homepage
+          </a>
+        </div>
+        <h1>Privacy policy</h1>
+        <div class="page-block__content content">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </main>
+{{ end }}
