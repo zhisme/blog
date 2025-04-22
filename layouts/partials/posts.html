@@ -41,9 +41,22 @@
 
   <div class="main-posts">
     <div class="main-posts__top">
-      <h2 class="main-posts__h2">
-        {{ if $taxonomy }}{{ $taxonomy | title }}: {{ .Title | lower }} {{ else }} All posts {{ end }}
-      </h2>
+      {{ if $taxonomy }}
+        {{ if eq $taxonomy "tag" }}
+          <h2 class="main-posts__h2">Posts with</h2>
+          <div class="search-tag">
+            #{{ .Title | lower }}
+            <a class="icon" href="/" style="--icon: url('../img/icon/icon-close.svg');"></a>
+          </div>
+        {{ else }}
+          <h2 class="main-posts__h2">Posts from</h2>
+          <div class="search-tag">
+            {{ .Title }}
+          </div>
+        {{ end }}
+      {{ else }}
+        <h2 class="main-posts__h2">All posts</h2>
+      {{ end }}
     </div>
 
     {{ range $pag.Pages }}
