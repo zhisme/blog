@@ -6,6 +6,7 @@ theme = 'zhisme-blog'
 [params]
   description = "A blog about software engineering and developer philosophy."
   keywords = ["software", "engineering", "programmer life", "philosophy", "pragmatic engineer", "zhisme"]
+  disqusShortname = "zhisme"
 
 [taxonomies]
   category = "categories"
