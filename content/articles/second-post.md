@@ -7,11 +7,9 @@ featuredImage: "/img/article-index.jpg"
 featuredImageAlt: "Hello World"
 readingTime: 5
 pinned: true
+intro: Testing the blog with a simple post. [Latex](http://google.com/)
 description: "This is the first blog post on my new blog. I am a PhD student at the University of Cambridge, working on robotics and AI. Testing the blog with a simple post."
 keywords: ["robots", "AI", "PhD"]
-summary: |
-  This is the first blog post on my new blog. I am a PhD student at the University of Cambridge, working on robotics and AI.
-  Testing the blog with a simple post. [Latex](http://google.com/)
 ---
 Almost every document you may write in [Latex](http://google.com/) <a href="#">LaTeX</a> format will have a list of references at
 the end. Most likely, you will use <a href="#">BibTeX</a> or <a href="#">BibLaTeX</a> to print this list of references

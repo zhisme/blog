@@ -6,6 +6,7 @@ tags: ["robots", "ai"]
 featuredImage: "/img/article-index.jpg"
 readingTime: 2
 pinned: true
+intro: This is the first blog post on my new blog. I am a PhD student at the University of Cambridge, working on robotics and AI.
 description: |
   This is the first blog post on my new blog. I am a PhD student at the University of Cambridge, working on robotics and AI.
   Testing the blog with a simple post. [Latex](http://google.com/)
