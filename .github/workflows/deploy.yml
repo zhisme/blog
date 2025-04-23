@@ -20,6 +20,15 @@ jobs:
       - name: Build site
         run: hugo --minify
 
+      - name: Clean remote folder
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: 165.22.80.158
+          username: zh
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            rm -rf /var/www/blog/*
+
       - name: Copy site via SSH
         uses: appleboy/scp-action@v0.1.4
         with:
