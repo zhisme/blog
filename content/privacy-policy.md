@@ -5,6 +5,8 @@ draft: false
 url: "/privacy-policy/"
 type: "privacy-policy"
 layout: "privacy-policy"
+description: "Details on how @zhisme :: signal over noise blog handles your data, privacy, and analytics."
+keywords: ["privacy", "policy", "data", "signal over noise"]
 ---
 
 _Last updated: April 15, 2025_

@@ -315,7 +315,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /*
-(i) Стили будут применяться ко 
+(i) Стили будут применяться ко
 всем классам содержащим *__container
 Например header__container, main__container и т.д.
 Снипет (HTML): cnt
@@ -1785,6 +1785,10 @@ body.popup-show::after {
   padding-left: 25px;
   margin-bottom: 16px;
 }
+.content ol {
+  padding-left: 25px;
+  margin-bottom: 16px;
+}
 .content ul li {
   list-style: disc;
 }
@@ -1803,13 +1807,13 @@ body.popup-show::after {
 .content .picture-container figure {
   width: calc(50% - 12px);
 }
-.content .blockquote {
+.content blockquote {
   margin: 40px 0;
   background: rgba(2, 190, 134, 0.08);
   padding: 40px 48px;
   position: relative;
 }
-.content .blockquote:before {
+.content blockquote:before {
   content: "";
   width: 8px;
   background: #02BE86;
@@ -1819,7 +1823,7 @@ body.popup-show::after {
   height: 100%;
 }
 @media (max-width: 46.43625em) {
-  .content .blockquote {
+  .content blockquote {
     padding: 20px;
   }
 }
@@ -1960,6 +1964,9 @@ figcaption {
 .article-block ul {
   padding-left: 134px;
 }
+.article-block ol {
+  padding-left: 134px;
+}
 @media (max-width: 61.99875em) {
   .article-block {
     flex-direction: column-reverse;
@@ -1971,6 +1978,9 @@ figcaption {
     padding-left: 4px;
   }
   .article-block ul {
+    padding-left: 34px;
+  }
+  .article-block ol {
     padding-left: 34px;
   }
 }

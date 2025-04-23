@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = '@zhisme :: signal over noise'
 theme = 'zhisme-blog'
 
+[params]
+  description = "A blog about software engineering and developer philosophy."
+  keywords = ["software", "engineering", "programmer life", "philosophy", "pragmatic engineer", "zhisme"]
+
 [taxonomies]
   category = "categories"
   tag = "tags"

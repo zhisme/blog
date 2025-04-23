@@ -10,6 +10,19 @@
 <link rel="shortcut icon" href="/img/favicon.ico">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
+<meta name="description" content="A blog about software engineering and developer philosophy.">
+<meta name="keywords" content="software, engineering, programmer life, philosophy, pragmatic engineer, zhisme">
+
+<meta property="og:title" content="Articles">
+
+<meta property="og:url" content="http://localhost:1313/articles/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Articles">
+
+
 <title>Articles | @zhisme :: signal over noise</title>
 
     <link rel="stylesheet" href="/css/main.css">
@@ -36,12 +49,12 @@
         <div>
           <div class="text-size-24 fw-700 family-mono mb-8 letter-1">Evgeny Zhdanov</div>
           <div class="text-size-16 mb-24 letter-0-5">
-            Pragmatic software engineer. <br/> Signal over noise.
+            Pragmatic software engineer. <br/>
           </div>
         </div>
       </div>
       <div class="sidebar-person__container-event">
-        <a href="#" class="button button-green mb-8" title="I welcome you in my subscriber's list" data-popup="#subscribe">Subscribe</a>
+        <a href="void(0)" class="button button-green mb-8" title="I welcome you in my subscriber's list" data-popup="#subscribe">Subscribe</a>
         <div class="sidebar-person__events">
           <a href="https://resume.io/r/scqe2XFZl" title="What I'm proud of" target="_blank" class="button button-white sidebar-person__see">See CV ↗</a>
           <a href="https://t.me/zhisme_dev" title="Reach me out by telegram message. The fastest way" target="_blank" class="button button-white icon button-message"
@@ -149,9 +162,9 @@
 
   <div class="main-posts">
     <div class="main-posts__top">
-      <h2 class="main-posts__h2">
-         All posts 
-      </h2>
+      
+        <h2 class="main-posts__h2">All posts</h2>
+      
     </div>
 
     
@@ -174,13 +187,12 @@
     
   </div>
   
-    <img src="/img/article-2.jpg" alt="" class="article-pic">
+    <img src="/img/article-index.jpg" alt="" class="article-pic">
   
 
   <p class="article-content">
     This is the first blog post on my new blog. I am a PhD student at the University of Cambridge, working on robotics and AI.
-Testing the blog with a simple post. [Latex](http://google.com/)
-
+Testing the blog with a simple post. <a href="http://google.com/">Latex</a>
   </p>
 
   <div class="article-tag">
@@ -215,9 +227,13 @@ Testing the blog with a simple post. [Latex](http://google.com/)
   
 
   <p class="article-content">
-    This is the first blog post on my new blog. I am a PhD student at the University of Cambridge, working on robotics and AI.
-Testing the blog with a simple post. [Latex](http://google.com/)
-
+    <p>Almost every document you may write in <a href="http://google.com/">Latex</a> <a href="#">LaTeX</a> format will have a list of references at
+the end. Most likely, you will use <a href="#">BibTeX</a> or <a href="#">BibLaTeX</a> to print this list of references
+in a nicely formatted way. It is also highly probable that your .bib file will contain
+many typographic, stylistic, and logical mistakes. I’m fairly certain that you won’t
+find the time to identify and correct them. As a result, the “References” section in
+your paper may appear sloppy. I suggest using the <a href="#">bibcop</a> package, which identifies
+mistakes in the .bib file and auto-fixes some of them.</p>
   </p>
 
   <div class="article-tag">
@@ -239,6 +255,62 @@ Testing the blog with a simple post. [Latex](http://google.com/)
 
 
 
+  </div>
+</div>
+
+        <div id="subscribe" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <button data-close type="button" class="popup__close icon" style="--icon: url('../img/icon/icon-close.svg');"></button>
+      <div class="zhdanov-head">
+        <div class="zhdanov-pic">
+          <picture><source srcset="/img/avatar.jpg" type="image/jpg"><img src="/img/avatar.jpg" alt=""></picture>
+        </div>
+        <div class="zhdanov-content">
+          <div class="zhdanov-name">Evgeny Zhdanov</div>
+          <div class="zhdanov-position">Pragmatic software engineer</div>
+        </div>
+      </div>
+      <h2 class="mb-16">Subscribe to the newsletter</h2>
+      <p class="mb-24 text-size-16 letter-0-5">
+      I send out a monthly email summarizing new posts and insights on software engineering, developer life, and programmer philosophy. <br/>
+        If you’d like to stay updated, drop your name and email below — I’d love to keep you in the loop.
+      </p>
+      
+      <form action="#">
+        <fieldset>
+          <div class="form-item mb-16">
+            <input type="text" class="input" placeholder="Enter your name" min="2">
+          </div>
+          <div class="form-item mb-16">
+            <input type="email" class="input" placeholder="Enter your email">
+          </div>
+        </fieldset>
+        <div class="agreed">
+          <div class="agreed-icon">
+            <input type="checkbox" id="agreed2">
+            <span class="agreed-icon__square icon" style="--icon: url('../img/icon/icon-check.svg');"></span>
+          </div>
+          <label for="agreed2" class="agreed-label">By subscribing, you agree to our Privacy Policy</label>
+        </div>
+        <button class="button button-green" type="submit">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="subscribe-success" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content text-center">
+      <button data-close type="button" class="popup__close icon" style="--icon: url('../img/icon/icon-close.svg');"></button>
+      <div class="popup__content-thanks">
+        <h2 class="mb-16">Thanks for the subscription!</h2>
+        <p class="mb-24 text-size-16 letter-0-5">Look forward to the next newsletter.</p>
+        <a href="#" class="button button-green" data-close>Close</a>
+      </div>
+    </div>
   </div>
 </div>
 

@@ -13,7 +13,7 @@
       <link>http://localhost:1313/articles/second-post/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/articles/second-post/</guid>
-      <description>&lt;p&gt;Almost every document you may write in &lt;a href=&#34;http://google.com/&#34;&gt;Latex&lt;/a&gt; &lt;a href=&#34;#&#34;&gt;LaTeX&lt;/a&gt; format will have a list of references at&#xA;the end. Most likely, you will use &lt;a href=&#34;#&#34;&gt;BibTeX&lt;/a&gt; or &lt;a href=&#34;#&#34;&gt;BibLaTeX&lt;/a&gt; to print this list of references&#xA;in a nicely formatted way. It is also highly probable that your .bib file will contain&#xA;many typographic, stylistic, and logical mistakes. I’m fairly certain that you won’t&#xA;find the time to identify and correct them. As a result, the “References” section in&#xA;your paper may appear sloppy. I suggest using the &lt;a href=&#34;#&#34;&gt;bibcop&lt;/a&gt; package, which identifies&#xA;mistakes in the .bib file and auto-fixes some of them.&lt;/p&gt;</description>
+      <description>This is the first blog post on my new blog. I am a PhD student at the University of Cambridge, working on robotics and AI.&#xA;Testing the blog with a simple post. &lt;a href=&#34;http://google.com/&#34;&gt;Latex&lt;/a&gt;</description>
     </item>
   </channel>
 </rss>
