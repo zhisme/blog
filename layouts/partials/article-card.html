@@ -17,7 +17,7 @@
     <div class="article-info__comment">
       <span class="icon-head icon" style="--icon: url('../img/icon/icon-comment.svg');"></span>
       <!-- <span class="disqus-comment-count" data-disqus-url="{{ .Permalink }}"></span> -->
-      <a href="{{ .Permalink }}#disqus_thread">link</a>
+      <a href="{{ .Permalink }}#disqus_thread" data-disqus-url="{{ .Permalink }}">Comments</a>
     </div>
   </div>
   {{ with .Params.featuredImage }}
