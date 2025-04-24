@@ -15,10 +15,9 @@
       {{ with .Params.readingTime }}{{ . }} minutes to read{{ end }}
     </time>
     <div class="article-info__comment">
-      <span class="icon-head icon" href="{{ .RelPermalink }}" style="--icon: url('../img/icon/icon-comment.svg');"></span>
+      <span class="icon-head icon" style="--icon: url('../img/icon/icon-comment.svg');"></span>
       <span class="disqus-comment-count" data-disqus-url="{{ .Permalink }}"></span>
     </div>
-    <!-- Comments stubbed or pulled from external if needed -->
   </div>
   {{ with .Params.featuredImage }}
     <img src="{{ . }}" alt="" class="article-pic">

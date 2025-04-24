@@ -26,7 +26,7 @@
           </time>
           <div class="article-info__comment">
             <span class="icon-head icon" style="--icon: url('../img/icon/icon-comment.svg');"></span>
-            16 comments
+            <span class="disqus-comment-count" data-disqus-url="{{ .Permalink }}"></span>
           </div>
         </div>
         <div class="article-block">
@@ -36,7 +36,7 @@
             </div>
             <div class="article-name mb-8">Written by Evgeny Zhdanov</div>
             <div class="article-description mb-16 text-size-16 letter-0-5">
-              Pragmatic software engineer. <br/> Signal over noise.
+              Pragmatic software engineer. <br/>
             </div>
             <a href="javascript:void(0)" class="button button-green" data-popup="#subscribe">Subscribe</a>
           </div>
@@ -61,5 +61,6 @@
       {{ partial "comments.html" . }}
     </div>
     {{ partial "message-popup.html" . }}
+    {{ partial "comment-count.html" . }}
   </main>
 {{ end }}
