@@ -16,21 +16,16 @@
       I send out a monthly email summarizing new posts and insights on software engineering, developer life, and programmer philosophy. <br/>
         If you’d like to stay updated, drop your name and email below — I’d love to keep you in the loop.
       </p>
-      <!-- TODO: fix email validation -->
-      <form action="#">
+      <form action="{{ .Site.BaseURL | relURL }}api/mailing_list" method="POST" class="form" onsubmit="handleSubmit(event, this)">
         <fieldset>
           <div class="form-item mb-16">
-            <input type="text" class="input" placeholder="Enter your name" min="2">
+            <input type="text" class="input" placeholder="Enter your name" min="2" required>
           </div>
           <div class="form-item mb-16">
-            <input type="email" class="input" placeholder="Enter your email">
+            <input type="email" class="input" placeholder="Enter your email" required>
           </div>
         </fieldset>
         <div class="agreed">
-          <div class="agreed-icon">
-            <input type="checkbox" id="agreed2">
-            <span class="agreed-icon__square icon" style="--icon: url('../img/icon/icon-check.svg');"></span>
-          </div>
           <label for="agreed2" class="agreed-label">By subscribing, you agree to our Privacy Policy</label>
         </div>
         <button class="button button-green" type="submit">
