@@ -709,7 +709,7 @@
       };
     function c(e) {
       setTimeout(() => {
-        window.FLS && console.log(e);
+        window.FLS;
       }, 0);
     }
     function d(e) {
@@ -976,7 +976,7 @@
           : e[0].focus();
       }
       popupLogging(e) {
-        this.options.logging && c(`[Попапос]: ${e}`);
+        this.options.logging && c();
       }
     })({})),
       (window.flsModules = e);
@@ -1515,7 +1515,7 @@
         );
       }
       setLogging(e) {
-        this.config.logging && c(`[select]: ${e}`);
+        this.config.logging && c();
       }
     })({})),
       (window.select = e.select);
@@ -5519,25 +5519,22 @@
         on: {
           init: function (e) {
             setTimeout(() => {
-              const t = e.$wrapperEl[0];
-              console.log(t);
-              const i = e.slides[e.activeIndex].offsetHeight;
+              const t = e.$wrapperEl[0],
+                i = e.slides[e.activeIndex].offsetHeight;
               t.style.minHeight = `${i}px`;
             }, 0),
               window.addEventListener("resize", function () {
                 setTimeout(() => {
-                  const t = e.$wrapperEl[0];
-                  console.log(t);
-                  const i = e.slides[e.activeIndex].offsetHeight;
+                  const t = e.$wrapperEl[0],
+                    i = e.slides[e.activeIndex].offsetHeight;
                   t.style.minHeight = `${i}px`;
                 }, 0);
               });
           },
           slideChange: function (e) {
             setTimeout(() => {
-              const t = e.$wrapperEl[0];
-              console.log(t);
-              const i = e.slides[e.activeIndex].offsetHeight;
+              const t = e.$wrapperEl[0],
+                i = e.slides[e.activeIndex].offsetHeight;
               t.style.minHeight = `${i}px`;
             }, 0);
           },
@@ -5646,7 +5643,7 @@
           this.scrollWatcherLogging(`Я перестал следить за ${e.classList}`);
       }
       scrollWatcherLogging(e) {
-        this.config.logging && c(`[Наблюдатель]: ${e}`);
+        this.config.logging && c();
       }
       scrollWatcherCallback(e, t) {
         const i = e.target;
