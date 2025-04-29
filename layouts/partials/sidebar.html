@@ -25,20 +25,23 @@
       {{ partial "socials.html" . }}
     </div>
   </div>
-  <div class="sidebar-posts">
-    <div class="sidebar-posts__head">
-      <div class="fw-700 letter-0-5">Pinned posts</div>
-      <span class="icon" style="--icon: url('../img/icon/icon-pin.svg');"></span>
-    </div>
-    <div class="sidebar-articles swiper">
-      <div class="swiper-wrapper">
-        {{ range where .Site.RegularPages "Params.pinned" true }}
-          {{ partial "pinned-article-card.html" . }}
-        {{ end }}
+  {{ $pinned := where .Site.RegularPages "Params.pinned" true }}
+  {{ if gt (len $pinned) 0 }}
+    <div class="sidebar-posts">
+      <div class="sidebar-posts__head">
+        <div class="fw-700 letter-0-5">Pinned posts</div>
+        <span class="icon" style="--icon: url('../img/icon/icon-pin.svg');"></span>
       </div>
-      <button type="button" class="swiper-arrow swiper-button-next swiper-button-next-article">
-        <span class="icon" style="--icon: url('../img/icon/icon-arrow-right.svg');"></span>
-      </button>
+      <div class="sidebar-articles swiper">
+        <div class="swiper-wrapper">
+          {{ range $pinned }}
+            {{ partial "pinned-article-card.html" . }}
+          {{ end }}
+        </div>
+        <button type="button" class="swiper-arrow swiper-button-next swiper-button-next-article">
+          <span class="icon" style="--icon: url('../img/icon/icon-arrow-right.svg');"></span>
+        </button>
+      </div>
     </div>
-  </div>
+  {{ end }}
 </div>
