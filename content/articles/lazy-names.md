@@ -12,11 +12,11 @@ keywords: ["ruby", "gem", "open-source", "lazy_names", "console", "pry", "irb"]
 ---
 I'm happy to share the [lazy_names](https://github.com/zhisme/lazy_names?tab=readme-ov-file#lazy_names) gem!
 This gem allows you to define a config file that maps long, namespaced constants to something simpler and more intuitive:
-```
+```yml
 'Models::Users::CreditCard': 'UserCard'
 ```
 I spend a lot of time in the console, which is why I originally wrote this gem. Here’s a quick look at my most frequently run commands from my Zsh history:
-```
+```sh
 $: history | awk '{$1=""; print $0}' | sort | uniq -c | sort -nr
  647  gs
  135  rc # rails console
