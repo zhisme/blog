@@ -61,7 +61,10 @@
         </div>
 
       </div>
-      {{ partial "comments.html" . }}
+
+      {{ if eq hugo.Environment "production" }}
+        {{ partial "comments.html" . }}
+      {{ end }}
     </div>
     {{ partial "message-popup.html" . }}
   </main>

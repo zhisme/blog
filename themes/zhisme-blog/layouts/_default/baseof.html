@@ -12,6 +12,9 @@
         {{ partial "footer.html" . }}
       </footer>
     </div>
-    {{ partial "comment-count.html" . }}
+
+    {{ if eq hugo.Environment "production" }}
+      {{ partial "comment-count.html" . }}
+    {{ end }}
   </body>
 </html>
