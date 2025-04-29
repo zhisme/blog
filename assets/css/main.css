@@ -1887,15 +1887,19 @@ body.popup-show::after {
   opacity: 0.64;
   font-size: 16px;
 }
-.content code {
+.content pre code {
   display: block;
   margin: 40px 0;
   padding: 40px;
   background: #F6F6F6;
   word-break: break-word;
 }
+.content p code {
+  background: #EDEDED;
+  font-family: "SpaceMono";
+}
 @media (max-width: 46.43625em) {
-  .content code {
+  .content pre code {
     padding: 20px;
   }
 }
