@@ -1,5 +1,6 @@
 ---
 title: lazy_names gem, how much time do you spend in console?
+slug: lazy-names
 date: 2020-01-12
 categories: ["Engineering"]
 tags: ["ruby", "gem", "open-source"]

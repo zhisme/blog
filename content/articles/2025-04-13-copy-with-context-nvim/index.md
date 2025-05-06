@@ -1,12 +1,13 @@
 ---
 title: copy_with_context.nvim plugin released
+slug: copy-with-context-nvim
 date: 2025-04-13
 categories: ["Engineering"]
 tags: ["neovim", "open-source", "lua"]
 featuredImage: "/img/copy_with_context/index.png"
 featuredImageAlt: "copy_with_context.nvim"
 readingTime: 4
-intro: Copy lines with file path and line number metadata. Perfect for sharing code snippets with context.
+intro: Neovim plugin released! Copy lines with file path and line number metadata. Perfect for sharing code snippets with context.
 description: Copy lines with file path and line number metadata in neovim. Perfect for sharing code snippets with context.
 keywords: ["neovim", "plugin", "open-source", "copy_with_context.nvim", "lua", "nvim"]
 ---

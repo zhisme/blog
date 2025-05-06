@@ -1,5 +1,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+<meta name="author" content="Evgeny Zhdanov - {{ .Site.BaseURL }}">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+
+<meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="keywords" content="{{ with .Params.keywords }}{{ delimit . ", " }} {{ else }}{{ delimit .Site.Params.keywords ", " }}{{ end }}">
+
+<!-- Open Graph (for social sharing) -->
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ .Title }}">
+{{ with .Params.description }}
+  <meta property="og:description" content="{{ . }}">
+{{ end }}
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if eq .Type "page" }}website{{ else }}article{{ end }}">
+<meta property="og:image" content="{{ if (and .Page.File (os.FileExists (path.Join "content" .Page.File.Dir "og.jpg" )) ) }}{{ urls.JoinPath .Page.Permalink "og.jpg" }}{{ else }}{{ urls.JoinPath .Site.BaseURL "img/og.jpg" }}{{ end }}">
+<meta property="og:image:alt" content="{{ .Title }}">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="{{ if eq .Type "page" }}website{{ else }}article{{ end }}">
+<meta name="twitter:title" content="{{ .Title }}">
+{{ with .Params.description }}
+  <meta name="twitter:description" content="{{ . }}">
+{{ end }}
+<meta name="twitter:image" content="{{ if (and .Page.File (os.FileExists (path.Join "content" .Page.File.Dir "og.jpg" )) ) }}{{ urls.JoinPath .Page.Permalink "og.jpg" }}{{ else }}{{ urls.JoinPath .Site.BaseURL "img/og.jpg" }}{{ end }}">
+<meta name="twitter:image:alt" content="{{ .Title }}">
+
+{{ partialCached "head/css.html" . }}
+{{ partialCached "head/js.html" . }}
+
 <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/img/android-chrome-192x192.png">
@@ -7,38 +36,20 @@
 <link rel="shortcut icon" href="/img/favicon.ico">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
 <link rel="canonical" href="{{ .Permalink }}">
-
-<meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<meta name="keywords" content="{{ with .Params.keywords }}{{ delimit . ", " }} {{ else }}{{ delimit .Site.Params.keywords ", " }}{{ end }}">
-<!-- Open Graph (for social sharing) -->
-<meta property="og:title" content="{{ .Title }}">
-{{ with .Params.description }}
-  <meta property="og:description" content="{{ . }}">
-{{ end }}
-<meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:type" content="article">
-<!-- Twitter Cards -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="{{ .Title }}">
-{{ with .Params.description }}
-  <meta name="twitter:description" content="{{ . }}">
-{{ end }}
-
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
-{{ partialCached "head/css.html" . }}
-{{ partialCached "head/js.html" . }}
+<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}feed.xml" />
 
 {{ if eq hugo.Environment "production" }}
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JKN6QF0DXY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKN6QF0DXY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-JKN6QF0DXY');
-</script>
+    gtag('config', 'G-JKN6QF0DXY');
+  </script>
 {{ end }}
 
 
