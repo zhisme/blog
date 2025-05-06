@@ -33,6 +33,11 @@
                data-disqus-url="{{ .Permalink }}">Comments</a>
           </div>
         </div>
+        <div class="article-tag">
+          {{ range .Params.tags }}
+            <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="article-tag__item">#{{ . }}</a>
+          {{ end }}
+        </div>
         <div class="article-block">
           <div class="article-author">
             <div class="article-author__pic mb-16">
