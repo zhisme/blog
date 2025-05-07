@@ -1983,7 +1983,7 @@ figcaption {
 .article-block ol {
   padding-left: 134px;
 }
-.article-block
+
 @media (max-width: 61.99875em) {
   .article-block {
     flex-direction: column-reverse;
