@@ -1,7 +1,6 @@
 ---
 title: 'Reviewing "Angry Tests"'
 slug: 'reviewing-angry-tests'
-draft: true
 categories: ["Books"]
 tags: ["book-review", "good-read", "software-testing"]
 intro: Just participated as one of the reviewers for "Angry Tests" by Yegor Bugayenko. This book is a practical guide to writing better tests, and I found it to be a valuable resource for anyone involved in software testing.
