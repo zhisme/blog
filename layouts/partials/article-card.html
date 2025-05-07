@@ -20,9 +20,11 @@
     </div>
   </div>
 
-  {{ with .Resources.GetMatch "index*" }}
-    <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="article-pic">
-  {{ end }}
+  <div class="article-pic-wrapper">
+    {{ with .Resources.GetMatch "index*" }}
+      <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="article-pic">
+    {{ end }}
+  </div>
 
   <p class="article-content">
     {{ .Params.Intro | safeHTML }}

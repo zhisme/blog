@@ -1,0 +1,22 @@
+<blockquote>
+  <div class="blockquote-text">
+    {{ .Inner }}
+  </div>
+  <div class="blockquote-author">
+    <div class="blockquote-author__pic">
+      {{ with .Get "authorPic" }}
+        {{ with $.Page.Resources.GetMatch . }}
+          <picture>
+            <source srcset="{{ .RelPermalink }}">
+            <img src="{{ .RelPermalink }}" alt="{{ $.Get "author" }}">
+          </picture>
+        {{ else }}
+        {{ end }}
+      {{ end }}
+    </div>
+    <div class="blockquote-author__content">
+      <div class="blockquote-author__name">{{ .Get "author" }}</div>
+      <div class="blockquote-author__position">{{ .Get "citeCaption" }}</div>
+    </div>
+  </div>
+</blockquote>
