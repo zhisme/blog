@@ -10,17 +10,18 @@
       <span class="icon-head icon" style="--icon: url('../img/icon/icon-calendar.svg');"></span>
       {{ .Date.Format "Jan 2, 2006" }}
     </time>
-    <time class="article-info__date">
+    <time class="article-info__date" datetime="PT{{ .ReadingTime }}M">
       <span class="icon-head icon" style="--icon: url('../img/icon/icon-time.svg');"></span>
-      {{ with .Params.readingTime }}{{ . }} minutes to read{{ end }}
+      {{ .ReadingTime }} minutes to read
     </time>
     <div class="article-info__comment">
       <span class="icon-head icon" style="--icon: url('../img/icon/icon-comment.svg');"></span>
       <a href="{{ .Permalink }}#disqus_thread" data-disqus-url="{{ .Permalink }}">Comments</a>
     </div>
   </div>
-  {{ with .Params.featuredImage }}
-    <img src="{{ . }}" alt="" class="article-pic">
+
+  {{ with .Resources.GetMatch "index*" }}
+    <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="article-pic">
   {{ end }}
 
   <p class="article-content">

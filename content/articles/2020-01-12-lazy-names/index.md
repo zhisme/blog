@@ -4,9 +4,6 @@ slug: lazy-names
 date: 2020-01-12
 categories: ["Engineering"]
 tags: ["ruby", "gem", "open-source"]
-featuredImage: "/img/lazy_names/index.png"
-featuredImageAlt: "lazy_names gem"
-readingTime: 3
 intro: The idea behind the gem is to shorten long constant names that often appear as a project grows. Your services, models, and controllers get buried under deep namespaces, and typing them repeatedly becomes tedious. I'm a lazy developer, and I believe many of us are too.
 description: lazy_names ruby gem that helps you shorten long constant names in your console. It allows you to use shorter names for constants/classes/modules, allowing you to type less in console.
 keywords: ["ruby", "gem", "open-source", "lazy_names", "console", "pry", "irb"]
