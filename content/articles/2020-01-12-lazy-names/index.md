@@ -1,7 +1,6 @@
 ---
 title: lazy_names gem, how much time do you spend in console?
 slug: lazy-names
-date: 2020-01-12
 categories: ["Engineering"]
 tags: ["ruby", "gem", "open-source"]
 intro: The idea behind the gem is to shorten long constant names that often appear as a project grows. Your services, models, and controllers get buried under deep namespaces, and typing them repeatedly becomes tedious. I'm a lazy developer, and I believe many of us are too.
