@@ -4,6 +4,9 @@ title = '@zhisme :: signal over noise'
 theme = 'zhisme-blog'
 enableRobotsTXT = true
 
+[frontmatter]
+  date = [":filename", ":default"]
+
 [permalinks]
   articles = "/articles/:slug/"
 
