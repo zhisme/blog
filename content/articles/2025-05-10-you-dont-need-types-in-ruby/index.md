@@ -26,12 +26,42 @@ that was trying to add types to ruby. It was a part of the [ruby 3](https://www.
 - rtc: Ruby Type Checker
 - Rubype
 
+## Why types are bad in dynamic languages
+
 I think it is a bad idea to add types to ruby. I think it is a bad idea to add types to any dynamically typed language. I think it is a bad idea to add types to any language that was not designed in first place for that.
+
+It is a desing flaw. Consider typing in statically typed languages:
+1. They have compilation process
+2. Types are checked during compilation and compilation is aborted in case types are incorrect
+3. No runtime typechecks that decrease perfomance *here add some benchmarking with ruby sorbet for example*
+4. Overwhelming annotations that pollute codebase
+
+*Show what happens when types are checked, how many extra commands are generated*
+
+But annotating everywhere
+
+```ruby
+  sig { params(cat: Cat) }
+```
+does not improve your design, it just makes noisy and clumsy. I would think that if your code need type annotations, it smells like bad design and should be considered for refactoring.
+
+There are messages that you send to objects not statically typed bits and procedures (which the way of thinking for statically typed languages and procedural programming). You even have in your toolbox methods like (to_int, to_str, to_ary), that already do type-check strictly.
+
+When you add types to ruby what are your benefits? It becomes faster language? No, it becomes even slower. It becomes more readable? Alas no. It becomes type safe? Yet no. It becomes more verbose with this type annotation everywhere making it look like nightmare. Why should one use hammer with self-tapping screw? Use screwdriver for that kind of activity.
 
 Matz (the creator of ruby) said that he doesn't like types in ruby. He suggest to use duck-typing hiding the types behind the interface. *find quote here, link*
 
 There are statically typed languages: go, java, rust, even c++. Why one would try to make ruby "look like" statically typed language? It violates the idea of ruby, which dynamically typed language. You can create amazing tools if you think in dynamic way (duck-typing, meta-programming, runtime definitions). There are messages that you send to objects not statically typed bits and procedures (which the way of thinking for statically typed languages and procedural programming). You even have in your toolbox methods like (to_int, to_str, to_ary), that already do type-check strictly.
 
 When you add types to ruby what are your benefits? It becomes faster language? No, it becomes even slower. It becomes more readable? Alas no. It becomes type safe? Yet no. It becomes more verbose with this type annotation everywhere making it look like nightmare. Why should one use hammer with self-tapping screw? Use screwdriver for that kind of activity.
+
+## What to do?
+
+Educate your developers, show them duck-typing and how to deal with ruby if they have statically typed language background.
+
+
+## Conclusion
+
+However I really against types in dynamic language with strict typing, I believe there's a problem that our industry has met that this typing annotations were firstly invented and tried out in production environment. Can you describe such cases? I mean like real production cases, not including type checks into your codebase just for fun or because ruby gives you a lot of freedom and allows you to experiment. Did you do any benchmarking, like it slighly improved your delivering speed or decreased errors in your production (errors in production for nil checks decreased or whatever)
 
 We care so much about environment and [climate changes](https://marmelab.com/blog/2020/10/21/sunsetting-faker.html#faker-has-a-design-problem), but think it is ok to waste resources for such activity.
