@@ -11,6 +11,48 @@ There was quite intensive discussion in hackernews [thread](https://news.ycombin
 
 Let's begin!
 
+## How we deal with types in ruby
+Most of the time in ruby we use [duck-typing](https://en.wikipedia.org/wiki/Duck_typing).
+It is object-oriented language that is designed to send messages which influenced by the [Smalltalk](https://en.wikipedia.org/wiki/Smalltalk) programming language. The idea is to send messages to objects and not to worry about the types of the objects. Now we want to skip years of evolution and try to treat objects like statically typed bits and procedures (which is the way of thinking for statically typed languages and procedural programming). We want to step back and say we not so smart as the inventors of dynamically typed languages and we strictly need to use typed bits to understand what we are doing. Nah. Why we need it in first place? Because we used to it and can't adopt to *new* paradigms which is 50 years old? (Smalltalk was invented in 1970s)
+
+Let's examine the following example:
+
+```ruby
+# example1
+
+class Cat
+  def sound
+    puts "Meow!"
+  end
+end
+
+class Cow
+  def sound
+    puts "Moooo!"
+  end
+end
+
+class Animal
+  def make_sound(animal)
+    animal.sound
+  end
+end
+
+cat = Cat.new
+cow = Cow.new
+animal = Animal.new
+animal.make_sound(cat) # Meow!
+animal.make_sound(cow) # Moooo!
+```
+
+This is the essence of duck-typing. You don't need to worry about the type of the object, as long as it responds to the method you are calling on it. We will use this example later on when adding types to it and see how it will look.
+
+{{< quote author="Sandy Metz" citeCaption="\"Practical Object-Oriented Design: An Agile Primer Using Ruby\" author" authorPic="sandi-metz.jpg" >}}
+If you have a method that takes an argument, you should be able to pass any object to it, as long as that object responds to the method you are calling on it.
+{{</ quote >}}
+
+The well-written book the subject is [Practical Object-Oriented Design in Ruby](https://a.co/d/7fA1qwt) by Sandi Metz. The book is a great resource for learning about object-oriented design in Ruby. It covers topics such as duck-typing, polymorphism, and how to write clean and maintainable object-oriented code.
+
 ## Brief history
 There was many projects trying to achieve this goal. Most of them failed. Let's take a look at them.
 
@@ -39,8 +81,8 @@ But annotating everywhere
 
 ```ruby
   sig { params(cat: Cat) }
-  def meow(cat)
-    cat.meow
+  def sound(cat)
+    cat.sound
   end
 ```
 does not improve your design, it just makes noisy and clumsy. I would think that if your code need type annotations, it smells like bad design and should be considered for refactoring.
@@ -65,6 +107,26 @@ Sorbet relies heavily on runtime type checks to back up the predictions made sta
 
 Educate your developers, show them duck-typing and how to deal with ruby if they have statically typed language background.
 
+## When do you need types?
+There are cases when you need types.
+
+1. For example, when building gems or API. You need to provide types for your users. But it is not the case when you build your application. How ruby developers dealt without types for years? They used other tool called [yard](https://yardoc.org/) that allows you to document your code. It is a great tool for documenting your code and it is widely used in the ruby community. It is not a type checker, but it allows you to document your code and to provide types for your users. You can even turn on LSP support for it. It is a great tool for documenting your code and it is widely used in the ruby community. It is not a type checker, but it allows you to document your code and to provide types for your users.
+
+```ruby
+# example2
+
+# @param [Animal] animal
+# @return [String]
+def sound(animal)
+  animal.sound
+end
+```
+
+Beloved reader would ask: "Oh, zhisme! But I want types to refactor my codebase. It is so easy to catch errors with all this linters that verify types and help me with nil-checks. How do I achieve that without types?"
+
+Write tests. Tests are the best way to catch errors in your code. They are the best way to verify that your code works as expected. They are the best way to refactor your code. They are the best way to document your code. They are the best way to provide types for your users (they can check them in your repo and understand what happens if you throw nil in your method). They are the best way to provide types for your users, not magic comments.
+
+The more I see current codebases the more I believe that we are in some adult-kindergarten. We invent tools for fun and persuade others to use them and take this as religious belief.
 
 ## Conclusion
 
