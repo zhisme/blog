@@ -1,5 +1,6 @@
 ---
 title: 'You Dont Need Types in Ruby'
+slug: 'you-dont-need-types-in-ruby'
 draft: true
 categories: ["Engineering"]
 tags: ["ruby", "types", "sorbet", "static-typing"]
@@ -7,13 +8,13 @@ intro: Why would one implement types in Ruby? The language is dynamically typed,
 description: desc
 keywords: ["ruby", "types"]
 ---
-There was quite intensive discussion in hackernews [thread](https://news.ycombinator.com/item?id=43938400) about [sorbet](https://sorbet.org/) in general that originally led to this post. I think it is quite interesting to see how people try to make ruby **only look like** statically typed language. It is not the first time when people try to add types to ruby. The author opinion is to make java from ruby is completely wrong idea, let me prove my point below.
+There was quite intensive discussion in hackernews [thread](https://news.ycombinator.com/item?id=43938400) about [sorbet](https://sorbet.org/) and types in general that originally led to this post. I think it is quite interesting to see how people try to make ruby **only look like** statically typed language. It is not the first time when people try to add types to ruby. The author opinion is to make java from ruby is completely wrong idea, let me prove my point below.
 
 Let's begin!
 
 ## How we deal with types in ruby
 Most of the time in ruby we use [duck-typing](https://en.wikipedia.org/wiki/Duck_typing).
-It is object-oriented language that is designed to send messages which influenced by the [Smalltalk](https://en.wikipedia.org/wiki/Smalltalk) programming language. The idea is to send messages to objects and not to worry about the types of the objects. Now we want to skip years of evolution and try to treat objects like statically typed bits and procedures (which is the way of thinking for statically typed languages and procedural programming). We want to step back and say we not so smart as the inventors of dynamically typed languages and we strictly need to use typed bits to understand what we are doing. Nah. Why we need it in first place? Because we used to it and can't adopt to *new* paradigms which is 50 years old? (Smalltalk was invented in 1970s)
+It is object-oriented language that is designed to send messages which influenced by the [Smalltalk](https://en.wikipedia.org/wiki/Smalltalk) programming language. The idea is to send messages to objects and not to worry about the types of the objects. Now we want to skip years of evolution and try to treat objects like statically typed bits and procedures (which is the way of thinking for statically typed languages and procedural programming). While this is not bad approach in general, but making ruby look like one of them I believe is wrong. We want to step back and say we not so smart as the inventors of dynamically typed languages and we strictly need to use typed bits to understand what we are doing. Nah. Why we need it in first place? Because we used to it and can't adopt to *new* paradigms which is 50 years old? (Smalltalk was invented in 1970s)
 
 Let's examine the following example:
 
@@ -32,20 +33,13 @@ class Cow
   end
 end
 
-class Animal
-  def make_sound(animal)
-    animal.sound
-  end
-end
-
 cat = Cat.new
 cow = Cow.new
-animal = Animal.new
-animal.make_sound(cat) # Meow!
-animal.make_sound(cow) # Moooo!
+animal = rand(100) % 2 == 0 ? Cat.new : Cow.new
+animal.sound if animal.respond_to?(:sound)
 ```
 
-This is the essence of duck-typing. You don't need to worry about the type of the object, as long as it responds to the method you are calling on it. We will use this example later on when adding types to it and see how it will look.
+This is the essence of duck-typing. You don't need to worry about the type of the object, as long as it responds to the method you are calling on it. We will use this example later on when adding types to it and see how it will look[^1].
 
 {{< quote author="Sandy Metz" citeCaption="\"Practical Object-Oriented Design: An Agile Primer Using Ruby\" author" authorPic="sandi-metz.jpg" >}}
 If you have a method that takes an argument, you should be able to pass any object to it, as long as that object responds to the method you are calling on it.
@@ -54,6 +48,8 @@ If you have a method that takes an argument, you should be able to pass any obje
 The well-written book the subject is [Practical Object-Oriented Design in Ruby](https://a.co/d/7fA1qwt) by Sandi Metz. The book is a great resource for learning about object-oriented design in Ruby. It covers topics such as duck-typing, polymorphism, and how to write clean and maintainable object-oriented code.
 
 ## Brief history
+The discussion is already 10 years old if not even more.
+
 There was many projects trying to achieve this goal. Most of them failed. Let's take a look at them.
 
 - There was a project called [rbs]()
@@ -87,11 +83,12 @@ But annotating everywhere
 ```
 does not improve your design, it just makes noisy and clumsy. I would think that if your code need type annotations, it smells like bad design and should be considered for refactoring.
 
-There are messages that you send to objects not statically typed bits and procedures (which the way of thinking for statically typed languages and procedural programming). You even have in your toolbox methods like (to_int, to_str, to_ary), that already do type-check strictly.
+There are messages that you send to objects not statically typed bits and procedures (which the way of thinking for statically typed languages and structured programming). You even have in your toolbox methods like (to_int, to_str, to_ary), that already do type-check strictly[^2].
 
 When you add types to ruby what are your benefits? It becomes faster language? No, it becomes even slower. It becomes more readable? Alas no. It becomes type safe? Yet no. It becomes more verbose with this type annotation everywhere making it look like nightmare. Why should one use hammer with self-tapping screw? Use screwdriver for that kind of activity.
 
-Matz (the creator of ruby) said that he doesn't like types in ruby. He suggest to use duck-typing hiding the types behind the interface. *find quote here, link*
+Matz (the creator of ruby) said that he doesn't like types in ruby. He suggest to use duck-typing hiding the types behind the interface[^3]. One very scilliating quote is:
+"Ruby without duck-typing, really Ruby?! Ruby should keep being Ruby, forever."
 
 There are statically typed languages: go, java, rust, even c++. Why one would try to make ruby "look like" statically typed language? It violates the idea of ruby, which dynamically typed language. You can create amazing tools if you think in dynamic way (duck-typing, meta-programming, runtime definitions). There are messages that you send to objects not statically typed bits and procedures (which the way of thinking for statically typed languages and procedural programming). You even have in your toolbox methods like (to_int, to_str, to_ary), that already do type-check strictly.
 
@@ -135,3 +132,8 @@ However I really against types in dynamic language with strict typing, I believe
 We care so much about environment and [climate changes](https://marmelab.com/blog/2020/10/21/sunsetting-faker.html#faker-has-a-design-problem), but think it is ok to waste resources for such activity.
 
 https://blog.iron.io/how-we-went-from-30-servers-to-2/
+
+### Footnotes
+[^1]: This is the footnote text.
+[^2]: https://zverok.space/blog/2016-01-18-implicit-vs-expicit.html
+[^3]: https://youtu.be/85ct6jOvVPI?si=G0JOy8FUD3C5QoNf&t=957
