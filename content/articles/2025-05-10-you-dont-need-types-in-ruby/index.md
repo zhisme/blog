@@ -1,26 +1,36 @@
 ---
-title: 'You Dont Need Types in Ruby'
+title: 'You Don’t Need Types in Ruby'
 slug: 'you-dont-need-types-in-ruby'
 draft: true
 categories: ["Engineering"]
 tags: ["ruby", "types", "sorbet", "static-typing"]
-intro: Why would one implement types in Ruby? The language is dynamically typed, and it works well for most use cases. That's quite interesting why people try to reinvent wheel all over the history. Let's deep dive into the topic that people believe will improve their codebases and bring them beloved stability.
-description: desc
-keywords: ["ruby", "types"]
+intro: Ruby was never meant to be statically typed — and forcing it to be one breaks what makes it beautiful. Let's explore why adding types to Ruby is a mistake, and how to embrace the language the way it was designed.
+description: Why adding static types to Ruby goes against the language philosophy, and why duck typing and good design are still the best tools for reliability and clarity.
+keywords: ["ruby", "types", "duck typing", "sorbet"]
 ---
-There was quite intensive discussion in hackernews [thread](https://news.ycombinator.com/item?id=43938400) about [sorbet](https://sorbet.org/) and types in general that originally led to this post. I think it is quite interesting to see how people try to make ruby **only look like** statically typed language. It is not the first time when people try to add types to ruby. The author opinion is to make java from ruby is completely wrong idea, let me prove my point below.
 
-Let's begin!
+There was an intense discussion on Hacker News in [this thread](https://news.ycombinator.com/item?id=43938400) about [Sorbet](https://sorbet.org/) and types in Ruby, which originally led me to write this post. It’s fascinating how people keep trying to make Ruby *look like* a statically typed language. It’s not the first time — and it won’t be the last.
 
-## How we deal with types in ruby
-Most of the time in ruby we use [duck-typing](https://en.wikipedia.org/wiki/Duck_typing).
-It is object-oriented language that is designed to send messages which influenced by the [Smalltalk](https://en.wikipedia.org/wiki/Smalltalk) programming language. The idea is to send messages to objects and not to worry about the types of the objects. Now we want to skip years of evolution and try to treat objects like statically typed bits and procedures (which is the way of thinking for statically typed languages and procedural programming). While this is not bad approach in general, but making ruby look like one of them I believe is wrong. We want to step back and say we not so smart as the inventors of dynamically typed languages and we strictly need to use typed bits to understand what we are doing. Nah. Why we need it in first place? Because we used to it and can't adopt to *new* paradigms which is 50 years old? (Smalltalk was invented in 1970s)
+My opinion? Turning Ruby into Java-like is a terrible idea. Let me explain why.
 
-Let's examine the following example:
+Let’s begin.
+
+---
+
+## How We Deal with Types in Ruby
+
+Most of the time in Ruby, we use [duck typing](https://en.wikipedia.org/wiki/Duck_typing).
+Ruby is an object-oriented language built around message passing — a concept deeply influenced by [Smalltalk](https://en.wikipedia.org/wiki/Smalltalk).
+
+The idea is simple: you send messages to objects and don’t worry about their types. You care about *behavior*, not classification.
+
+Now, some developers want to “upgrade” Ruby by forcing it to behave like a statically typed or procedural language — the kind where every variable has a fixed type, and the compiler babysits your logic. That’s not evolution; that’s regression.
+
+Do we really need types just because we’re too used to them? Because we can’t adapt to a paradigm that’s been around for fifty years? (Smalltalk appeared in the 1970s.)
+
+Let’s look at an example.
 
 ```ruby
-# example1
-
 class Cat
   def sound
     puts "Meow!"
@@ -33,107 +43,161 @@ class Cow
   end
 end
 
-cat = Cat.new
-cow = Cow.new
-animal = rand(100) % 2 == 0 ? Cat.new : Cow.new
+animal = rand(100).even? ? Cat.new : Cow.new
 animal.sound if animal.respond_to?(:sound)
 ```
 
-This is the essence of duck-typing. You don't need to worry about the type of the object, as long as it responds to the method you are calling on it. We will use this example later on when adding types to it and see how it will look[^1].
+This is the essence of duck typing. You don’t care what animal is — only that it responds to sound.
+That’s flexibility. That’s Ruby.
 
-{{< quote author="Sandy Metz" citeCaption="\"Practical Object-Oriented Design: An Agile Primer Using Ruby\" author" authorPic="sandi-metz.jpg" >}}
+{{< quote author="Sandi Metz" citeCaption="Practical Object-Oriented Design: An Agile Primer Using Ruby" authorPic="sandi-metz.jpg" >}}
 If you have a method that takes an argument, you should be able to pass any object to it, as long as that object responds to the method you are calling on it.
 {{</ quote >}}
 
-The well-written book the subject is [Practical Object-Oriented Design in Ruby](https://a.co/d/7fA1qwt) by Sandi Metz. The book is a great resource for learning about object-oriented design in Ruby. It covers topics such as duck-typing, polymorphism, and how to write clean and maintainable object-oriented code.
+A great resource on this topic is Practical Object-Oriented Design in Ruby by Sandi Metz. It’s the kind of book that makes you appreciate Ruby’s design — duck typing, polymorphism, and writing clean, adaptable code.
 
-## Brief history
-The discussion is already 10 years old if not even more.
+## A Brief History of Typing in Ruby
 
-There was many projects trying to achieve this goal. Most of them failed. Let's take a look at them.
+The “types in Ruby” debate is not new — it’s at least a decade old.
 
-- There was a project called [rbs]()
-that was trying to add types to ruby. It was a part of the [ruby 3](https://www.ruby-lang.org/en/news/2019/12/25/ruby-3-0-0-preview1/) release. It was a part of the [ruby 3x3](https://www.ruby-lang.org/en/news/2019/12/25/ruby-3-0-0-preview1/) initiative. The idea was to make ruby 3 times faster than ruby 2. The project was abandoned and it is not clear why.
-- There was another project called [dry-types](https://dry-rb.org/gems/dry-types/2.0/) that was trying to add types to ruby. It was a part of the [dry-rb](https://dry-rb.org/) initiative. The idea was to make ruby more type safe. The project is still alive and it is quite popular in the ruby community. But the problem they do all this in runtime affecting performance.
-- There was another project called typed-ruby that was trying to add types to ruby. That was abandoned as well.
-- sorbet is another project that is trying to add types to ruby. It is quite popular in the ruby community and it is used by many companies. The idea is to make ruby more type safe and to make it easier to write code.
-- rtc: Ruby Type Checker
-- Rubype
+Over the years, several projects tried to bring static typing to Ruby. Most of them either failed or proved unnecessary.
 
-## Why types are bad in dynamic languages
+RBS – Introduced as part of Ruby 3
+ and the “Ruby 3x3” initiative (3× faster than Ruby 2). It added type signatures to Ruby, but the idea never really caught on. It quietly faded away.
 
-I think it is a bad idea to add types to ruby. I think it is a bad idea to add types to any dynamically typed language. I think it is a bad idea to add types to any language that was not designed in first place for that.
+dry-types – Part of the dry-rb
+ ecosystem. Still alive and well. Provides runtime type validation — but it affects performance.
 
-It is a desing flaw. Consider typing in statically typed languages:
-1. They have compilation process
-2. Types are checked during compilation and compilation is aborted in case types are incorrect
-3. No runtime typechecks that decrease perfomance *here add some benchmarking with ruby sorbet for example*
-4. Overwhelming annotations that pollute codebase. That most of the time live as comments near to your methods.
-5. Type annotations in a codebase are near useless if developers don’t trust [them](https://sorbet.org/docs/runtime#why-have-runtime-checks).
+typed-ruby, Rubype, rtc (Ruby Type Checker) – all abandoned.
 
-*Show what happens when types are checked, how many extra commands are generated*
+Sorbet – Developed and promoted by Stripe. It’s popular and actively used, but it still suffers from the same conceptual flaws: performance overhead, verbosity, and philosophical mismatch.
 
-But annotating everywhere
+Why Types Are a Bad Fit for Dynamic Languages
 
-```ruby
-  sig { params(cat: Cat) }
-  def sound(cat)
-    cat.sound
-  end
-```
-does not improve your design, it just makes noisy and clumsy. I would think that if your code need type annotations, it smells like bad design and should be considered for refactoring.
+Adding static types to Ruby (or any dynamic language) is a design mistake.
+It’s like bolting a type system onto a philosophy that was built not to need one.
 
-There are messages that you send to objects not statically typed bits and procedures (which the way of thinking for statically typed languages and structured programming). You even have in your toolbox methods like (to_int, to_str, to_ary), that already do type-check strictly[^2].
+Let’s break down why:
 
-When you add types to ruby what are your benefits? It becomes faster language? No, it becomes even slower. It becomes more readable? Alas no. It becomes type safe? Yet no. It becomes more verbose with this type annotation everywhere making it look like nightmare. Why should one use hammer with self-tapping screw? Use screwdriver for that kind of activity.
+No compilation step.
+Static type systems shine in compiled languages. Ruby is interpreted. It can’t leverage compile-time guarantees.
 
-Matz (the creator of ruby) said that he doesn't like types in ruby. He suggest to use duck-typing hiding the types behind the interface[^3]. One very scilliating quote is:
-"Ruby without duck-typing, really Ruby?! Ruby should keep being Ruby, forever."
+Runtime overhead.
+Tools like Sorbet perform runtime type checks — which means slower code.
 
-There are statically typed languages: go, java, rust, even c++. Why one would try to make ruby "look like" statically typed language? It violates the idea of ruby, which dynamically typed language. You can create amazing tools if you think in dynamic way (duck-typing, meta-programming, runtime definitions). There are messages that you send to objects not statically typed bits and procedures (which the way of thinking for statically typed languages and procedural programming). You even have in your toolbox methods like (to_int, to_str, to_ary), that already do type-check strictly.
+Code pollution.
+You end up with verbose annotations everywhere. Instead of elegant Ruby, you get noisy, cluttered code.
 
-When you add types to ruby what are your benefits? It becomes faster language? No, it becomes even slower. It becomes more readable? Alas no. It becomes type safe? Yet no. It becomes more verbose with this type annotation everywhere making it look like nightmare. Why should one use hammer with self-tapping screw? Use screwdriver for that kind of activity.
+False sense of safety.
+If developers don’t trust the annotations, the type system is useless anyway. Even Sorbet admits this
+.
 
-## The numbers. Performance
+Here’s what that “safety” looks like:
 
->*Enable Runtime Checks.*
-<br/>
-Sorbet relies heavily on runtime type checks to back up the predictions made statically about a codebase. Learn why these checks are necessary, and how to enable them.
+sig { params(cat: Cat).void }
+def sound(cat)
+  cat.sound
+end
 
-## What to do?
 
-Educate your developers, show them duck-typing and how to deal with ruby if they have statically typed language background.
+It doesn’t improve your design. It just adds ceremony.
+If your code needs type annotations to make sense, it probably needs refactoring instead.
 
-## When do you need types?
-There are cases when you need types.
+Ruby was designed around messages, not static bits of data.
+Methods like to_int, to_str, and to_ary already provide strong type guarantees when needed — the Ruby way.
 
-1. For example, when building gems or API. You need to provide types for your users. But it is not the case when you build your application. How ruby developers dealt without types for years? They used other tool called [yard](https://yardoc.org/) that allows you to document your code. It is a great tool for documenting your code and it is widely used in the ruby community. It is not a type checker, but it allows you to document your code and to provide types for your users. You can even turn on LSP support for it. It is a great tool for documenting your code and it is widely used in the ruby community. It is not a type checker, but it allows you to document your code and to provide types for your users.
+So what do you gain by adding types?
 
-```ruby
-# example2
+Is Ruby faster? No — it’s slower.
+
+More readable? No — more verbose.
+
+Type safe? Not really — just more complex.
+
+It’s like using a hammer on a self-tapping screw: wrong tool, wrong mindset.
+
+Matz himself (the creator of Ruby) has spoken clearly on this:
+
+“Ruby without duck typing? Really Ruby?! Ruby should keep being Ruby, forever.” 1
+
+We already have statically typed languages: Go, Java, Rust, C++.
+Why try to make Ruby pretend to be one of them?
+
+The Numbers: Performance
+
+Sorbet relies on runtime type checks to “verify” assumptions made by its static analyzer.
+These checks run in production and cost CPU time. Stripe themselves admitted this overhead was measurable — and they needed to optimize around it.
+
+In other words: you trade speed and simplicity for a simulation of type safety.
+
+So What Should You Do Instead?
+
+If you’re managing a Ruby codebase, focus on these instead of adding types:
+
+Educate developers.
+Teach them Ruby’s philosophy — message passing, duck typing, and polymorphism.
+
+Use YARD for documentation.
+YARD
+ lets you document method signatures for humans and tools alike. It’s simple, readable, and integrates with LSP.
 
 # @param [Animal] animal
 # @return [String]
 def sound(animal)
   animal.sound
 end
-```
 
-Beloved reader would ask: "Oh, zhisme! But I want types to refactor my codebase. It is so easy to catch errors with all this linters that verify types and help me with nil-checks. How do I achieve that without types?"
 
-Write tests. Tests are the best way to catch errors in your code. They are the best way to verify that your code works as expected. They are the best way to refactor your code. They are the best way to document your code. They are the best way to provide types for your users (they can check them in your repo and understand what happens if you throw nil in your method). They are the best way to provide types for your users, not magic comments.
+Write tests.
+Tests are your best type checker.
+They catch nils, verify interfaces, and protect your design far better than annotations.
 
-The more I see current codebases the more I believe that we are in some adult-kindergarten. We invent tools for fun and persuade others to use them and take this as religious belief.
+The Ruby community has thrived for decades without static typing.
+We don’t need to reinvent a wheel that was never meant to roll that way.
 
-## Conclusion
+When You Actually Need Types
 
-However I really against types in dynamic language with strict typing, I believe there's a problem that our industry has met that this typing annotations were firstly invented and tried out in production environment. Can you describe such cases? I mean like real production cases, not including type checks into your codebase just for fun or because ruby gives you a lot of freedom and allows you to experiment. Did you do any benchmarking, like it slighly improved your delivering speed or decreased errors in your production (errors in production for nil checks decreased or whatever)
+There are valid cases — when building libraries or APIs consumed by others.
+There, type definitions act as a contract for external users. But even then, documentation (YARD, RBS, or generated API specs) often works better than enforced runtime checks.
 
-We care so much about environment and [climate changes](https://marmelab.com/blog/2020/10/21/sunsetting-faker.html#faker-has-a-design-problem), but think it is ok to waste resources for such activity.
+Within your application? You don’t need it.
+Ruby’s clarity, expressiveness, and testability are your safety net.
 
-https://blog.iron.io/how-we-went-from-30-servers-to-2/
+The Real Problem
 
-### Footnotes
-[^1]: This is the footnote text.
-[^2]: https://zverok.space/blog/2016-01-18-implicit-vs-expicit.html
-[^3]: https://youtu.be/85ct6jOvVPI?si=G0JOy8FUD3C5QoNf&t=957
+Many developers treat new tools like religion.
+They adopt them because they feel safer, not because they make code better.
+
+It’s like an adult kindergarten: inventing toys, playing with them, and then convincing others they’re essential for “serious work.”
+
+We should know better.
+
+Conclusion
+
+I’m firmly against adding types to Ruby.
+But I’m also aware this debate didn’t appear out of nowhere — it’s a symptom of a real industry problem.
+We’ve confused “rigor” with “rigidity.”
+
+So here’s a question for you:
+If you added Sorbet or RBS to your production system — did it actually reduce errors?
+Did it speed up development, improve runtime stability, or reduce production issues?
+
+Show the numbers. Otherwise, it’s just ceremony.
+
+We talk about saving the planet and optimizing compute resources — but we’re fine wasting CPU cycles on runtime type checks that exist only to make us feel safer.
+
+As Iron.io’s case study
+ reminds us — less code, fewer abstractions, and simpler systems almost always win.
+
+Keep Ruby Ruby.
+
+Footnotes
+
+---
+
+Would you like me to also help you add a **short meta excerpt** (1–2 sentence TL;DR summary) and **Twitter card description** for your blog engine
+
+Footnotes
+
+Matz on Duck Typing — YouTube talk
+ ↩
