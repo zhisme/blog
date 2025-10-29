@@ -16,8 +16,6 @@ It’s fascinating how people try to make Ruby *look* like a statically typed la
 Turning Ruby into Java isn’t progress. It’s a step backward.
 Let me explain why.
 
----
-
 ## How Ruby Deals with Types
 
 Ruby is a dynamically typed, object-oriented language designed around message passing — an idea borrowed from [Smalltalk](https://en.wikipedia.org/wiki/Smalltalk).
@@ -67,8 +65,6 @@ If you have a method that takes an argument, you should be able to pass any obje
 Sandi Metz’s book [Practical Object-Oriented Design in Ruby](https://a.co/d/7fA1qwt) is still the best explanation of this philosophy.
 It’s not about enforcing constraints — it’s about designing objects that *cooperate*.
 
----
-
 ## A Brief History of Type Experiments
 
 Adding types to Ruby isn’t new. Many have tried. Most have failed.
@@ -79,8 +75,6 @@ Adding types to Ruby isn’t new. Many have tried. Most have failed.
 * **Sorbet** – the most popular attempt so far, backed by Stripe. It mixes static and runtime checks but at the expense of speed and simplicity/readability.
 
 Ten years later, the discussion is still alive — but the core issue remains: Ruby wasn’t designed for static typing.
-
----
 
 ## Why Adding Types to Ruby Is a Bad Idea
 
@@ -122,9 +116,7 @@ He encourages hiding types behind interfaces — not surfacing them as syntax[^2
 There are already excellent statically typed languages — Go, Java, Rust, C++.
 Ruby isn’t one of them, and it shouldn’t pretend to be.
 
----
-
-## Performance
+## Runtime Performance Overhead
 
 Even Sorbet's own docs[^3] admit it:
 > "Enable Runtime Checks. Sorbet relies heavily on runtime type checks to back up its static predictions."
@@ -135,7 +127,12 @@ Compare this to a linter. A linter runs during development, catches issues in yo
 
 Why does a static type checker need to exist in production at all? It shouldn't. The whole point of static analysis is to fail fast during development, not to babysit your code in production. Sorbet conflates compile-time safety with runtime validation, and you pay for it.
 
----
+## Maintability
+
+Imagine refactoring a large Ruby codebase littered with type annotations. Every method signature change cascades through the code, forcing updates to all related `sig` blocks. This creates a maintenance nightmare, especially in dynamic languages where flexibility is key.
+
+Counter argument would be that's why it makes type safe. But in reality, it just adds friction to the development process. I believe this is maintability hell for developers and they will avoid touching code that is heavily annotated. They would sabotage the type system to get their work done faster.
+Did you see any[^4] in typescript world? Rules must be clear and simple to follow, otherwise they will be violated. Improving such codebase is harder, not easier. Refactoring becomes very time consuming.
 
 ## What to Do Instead
 
@@ -145,6 +142,7 @@ If someone comes from Java, Go, or C#, help them unlearn the obsession with type
 Show them:
 
 * **Duck typing** — it’s powerful, flexible, and elegant when used right.
+* **Implicit conversion methods** like `to_int`, `to_str`, etc. Use them to enforce strictness when needed. Most of the time, you don’t need them.
 * **[YARD](https://yardoc.org/)** — for documenting code with optional type hints.
 * **Tests** — still the best type system Ruby ever had. In ruby you have [rspec](https://rspec.info/)/[minitest](https://github.com/minitest/minitest) to cover your codebase.
 * **Linters** — like [RuboCop](https://rubocop.org/) to enforce style and catch common mistakes.
@@ -195,3 +193,4 @@ There are many languages designed for static typing. Ruby isn’t one of them.
 [^1]: [Implicit vs. Explicit by zverok](https://zverok.space/blog/2016-01-18-implicit-vs-expicit.html)
 [^2]: [Matz on Duck Typing (YouTube)](https://youtu.be/85ct6jOvVPI?si=G0JOy8FUD3C5QoNf&t=957)
 [^3]: [Sorbet Runtime Checks](https://sorbet.org/docs/runtime#why-have-runtime-checks)
+[^4]: [TypeScript's any type](https://tamingtypescript.com/09-the-any-escape-hatch-and-why-its-a-trap)
