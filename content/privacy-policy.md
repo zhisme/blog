@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-date: 2025-04-15
+date: 2025-11-01
 draft: false
 url: "/privacy-policy/"
 type: "privacy-policy"
@@ -9,9 +9,7 @@ description: "Details on how @zhisme :: signal over noise blog handles your data
 keywords: ["privacy", "policy", "data", "signal over noise"]
 ---
 
-_Last updated: April 15, 2025_
-
-This blog ("Site") is operated by **zhisme** ("I", "me", "my"). Your privacy matters, and this policy explains what data is collected, how it’s used, and your rights as a visitor.
+This blog ("Site") is operated by **zhisme** ("I", "me", "my"). Your privacy matters, and this policy explains what data is collected, how it's used, and your rights as a visitor.
 
 ---
 
@@ -44,7 +42,7 @@ This site uses **Disqus** for comments. When you post a comment, Disqus may coll
 This site and its third-party tools may use **cookies** to:
 
 - Enable site functionality
-- Collect usage data for analytics
+- Collect anonymized usage data for analytics
 - Improve your experience
 
 You can control or disable cookies through your browser settings.
