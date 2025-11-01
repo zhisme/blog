@@ -1,4 +1,4 @@
-name: Hugo build
+name: Hugo
 
 on:
   pull_request:
