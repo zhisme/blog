@@ -97,6 +97,21 @@ My workflow:
 
 AI will generate test structures you can adapt. You'll still need to review and ensure they test the right things, but it's a massive time-saver.
 
+### 6. Learning New Technologies and Concepts
+
+This is where AI truly shines: **personalized learning**.
+
+With proper prompts about your interests, background, and learning style, AI can help you find resources, summarize complex topics, and generate practice problems to test your understanding.
+
+Google even released a "Learn Your Way" AI tool designed to help students learn more effectively by tailoring content to their needs—taking into consideration your real-life experiences, learning preferences, interests, and how you best absorb information.
+
+**My workflow for learning**:
+- "I'm a Rails developer learning Rust. Explain ownership and borrowing using analogies from Ruby's memory management"
+- "Generate 5 practice problems for understanding React hooks, starting from beginner to intermediate level"
+- "Summarize the key differences between gRPC and REST APIs. I'm familiar with REST already"
+
+AI adjusts to your context. No more sifting through generic tutorials that assume you know nothing—or worse, assume you know everything.
+
 ## The Real Value: Cognitive Offloading
 
 The real power of AI isn't in writing code—it's in **offloading cognitive burden**.
@@ -107,6 +122,45 @@ The real power of AI isn't in writing code—it's in **offloading cognitive burd
 - Don't stare at a blank test file wondering what edge cases exist
 
 Use AI for the grunt work. Reserve your brain for the hard problems: architecture decisions, business logic, performance optimization, and the creative problem-solving that actually defines software engineering.
+
+## The Elephant in the Room: Privacy Concerns
+
+Let's address why people still aren't using AI in 2025: **privacy**.
+
+What will AI tools do with your data? How do they store it? Can someone else stumble upon your proprietary code snippets while asking similar questions? Will your company's internal logic end up in someone else's AI-generated response?
+
+I believe in the old aphorism: **"If something gets into the internet, it will be there forever."**
+
+Many companies rightfully forbid AI tools on company devices. Your employer has every right to protect their IP. But here's the thing: **opensource is now more fun than ever** with AI.
+
+You can jump into any opensource repository with an AI tool, grab an issue, and command your AI to dig through the codebase, find related changes, understand the context, and give you a summary. Suddenly, contributing to massive projects like Kubernetes or Rails isn't as daunting anymore.
+
+**My approach**:
+- Work code? No AI. Or only approved, self-hosted, company-controlled AI tools.
+- Opensource? AI all the way. It's public anyway.
+- Personal projects? Your call. Just don't paste production secrets or API keys like a fool.
+
+Privacy concerns are legitimate. The solution isn't to avoid AI—it's to be intentional about when and where you use it.
+
+## AI is Your Tool, Not Your Brain
+
+Here's the uncomfortable truth: **Only good developers can use AI tools effectively**.
+
+You have to understand and write code in your everyday routine to know what's going on and how to adjust AI answers and prompts to your needs. You cannot trust it blindly. You must verify and validate what AI gives you.
+
+But here's the kicker: **AI is your assistant, not your replacement**.
+
+A good developer with AI will outperform a bad developer with AI every single time. Why? Because:
+- You need to understand programming fundamentals to evaluate AI suggestions
+- You need to know architecture patterns to recognize when AI is suggesting garbage
+- You need to understand algorithms and data structures to optimize what AI generates
+- You need domain knowledge to translate requirements into proper prompts
+
+AI can suggest multiple solutions, but **the responsibility and final choice are always yours**.
+
+A junior developer copying AI code without understanding it will produce buggy, unmaintainable garbage. An experienced developer using AI to skip boilerplate and explore solutions faster? That's a force multiplier.
+
+AI cannot replace a good developer. But a good developer with AI can absolutely replace a mediocre developer without it.
 
 ## Final Thoughts
 
