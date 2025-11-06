@@ -14,9 +14,10 @@
     </div>
 
     <div class="cookie-block">
-      <div>This site uses cookies.</div>
-      <a href="javascript:void(0)" onclick="storeCookiesChoice()" class="button button-green">Got It</a>
-      <a href="/privacy-policy/" onclick="storeCookiesChoice()" class="button button-white-bg">Read more</a>
+      <div>This site uses cookies for analytics.  </div>
+      <a href="/privacy-policy/" class="button button-white-bg">Read more</a>
+      <a href="javascript:void(0)" onclick="declineTracking()" class="button button-white-bg">No, thanks</a>
+      <a href="javascript:void(0)" onclick="acceptTracking()" class="button button-green">Ok, got it</a>
     </div>
 
     {{ if eq hugo.Environment "production" }}
@@ -24,13 +25,57 @@
     {{ end }}
 
     <script type="text/javascript">
-      if (localStorage.getItem('cookies-accepted') !== 'true') {
+      // Check if user has made a choice
+      const trackingChoice = localStorage.getItem('tracking-choice');
+
+      if (!trackingChoice) {
         document.querySelector('.cookie-block').classList.add('visible');
+        loadGoatCounter();
+      } else if (trackingChoice === 'accepted') {
+        loadGoogleAnalytics();
+      } else if (trackingChoice === 'declined') {
+        loadGoatCounter();
       }
 
-      function storeCookiesChoice() {
-        localStorage.setItem('cookies-accepted', 'true');
+      function acceptTracking() {
+        localStorage.setItem('tracking-choice', 'accepted');
         document.querySelector('.cookie-block').classList.remove('visible');
+        loadGoogleAnalytics();
+      }
+
+      function declineTracking() {
+        localStorage.setItem('tracking-choice', 'declined');
+        document.querySelector('.cookie-block').classList.remove('visible');
+        // GoatCounter is already loaded or will load now
+        if (!window.goatcounter) {
+          loadGoatCounter();
+        }
+      }
+
+      function loadGoogleAnalytics() {
+        // Load GA4 script
+        const gaScript = document.createElement('script');
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-JKN6QF0DXY';
+        gaScript.async = true;
+        document.head.appendChild(gaScript);
+
+        // Initialize GA4
+        gaScript.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JKN6QF0DXY');
+        };
+      }
+
+      function loadGoatCounter() {
+        if (!window.goatcounter) {
+          const script = document.createElement('script');
+          script.setAttribute('data-goatcounter', 'https://zhisme.goatcounter.com/count');
+          script.src = '//gc.zgo.at/count.js';
+          script.async = true;
+          document.head.appendChild(script);
+        }
       }
     </script>
   </body>

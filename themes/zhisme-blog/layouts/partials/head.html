@@ -41,15 +41,7 @@
 <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}feed.xml" />
 
 {{ if eq hugo.Environment "production" }}
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKN6QF0DXY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-JKN6QF0DXY');
-  </script>
+  <!-- Analytics loaded based on user consent in baseof.html -->
 {{ end }}
 
 

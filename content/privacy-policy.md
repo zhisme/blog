@@ -1,12 +1,12 @@
 ---
 title: "Privacy Policy"
-date: 2025-11-01
+date: 2025-11-06
 draft: false
 url: "/privacy-policy/"
 type: "privacy-policy"
 layout: "privacy-policy"
 description: "Details on how @zhisme :: signal over noise blog handles your data, privacy, and analytics."
-keywords: ["privacy", "policy", "data", "signal over noise"]
+keywords: ["privacy", "policy", "data", "signal over noise", "GDPR", "cookies"]
 ---
 
 This blog ("Site") is operated by **zhisme** ("I", "me", "my"). Your privacy matters, and this policy explains what data is collected, how it's used, and your rights as a visitor.
@@ -17,15 +17,26 @@ This blog ("Site") is operated by **zhisme** ("I", "me", "my"). Your privacy mat
 
 ### a. Analytics
 
-This site uses third-party analytics services such as **Google Analytics** to collect anonymized data about how users interact with the site. This includes:
+This site gives you a **choice** between two analytics services:
 
-- Pages visited
-- Browser and device type
-- Referring site or link
-- Approximate geolocation (country-level)
-- Time spent on the site
+**Option 1: [GoatCounter](https://www.goatcounter.com/) (Default, Privacy-Friendly)**
+- If you decline cookie consent or haven't made a choice yet
+- **No cookies**, no personal data collection
+- Open-source, privacy-first analytics
+- Only tracks basic page views and referrers
+- GDPR compliant by design
 
-This helps me understand what content performs well and how to improve the blog.
+**Option 2: Google Analytics (If You Consent)**
+- Only loads if you click "Ok, got it" on the cookie banner
+- Collects more detailed analytics data including:
+  - Pages visited
+  - Browser and device type
+  - Referring site or link
+  - Approximate geolocation (country-level)
+  - Time spent on the site
+- Uses cookies to track sessions
+
+Both services help me understand what content performs well and how to improve the blog. Your choice is saved in your browser's local storage.
 
 ### b. Newsletter Subscriptions
 
@@ -37,15 +48,33 @@ This site uses **Disqus** for comments. When you post a comment, Disqus may coll
 
 ---
 
-## 2. Cookies
+## 2. Cookies & Consent
 
-This site and its third-party tools may use **cookies** to:
+### Your Choice Matters
 
-- Enable site functionality
-- Collect anonymized usage data for analytics
-- Improve your experience
+When you first visit this site, you'll see a cookie consent banner with three options:
 
-You can control or disable cookies through your browser settings.
+1. **"Ok, got it"** - Loads **Google Analytics** (uses cookies for detailed tracking)
+2. **"No, thanks"** - Loads **GoatCounter** (no cookies, privacy-friendly)
+3. **"Read more"** - View this policy before deciding
+
+### How Cookies Are Used
+
+**If you accept (Google Analytics):**
+- Cookies track your browsing session
+- Data includes page views, time on site, device info
+- You can clear your choice anytime by clearing browser data
+
+**If you decline (GoatCounter):**
+- **No tracking cookies** are set
+- Only basic, privacy-respecting page view counts
+- No cross-site tracking or personal data collection
+
+**Storage:**
+- Your consent choice is saved in `localStorage` (not a cookie)
+- This preference persists until you clear browser data
+
+You can change your mind anytime by clearing your browser's local storage for this site.
 
 ---
 
