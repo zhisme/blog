@@ -1457,20 +1457,46 @@ body.popup-show::after {
   margin-left: 16px;
   padding: 16px 24px;
 }
+.cookie-block div {
+  order: 1;
+}
+.cookie-block .button-green {
+  order: 2;
+}
+.cookie-block .button:nth-child(3) {
+  order: 3;
+}
+.cookie-block .button:nth-child(2) {
+  order: 4;
+}
 @media (max-width: 46.43625em) {
   .cookie-block {
     flex-flow: row wrap;
     width: 340px;
     text-align: center;
     justify-content: space-between;
+    padding: 8px 8px 8px 8px;
+  }
+  .cookie-block div {
+    order: 1;
+    width: 100%;
+  }
+  .cookie-block .button:nth-child(2) {
+    order: 2;
+  }
+  .cookie-block .button:nth-child(3) {
+    order: 3;
+  }
+  .cookie-block .button-green {
+    order: 4;
   }
   .cookie-block .button {
     width: 150px;
     margin-left: 0;
     margin-top: 10px;
   }
-  .cookie-block div {
-    width: 100%;
+  .cookie-block .button-green {
+    margin: 10px auto 0 auto;
   }
 }
 .cookie-block.visible {
