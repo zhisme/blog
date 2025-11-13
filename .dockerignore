@@ -1,0 +1,22 @@
+# Git files
+.git
+.gitignore
+.github
+
+# Build output (will be generated during build)
+public/
+
+# macOS files
+.DS_Store
+
+# Hugo lock file (generated during build)
+.hugo_build.lock
+
+# Documentation (not needed in container)
+README.md
+AGENTS.md
+CLAUDE.md
+
+# Docker files (not needed in container)
+Dockerfile
+.dockerignore
