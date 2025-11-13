@@ -1,5 +1,7 @@
 # Docker Setup for Hugo Blog
 
+This Dockerfile builds the static Hugo site. The resulting image contains the built files in `/src/public`, which can be extracted and served by nginx at the Kubernetes cluster level.
+
 ## Building the Image
 
 ```bash
@@ -10,73 +12,121 @@ docker build -t zhisme-blog:latest .
 docker build -t zhisme-blog:v1.0.0 .
 ```
 
-## Running Locally
+## Testing the Build
 
-### For Local Testing (Port 1313)
+### Option 1: Automated Test Script
 
 ```bash
-# Run with Hugo's default port for easy testing
-docker run -d \
-  -p 1313:1313 \
-  -e NGINX_PORT=1313 \
-  --name zhisme-blog \
-  zhisme-blog:latest
+# Make the script executable
+chmod +x test-build.sh
 
-# Access the blog at: http://localhost:1313
+# Run the test
+./test-build.sh
 ```
 
-### For Production-like Testing (Port 80)
+This script will:
+1. Build the Docker image
+2. Extract files to `./test-output/public/`
+3. Validate the build
+4. Show file statistics
 
+### Option 2: Manual Testing
+
+#### Step 1: Build the image
 ```bash
-# Run with production port 80
+docker build -t zhisme-blog:latest .
+```
+
+#### Step 2: Extract the built files
+```bash
+# Create a temporary container (doesn't run it)
+docker create --name temp-hugo zhisme-blog:latest
+
+# Copy the built files out
+docker cp temp-hugo:/src/public ./test-output
+
+# Clean up the temporary container
+docker rm temp-hugo
+```
+
+#### Step 3: Inspect the files
+```bash
+# List the contents
+ls -lah ./test-output/
+
+# Check the structure
+tree ./test-output/ -L 2
+
+# View a file to verify it's correct
+cat ./test-output/index.html
+```
+
+#### Step 4: Test locally with a web server
+```bash
+# Using Python's built-in server
+cd test-output
+python3 -m http.server 8000
+
+# Visit: http://localhost:8000
+```
+
+Or with Docker using nginx:
+```bash
+# Quick test with nginx
 docker run -d \
   -p 8080:80 \
-  --name zhisme-blog \
-  zhisme-blog:latest
+  -v $(pwd)/test-output:/usr/share/nginx/html:ro \
+  --name test-nginx \
+  nginx:alpine
 
-# Access the blog at: http://localhost:8080
+# Visit: http://localhost:8080
+
+# Clean up when done
+docker stop test-nginx && docker rm test-nginx
 ```
 
-### Custom Port
+## What to Verify
+
+When inspecting the extracted files, check for:
+
+1. **index.html** - Homepage exists
+2. **404.html** - Custom 404 page exists
+3. **articles/** - All your blog posts are present
+4. **css/** - Compiled stylesheets exist
+5. **js/** - JavaScript files exist
+6. **Minification** - Files should be minified (check file sizes)
+
+### Example Validation Commands
 
 ```bash
-# Run with any custom port
-docker run -d \
-  -p 3000:3000 \
-  -e NGINX_PORT=3000 \
-  --name zhisme-blog \
-  zhisme-blog:latest
+# Count HTML files
+find test-output -name "*.html" | wc -l
 
-# Access the blog at: http://localhost:3000
-```
+# Check total size
+du -sh test-output/
 
-## Testing
+# List all articles
+ls -1 test-output/articles/
 
-```bash
-# Check container logs
-docker logs zhisme-blog
+# Check if images are present
+find test-output -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.svg" \)
 
-# Check container health
-docker ps
-
-# Stop the container
-docker stop zhisme-blog
-
-# Remove the container
-docker rm zhisme-blog
+# Verify CSS/JS are minified (should be small)
+ls -lh test-output/assets/css/
+ls -lh test-output/assets/js/
 ```
 
 ## Kubernetes Deployment
 
-### Create a deployment.yaml:
+### Strategy 1: Init Container Pattern
+
+Use the Hugo builder as an init container that copies files to a shared volume:
 
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: zhisme-blog
-  labels:
-    app: zhisme-blog
 spec:
   replicas: 2
   selector:
@@ -87,11 +137,25 @@ spec:
       labels:
         app: zhisme-blog
     spec:
-      containers:
-      - name: zhisme-blog
+      # Init container builds and copies files
+      initContainers:
+      - name: hugo-builder
         image: zhisme-blog:latest
+        command: ['sh', '-c', 'cp -r /src/public/* /public/']
+        volumeMounts:
+        - name: hugo-public
+          mountPath: /public
+
+      # Main container serves with nginx
+      containers:
+      - name: nginx
+        image: nginx:1.27-alpine
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: hugo-public
+          mountPath: /usr/share/nginx/html
+          readOnly: true
         livenessProbe:
           httpGet:
             path: /
@@ -104,6 +168,10 @@ spec:
             port: 80
           initialDelaySeconds: 5
           periodSeconds: 10
+
+      volumes:
+      - name: hugo-public
+        emptyDir: {}
 ---
 apiVersion: v1
 kind: Service
@@ -119,19 +187,36 @@ spec:
   type: LoadBalancer
 ```
 
-### Deploy to Kubernetes:
+### Strategy 2: Build Image, Then Copy to Nginx Image
+
+Create a custom nginx image with the built files:
+
+```dockerfile
+# Multi-stage build
+FROM zhisme-blog:latest AS builder
+
+FROM nginx:1.27-alpine
+COPY --from=builder /src/public /usr/share/nginx/html
+```
+
+Then deploy this combined image to Kubernetes.
+
+### Strategy 3: Cluster-Level Nginx with ConfigMap
+
+1. Build and extract files locally
+2. Create ConfigMap with the files
+3. Mount ConfigMap in nginx deployment
 
 ```bash
-# Apply the deployment
-kubectl apply -f deployment.yaml
+# Extract files
+docker create --name temp-hugo zhisme-blog:latest
+docker cp temp-hugo:/src/public ./public
+docker rm temp-hugo
 
-# Check the deployment
-kubectl get deployments
-kubectl get pods
-kubectl get services
+# Create ConfigMap (for small sites)
+kubectl create configmap blog-content --from-file=./public
 
-# Get the service URL
-kubectl get service zhisme-blog
+# Or use a PersistentVolume for larger sites
 ```
 
 ## Image Registry
@@ -145,31 +230,48 @@ docker tag zhisme-blog:latest your-registry.com/zhisme-blog:latest
 # Push to registry
 docker push your-registry.com/zhisme-blog:latest
 
-# Update deployment.yaml with the full image path
+# Update deployment YAML with the full image path
 ```
 
 ## Dockerfile Details
 
-The Dockerfile uses a multi-stage build:
-- **Stage 1**: Uses official Hugo image (ghcr.io/gohugoio/hugo:v0.145.0) to build the static site
-- **Stage 2**: Uses nginx:1.27-alpine to serve the content
-- Includes health checks for Kubernetes readiness/liveness probes
-- Optimized for production with minified output
-- **Configurable Port**: Use `NGINX_PORT` environment variable to change the listening port
-  - Default: Port 80 (production)
-  - Local testing: Port 1313 (Hugo's default)
-  - Custom: Any port you specify
+The Dockerfile:
+- Uses official Hugo image (ghcr.io/gohugoio/hugo:v0.145.0)
+- Builds the static site with `hugo --minify`
+- Output is located at `/src/public` inside the container
+- Does NOT include a web server (nginx configured at cluster level)
+- Small image size (~200MB with Hugo, or extract just the public/ folder)
 
 ### Hugo Image Version
 
-The Dockerfile uses the official Hugo Docker image from GitHub Container Registry. If you need a different version:
+To use a different Hugo version:
 
 ```dockerfile
 # Use a different Hugo version
-FROM ghcr.io/gohugoio/hugo:v0.152.0 AS builder
+FROM ghcr.io/gohugoio/hugo:v0.152.0
 
 # Or use the latest version
-FROM ghcr.io/gohugoio/hugo:latest AS builder
+FROM ghcr.io/gohugoio/hugo:latest
 ```
 
 **Note**: The previous `klakegg/hugo` images are deprecated (last update: v0.112.0). Always use the official `ghcr.io/gohugoio/hugo` images for the latest Hugo versions.
+
+## CI/CD Integration
+
+Example GitHub Actions workflow:
+
+```yaml
+- name: Build Hugo Docker image
+  run: docker build -t zhisme-blog:${{ github.sha }} .
+
+- name: Extract static files
+  run: |
+    docker create --name hugo-temp zhisme-blog:${{ github.sha }}
+    docker cp hugo-temp:/src/public ./public
+    docker rm hugo-temp
+
+- name: Deploy to K8s
+  run: |
+    # Upload to your deployment method
+    # or build final nginx image
+```
