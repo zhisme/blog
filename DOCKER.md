@@ -12,11 +12,42 @@ docker build -t zhisme-blog:v1.0.0 .
 
 ## Running Locally
 
+### For Local Testing (Port 1313)
+
 ```bash
-# Run the container
-docker run -d -p 8080:80 --name zhisme-blog zhisme-blog:latest
+# Run with Hugo's default port for easy testing
+docker run -d \
+  -p 1313:1313 \
+  -e NGINX_PORT=1313 \
+  --name zhisme-blog \
+  zhisme-blog:latest
+
+# Access the blog at: http://localhost:1313
+```
+
+### For Production-like Testing (Port 80)
+
+```bash
+# Run with production port 80
+docker run -d \
+  -p 8080:80 \
+  --name zhisme-blog \
+  zhisme-blog:latest
 
 # Access the blog at: http://localhost:8080
+```
+
+### Custom Port
+
+```bash
+# Run with any custom port
+docker run -d \
+  -p 3000:3000 \
+  -e NGINX_PORT=3000 \
+  --name zhisme-blog \
+  zhisme-blog:latest
+
+# Access the blog at: http://localhost:3000
 ```
 
 ## Testing
@@ -124,6 +155,10 @@ The Dockerfile uses a multi-stage build:
 - **Stage 2**: Uses nginx:1.27-alpine to serve the content
 - Includes health checks for Kubernetes readiness/liveness probes
 - Optimized for production with minified output
+- **Configurable Port**: Use `NGINX_PORT` environment variable to change the listening port
+  - Default: Port 80 (production)
+  - Local testing: Port 1313 (Hugo's default)
+  - Custom: Any port you specify
 
 ### Hugo Image Version
 
