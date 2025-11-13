@@ -120,7 +120,21 @@ docker push your-registry.com/zhisme-blog:latest
 ## Dockerfile Details
 
 The Dockerfile uses a multi-stage build:
-- **Stage 1**: Uses Hugo 0.145.0 to build the static site
+- **Stage 1**: Uses official Hugo image (ghcr.io/gohugoio/hugo:v0.145.0) to build the static site
 - **Stage 2**: Uses nginx:1.27-alpine to serve the content
 - Includes health checks for Kubernetes readiness/liveness probes
 - Optimized for production with minified output
+
+### Hugo Image Version
+
+The Dockerfile uses the official Hugo Docker image from GitHub Container Registry. If you need a different version:
+
+```dockerfile
+# Use a different Hugo version
+FROM ghcr.io/gohugoio/hugo:v0.152.0 AS builder
+
+# Or use the latest version
+FROM ghcr.io/gohugoio/hugo:latest AS builder
+```
+
+**Note**: The previous `klakegg/hugo` images are deprecated (last update: v0.112.0). Always use the official `ghcr.io/gohugoio/hugo` images for the latest Hugo versions.

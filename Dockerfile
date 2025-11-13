@@ -1,5 +1,5 @@
 # Stage 1: Build the Hugo site
-FROM klakegg/hugo:0.145.0-ext-alpine AS builder
+FROM ghcr.io/gohugoio/hugo:v0.145.0 AS builder
 
 # Set working directory
 WORKDIR /src
