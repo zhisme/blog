@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-date: 2025-11-06
+date: 2025-11-20
 draft: false
 url: "/privacy-policy/"
 type: "privacy-policy"
@@ -39,8 +39,6 @@ This site uses **Disqus** for comments. When you post a comment, Disqus may coll
 
 ## 2. Cookies & Consent
 
-### No Cookie Banner Needed
-
 This site **does not use cookies for analytics tracking**, so no consent banner is required under GDPR/CCPA regulations.
 
 ### Cookies Used on This Site
@@ -58,7 +56,7 @@ The only cookies you may encounter are from:
 
 ## 3. How I Use Your Data
 
-- **Analytics**: To improve site content and usability
+- **Analytics**: Anonymized data used to improve site content and usability
 - **Newsletter**: To send emails you opted into
 - **Comments**: To enable discussion
 
