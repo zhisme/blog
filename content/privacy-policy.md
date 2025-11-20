@@ -1,12 +1,12 @@
 ---
 title: "Privacy Policy"
-date: 2025-11-06
+date: 2025-11-20
 draft: false
 url: "/privacy-policy/"
 type: "privacy-policy"
 layout: "privacy-policy"
-description: "Details on how @zhisme :: signal over noise blog handles your data, privacy, and analytics."
-keywords: ["privacy", "policy", "data", "signal over noise", "GDPR", "cookies"]
+description: "Details on how @zhisme :: signal over noise blog handles your data, privacy, and analytics. Cookie-free, GDPR compliant."
+keywords: ["privacy", "policy", "data", "signal over noise", "GDPR", "cookie-free", "GoatCounter", "privacy-friendly"]
 ---
 
 This blog ("Site") is operated by **zhisme** ("I", "me", "my"). Your privacy matters, and this policy explains what data is collected, how it's used, and your rights as a visitor.
@@ -17,26 +17,15 @@ This blog ("Site") is operated by **zhisme** ("I", "me", "my"). Your privacy mat
 
 ### a. Analytics
 
-This site gives you a **choice** between two analytics services:
+This site uses **[GoatCounter](https://www.goatcounter.com/)** for privacy-friendly web analytics:
 
-**Option 1: [GoatCounter](https://www.goatcounter.com/) (Default, Privacy-Friendly)**
-- If you decline cookie consent or haven't made a choice yet
-- **No cookies**, no personal data collection
-- Open-source, privacy-first analytics
-- Only tracks basic page views and referrers
-- GDPR compliant by design
+- **No cookies** - GoatCounter doesn't use cookies or any browser storage for tracking
+- **No personal data** - No IP addresses, User-Agent strings, or unique identifiers stored
+- **Open-source** - Fully transparent, auditable code
+- **GDPR/CCPA compliant** - Privacy-first by design, no consent banner required
+- **Basic metrics only** - Page views, referrers, and browser/OS statistics (aggregated)
 
-**Option 2: Google Analytics (If You Consent)**
-- Only loads if you click "Ok, got it" on the cookie banner
-- Collects more detailed analytics data including:
-  - Pages visited
-  - Browser and device type
-  - Referring site or link
-  - Approximate geolocation (country-level)
-  - Time spent on the site
-- Uses cookies to track sessions
-
-Both services help me understand what content performs well and how to improve the blog. Your choice is saved in your browser's local storage.
+GoatCounter helps me understand what content performs well without compromising your privacy.
 
 ### b. Newsletter Subscriptions
 
@@ -50,37 +39,24 @@ This site uses **Disqus** for comments. When you post a comment, Disqus may coll
 
 ## 2. Cookies & Consent
 
-### Your Choice Matters
+This site **does not use cookies for analytics tracking**, so no consent banner is required under GDPR/CCPA regulations.
 
-When you first visit this site, you'll see a cookie consent banner with three options:
+### Cookies Used on This Site
 
-1. **"Ok, got it"** - Loads **Google Analytics** (uses cookies for detailed tracking)
-2. **"No, thanks"** - Loads **GoatCounter** (no cookies, privacy-friendly)
-3. **"Read more"** - View this policy before deciding
+The only cookies you may encounter are from:
 
-### How Cookies Are Used
+1. **Disqus Comments** - If you interact with the comments section, Disqus may set cookies according to their [Privacy Policy](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy)
 
-**If you accept (Google Analytics):**
-- Cookies track your browsing session
-- Data includes page views, time on site, device info
-- You can clear your choice anytime by clearing browser data
-
-**If you decline (GoatCounter):**
-- **No tracking cookies** are set
-- Only basic, privacy-respecting page view counts
-- No cross-site tracking or personal data collection
-
-**Storage:**
-- Your consent choice is saved in `localStorage` (not a cookie)
-- This preference persists until you clear browser data
-
-You can change your mind anytime by clearing your browser's local storage for this site.
+**GoatCounter Analytics:**
+- Uses **zero cookies** for visitor tracking
+- No browser storage (localStorage, sessionStorage, etc.)
+- Privacy-compliant by design
 
 ---
 
 ## 3. How I Use Your Data
 
-- **Analytics**: To improve site content and usability
+- **Analytics**: Anonymized data used to improve site content and usability
 - **Newsletter**: To send emails you opted into
 - **Comments**: To enable discussion
 
@@ -98,11 +74,13 @@ Your data is never sold or shared with third parties for advertising.
 
 ## 5. Your Rights
 
-You have the right to:
+Under GDPR/CCPA, you have the right to:
 
-- Request access to your data
-- Ask for corrections or deletion
-- Withdraw consent (unsubscribe)
+- **Newsletter subscribers**: Request access to your email address, update it, or unsubscribe at any time
+- **Disqus comment data**: Contact Disqus directly via their [Privacy Policy](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy) to access or delete your comment data
+- **Analytics data**: GoatCounter collects no personal data, so there's nothing to access or delete
+
+Since this site doesn't collect personal analytics data, the only data under my direct control is newsletter email addresses.
 
 Contact me here:
 
