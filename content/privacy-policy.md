@@ -76,11 +76,13 @@ Your data is never sold or shared with third parties for advertising.
 
 ## 5. Your Rights
 
-You have the right to:
+Under GDPR/CCPA, you have the right to:
 
-- Request access to your data
-- Ask for corrections or deletion
-- Withdraw consent (unsubscribe)
+- **Newsletter subscribers**: Request access to your email address, update it, or unsubscribe at any time
+- **Disqus comment data**: Contact Disqus directly via their [Privacy Policy](https://help.disqus.com/en/articles/1717103-disqus-privacy-policy) to access or delete your comment data
+- **Analytics data**: GoatCounter collects no personal data, so there's nothing to access or delete
+
+Since this site doesn't collect personal analytics data, the only data under my direct control is newsletter email addresses.
 
 Contact me here:
 
