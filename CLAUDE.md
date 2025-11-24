@@ -131,3 +131,4 @@ hugo --minify          # Build for production (outputs to public/)
 - When adding features, maintain the minimalist aesthetic
 - All changes should be tested locally before committing
 - Don't create unnecessary files - prefer editing existing structure
+- Image generation should be 16:9 for blog post preview. og expected in jpg format, prefer cartoon style when generating
