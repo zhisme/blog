@@ -13,9 +13,7 @@ public/
 .hugo_build.lock
 
 # Documentation (not needed in container)
-README.md
-AGENTS.md
-CLAUDE.md
+*.md
 
 # Docker files (not needed in container)
 Dockerfile
