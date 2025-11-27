@@ -5,7 +5,7 @@ categories: ["Engineering"]
 tags: ["open-source", "tools", "neovim", "lua"]
 intro: "Version 3 of copy_with_context plugin is now available! This release focuses on improving usability and adding new features for context management. Let me explain what's new, what's changed and how it can help you be more productive with AI-assisted coding."
 description: "Announcing copy_with_context v3 with new features, improved usability, and enhanced context handling capabilities."
-keywords: ["copy_with_context", "release", "neovim", "open-source", "lua", "productivity"]
+keywords: ["copy_with_context", "neovim", "open-source", "lua", "productivity", "copy_with_context.nvim"]
 draft: false
 ---
 
