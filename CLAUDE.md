@@ -108,7 +108,7 @@ hugo --minify          # Build for production (outputs to public/)
 ### Creating a New Article
 1. Create folder: `content/articles/YYYY-MM-DD-slug/`
 2. Add `index.md` with proper frontmatter
-3. Write content using Markdown
+3. Write boilerplate content using Markdown
 4. Test locally with `hugo server -D`
 5. Remove draft status when ready
 
@@ -132,3 +132,4 @@ hugo --minify          # Build for production (outputs to public/)
 - All changes should be tested locally before committing
 - Don't create unnecessary files - prefer editing existing structure
 - Image generation should be 16:9 for blog post preview. og expected in jpg format, prefer cartoon style when generating
+- Do not generate text content for the blog, only assist in reviewing, editing author texts, and improving site structure or functionality as requested
