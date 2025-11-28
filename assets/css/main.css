@@ -1011,11 +1011,15 @@ body.popup-show::after {
   flex-basis: 392px;
   margin-right: 24px;
   width: 392px;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
 }
 @media (max-width: 61.99875em) {
   .sidebar {
     margin-right: 0;
     width: 100%;
+    position: relative;
   }
 }
 
@@ -1024,8 +1028,6 @@ body.popup-show::after {
   border: 2px solid #3D3D3D;
   background: #FFF;
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.24);
-  position: sticky;
-  top: 20px;
   z-index: 1;
 }
 @media (max-width: 61.99875em) {

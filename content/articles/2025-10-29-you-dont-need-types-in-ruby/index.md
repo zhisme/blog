@@ -2,6 +2,7 @@
 title: 'You Don’t Need Types in Ruby'
 slug: 'you-dont-need-types-in-ruby'
 draft: false
+pinned: true
 categories: ["Engineering"]
 tags: ["ruby", "types", "sorbet", "static-typing"]
 intro: Ruby was never meant to be statically typed. For decades, it has thrived as a dynamic, expressive, and human-oriented language. Yet every few years, someone tries to reinvent it as a typed one. Let’s explore why that’s a mistake — and why Ruby should stay Ruby.
