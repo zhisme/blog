@@ -79,24 +79,24 @@ jobs:
           NEW_TAG="${{ needs.build-and-push.outputs.image_tag }}"
           echo "Updating hugo.image.tag to: $NEW_TAG"
 
-          yq eval ".hugo.image.tag = \"$NEW_TAG\"" -i helm/hugo_blog/values.yaml
+          yq eval ".hugo.image.tag = \"$NEW_TAG\"" -i helm/charts/hugo-blog/values.yaml
 
           echo "Updated values.yaml:"
-          cat helm/hugo_blog/values.yaml | grep -A 5 "hugo:"
+          cat helm/charts/hugo-blog/values.yaml | grep -A 5 "hugo:"
 
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add helm/hugo_blog/values.yaml
+          git add helm/charts/hugo-blog/values.yaml
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
 
-          git commit -m "chore: update hugo_blog image to ${{ needs.build-and-push.outputs.image_tag }}
+          git commit -m "chore: update hugo-blog image to ${{ needs.build-and-push.outputs.image_tag }}
 
           Triggered by: ${{ github.repository }}@${{ github.sha }}
           Author: ${{ github.actor }}"
