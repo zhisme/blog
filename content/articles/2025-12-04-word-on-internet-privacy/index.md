@@ -6,7 +6,6 @@ tags: ["privacy", "internet"]
 intro: "Some people are afraid of cookies, that they are being tracked, and think simply pressing the reject button will save them. Let me prove to you it won't."
 description: "Internet privacy is a myth nowadays, and all cookies banners are just imitation."
 keywords: ["internet privacy", "online privacy", "data protection", "surveillance", "cookies", "google analytics", "goatcounter"]
-draft: true
 ---
 
 ## The Sweetest Cookies
