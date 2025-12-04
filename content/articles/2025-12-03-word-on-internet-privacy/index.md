@@ -17,11 +17,13 @@ However, that's only half of the truth. It's not just your name that's stated �
 
 ## No Privacy, Let's Admit
 
-Let's admit that fact. I'm not going to argue with you or try to persuade you — I believe this is already a fact that doesn't need to be proven. It's been with us for more than 2 decades. I'm older than Google, by the way, but I remember using it in my childhood because it was a cool search engine and still is. My point is not to fight corporate and say that Google is **EVIL** — using such magical words and making such statements appreciated by the crowd isn't helping the world in any way. I think this is just a waste of time. I believe all this tracking and identification were invented to provide better services and to help people in the first place. The thing I want to talk about is that, in fact, there's no privacy nowadays. Of course, you can disable JavaScript and extra styling, or even go further and start using the Lynx[^1] browser in order to not be tracked and not fetch your JavaScript events like clicks and scrolls, but for me it sounds like insanity — why fight what's already there? Yes, you can slightly improve your privacy by using different browsers besides Edge/Chrome from companies whose main business is selling ad traffic, for example Mozilla or something even smaller. You can improve your privacy by using search engines like DuckDuckGo[^2] or Kagi[^3], but still, if you're running Apple/Microsoft OS or using their products, you're already being tracked and data is collected on how you use their products.
+Let's admit that fact. I'm not going to argue with you or try to persuade you — I believe this is already a fact that doesn't need to be proven. It's been with us for more than 2 decades. I'm older than Google, by the way, but I remember using it in my childhood because it was a cool search engine and still is. My point is not to fight corporate and say that Google is **EVIL** — using such magical words and making such statements appreciated by the crowd isn't helping the world in any way. I think this is just a waste of time. I believe all this tracking and identification were invented to provide better services and to help people in the first place. The thing I want to talk about is that, in fact, there's no privacy nowadays.
+
+Of course, you can disable JavaScript and extra styling, or even go further and start using the Lynx[^1] browser in order to not be tracked and not fetch your JavaScript events like clicks and scrolls, but for me it sounds like insanity — why fight what's already there? Yes, you can slightly improve your privacy by using different browsers besides Edge/Chrome from companies whose main business is selling ad traffic, for example Mozilla or something even smaller. You can improve your privacy by using search engines like DuckDuckGo[^2] or Kagi[^3], but still, if you're running Apple/Microsoft OS or using their products, you're already being tracked and data is collected on how you use their products.
 
 ## I'm Not Going To Use Website That Tracks Me
 
-While people cannot rebel against big companies, they try to put their effort and hate toward the small websites that produce content by small teams or even individuals. They can attack them with claims like "it's not following GDPR (I will sue you!)," DDoS them just for fun and justice, because some small blog or personal website used Google Analytics to track them. That sounds like impotence to me, and I'm quite surprised that there are plenty of people out there who try to protest in such a way. For me, it's like adult-kindergarten – men and women try to protest and show their teeth with balloons and paper guns pointing at small individuals. But their data is already with big tech companies. They try to boycott such small sites and make everyone else follow them in their burning crusade. That's hilarious, isn't it?
+While people cannot rebel against big companies, they try to put their effort and hate toward the small websites that produce content by small teams or even individuals. They can attack them with claims like "it's not following GDPR (I will sue you!)", DDoS them just for fun and justice or lets remove any mention of this site in our thread! Because some small blog or personal website used Google Analytics to track them. That sounds like impotence to me, and I'm quite surprised that there are plenty of people out there who try to protest in such a way. For me, it's like adult-kindergarten – men and women try to protest and show their teeth with balloons and paper guns pointing at small individuals. But their data is already with big tech companies. They try to boycott such small sites and make everyone else follow them in their burning crusade. That's hilarious, isn't it?
 
 ## Why bother?
 
@@ -38,13 +40,26 @@ This website uses cookies, localStorage, sessionStorage, IndexedDB, WebSQL, brow
 By clicking "Accept All" you agree to let us sell your data. By clicking "Reject All" you agree to let us sell your data anyway. By clicking "Customize" you get to pretend you have a choice while we still sell your data.
 {{</ quote>}}
 
-## Small Tool For Privacy-Friendly Analytics
+## A Pragmatic Compromise (Not a Principled One)
 
-While I was surprised by how people react to some small blogs using cookies for analytics, I also googled what other options exist to track views of different articles and understand the traffic and other valuable information for blog productivity (besides visible interactions like leaving comments/reactions), and also what language is mostly used and what time this blog is read. I found one gem that is totally privacy-friendly that I can recommend as both a user and a reader: GoatCounter[^5]. Even better, it's open-source for the nerds to be really satisfied with the solution. It has a nice UI and basic analytics to understand the traffic. I've already been using it for a few months and can recommend it as a good tool for such activity.
+Here's the thing: I don't actually need to track individual users, sessions, or behavior. I just want to know if anyone's reading this blog at all. Page views, maybe what language people use, what time they visit. That's it.
+
+So while I was surprised by how noisy people get about small blogs using cookies for analytics, I also realized I don't need Google Analytics in the first place. Why deal with the complexity and the vocal minority complaining about tracking when I can use something simpler?
+
+I found GoatCounter[^5]—a privacy-friendly, open-source analytics tool that gives me basic traffic stats without cookies or user tracking.
+
+Am I using it because I suddenly believe in the privacy crusade? No. I'm using it because:
+1. It gives me exactly what I need (page views) without the overhead
+2. It's one less thing for the noisy readers to complain about
+3. Small blogs don't need industrial-grade analytics anyway
+
+It's about pragmatism. If you're running a small blog, you probably don't need to track users at all. Use a simple page view counter and save yourself the headache of arguing with privacy zealots in the comments.
 
 ## Conclusion
 
 So anyway, all being said, your data will be sold, whatever you click, whatever you do. If you read Medium or any other blog aggregator, you're already tracked. If you use any website by any big company, your cookies and fingerprints are already available to them, and you enrich their data by filling your profile info in their system. So for me, it's crystal clear — there's no need to pretend that privacy is something that can be controlled by cookie-banner pressing reject/accept. It's just visual noise that doesn't help at all, and I don't see any reason to even pay attention to it. I personally always click "accept" and forget about it. Some advice[^6] from 2019 seems like insanity to me. I always ask myself the question: "Why bother?" Just don't do things on the internet that you wouldn't dare to do IRL, and that's simply it.
+
+And if you're running a small blog like mine? You probably don't need cookies or user tracking at all — just use a simple page view counter and avoid the whole circus. Not because privacy matters in the grand scheme (it doesn't — Google-like companies already has everything), but because you likely don't need that data anyway, and it's easier than arguing with angry readers.
 
 The battle for privacy was already lost a decade ago. Now it's just imitation — forget about it.
 
