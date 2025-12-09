@@ -10,6 +10,15 @@ keywords: ["AI programming", "developer productivity", "code review", "AI tools"
 
 Let's be clear: **I don't use AI for coding**. But I do use it to make me more productive. There's a massive difference between the two, and understanding that difference is what separates developers who benefit from AI from those who end up debugging AI-generated disasters.
 
+## Plan of the article
+
+- Dota match with openAI and dota stars (less known for anyone it was test match to prove that's this robot is insane high-skilled, prove some article and youtube video)
+- Forget about AI at all, no mentions it was silently enough, no news about it.
+- 2022 release of chatgpt to public, first usages with SQL
+- 2024 checking claude for mostly web prompts and helping identify issues
+- 2025 claude code subscription and many usage
+- 2025 end mention beads high-speed development and project management
+
 ## How I met AI
 
 It was early 2023 I guess the first time openai released the API in public and it make my attention to it. I was skeptical. I tried it out for fun, asking it to generate some code snippets. I was using it mainly for SQL queries generation at first. And I was shocked, it actually was working. Not always, not every time, but in 5-15 iterations I could get a working SQL query that did what I wanted. I was actually loading the whole db schema into the prompt to help it understand the context. It was a game changer for me. It would take time for me to understand all the indexes/tables how to plan the query and to google all the needed aggregation functions, what's join is better etc. But with AI it was just a matter of prompt engineering. I could get the query in few iterations. I was amazed. That's how my journey with AI started.
