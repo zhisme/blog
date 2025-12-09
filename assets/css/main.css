@@ -1191,6 +1191,10 @@ body.popup-show::after {
   background: #F58025;
 }
 
+.social-item-link-purple {
+  background: #786ec6;
+}
+
 .social-item-link-blue {
   background: #0A66C2;
 }
