@@ -1877,10 +1877,28 @@ body.popup-show::after {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
 }
 .article-author .button {
   font-size: 16px;
   width: 149px;
+  height: 40px;
+}
+.article-author .social-items {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+@media (max-width: 61.99875em) {
+  .article-author .social-items {
+    display: none;
+  }
+}
+.article-author .social-item-link {
+  flex-basis: 33.33%;
   height: 40px;
 }
 @media (max-width: 61.99875em) {
