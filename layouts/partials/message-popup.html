@@ -16,7 +16,7 @@
       I send out a monthly email summarizing new posts and insights on software engineering, developer life, and programmer philosophy. <br/>
         If you’d like to stay updated, drop your name and email below — I’d love to keep you in the loop.
       </p>
-      <form action="{{ .Site.BaseURL | relURL }}api/mailing_list" method="POST" class="form" onsubmit="handleSubmit(event, this)">
+      <form action="{{ .Site.BaseURL | relURL }}api/subscribe" method="POST" class="form" onsubmit="handleSubmit(event, this)">
         <fieldset>
           <div class="form-item mb-16">
             <input type="text" class="input" placeholder="Enter your name (optional)" min="2">
