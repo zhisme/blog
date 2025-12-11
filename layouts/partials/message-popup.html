@@ -19,7 +19,7 @@
       <form action="{{ .Site.BaseURL | relURL }}api/mailing_list" method="POST" class="form" onsubmit="handleSubmit(event, this)">
         <fieldset>
           <div class="form-item mb-16">
-            <input type="text" class="input" placeholder="Enter your name" min="2" required>
+            <input type="text" class="input" placeholder="Enter your name (optional)" min="2">
           </div>
           <div class="form-item mb-16">
             <input type="email" class="input" placeholder="Enter your email" required>
