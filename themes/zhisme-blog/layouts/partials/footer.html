@@ -16,7 +16,7 @@
           {{ partial "socials.html" . }}
 				</div>
 			</div>
-      <form action="{{ .Site.BaseURL | relURL }}api/subscribe" method="POST" class="form-subscribe" onsubmit="handleSubmit(event, this)">
+      <form action="{{ .Site.BaseURL | relURL }}/tinylist/api/subscribe" method="POST" class="form-subscribe" onsubmit="handleSubmit(event, this)">
 				<fieldset>
 					<div class="form-item">
 						<input type="text" class="input" placeholder="Enter your name (optional)" min="2">
