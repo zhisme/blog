@@ -7,7 +7,6 @@ intro: "The disconnect between what technical interviews test and what the job a
 description: "An examination of why technical interviews often test theoretical knowledge that rarely applies to day-to-day engineering work, and what this means for both candidates and companies."
 keywords: ["technical interviews", "system design interview", "software engineering hiring", "algorithm interviews", "interview process"]
 images: ["og.jpg", "plumber.jpg"]
-draft: true
 ---
 
 ## TL;DR
