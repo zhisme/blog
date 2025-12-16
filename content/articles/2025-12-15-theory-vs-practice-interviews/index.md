@@ -123,13 +123,15 @@ What's funny here, from my opinion, is that interviewers expect you to architect
 
 Their task will mostly at first expect you to count RPS to forecast the expected high-load value so you can plan your solution to meet defined needs. It is basically some DAU (daily active users) or MAU (monthly active users) and some extra condition to show you that user activity is not normalized — your hotspots for the backend will be mostly in the daytime (but the thing is that your users are across the whole world, so you cannot easily predict the load).
 
-The task will occasionally be poorly written (so you can ask your questions), you will waste another 10-15 minutes to understand what the actual key points are and what can be omitted. Also don't forget that you should also please your interviewer with the solution — if they're an RDBMS expert, they will ask you additional questions ("Are you sure that this DB architecture will handle such load? I would think more deeply about the requirements.")
+The task will occasionally be poorly written (so you can ask your questions), you will waste another 10-15 minutes to understand what the actual key points are and what can be omitted. Also don't forget that you should also please your interviewer with the solution — if they're an RDBMS expert, they will ask you additional questions ("Are you sure that this DB architecture will handle such load? I would think more deeply about the architecture.")
 
 And here you are sitting, shaking your head, embarrassed and waiting for this interview to end. And this cold thought goes through your mind: "I am not as good as I thought, I never developed Instagram from scratch in my career, I must be a junior developer and they are so smart!"
 
 ## The Perfect Match
 
-Let's imagine — are there many people in the market who made Instagram or an Instagram-like application with very high RPS and are looking for their dream job and available to attend such interviews and discuss it? I'm talking not about the person who read some book "System Design Interview"[^2] (which is cool btw), but someone who has real hands-on experience doing similar work. I really, really doubt it. But still there are many companies, and their count is growing, that are doing system design interviews and are wannabe FAANG companies. Wait. Is this normal? More and more companies interviewing engineers for problems they:
+Let's imagine — are there many people in the market who made Instagram or an Instagram-like application with very high RPS and are looking for their dream job and available to attend such interviews and discuss it? I'm talking not about the person who read some book "System Design Interview"[^2] (which is cool btw), but someone who has real hands-on experience doing similar work.
+
+I really, really doubt it. But still there are many companies, and their count is growing, that are doing system design interviews and are wannabe FAANG companies. Wait. Is this normal? More and more companies interviewing engineers for problems they:
 - never saw
 - never did
 - (mostly) will never do
@@ -151,7 +153,8 @@ Does this testing help you believe that the person who passed all these exams is
 You can always appeal to authority — but he passed a 5-step interview process! That's something else, nobody to blame here, that's not my responsibility.
 
 The reason for inadequate use of such approaches and too long hiring processes is to avoid personal responsibility of the one who hires.
-They can always say, if he passed such a process, he must be great! Maybe he's not good for us, but at least he passed the interview process perfectly.
+
+In case he fails and gets fired later, they can always say, if he passed such a process, he must be great! Maybe he's not good for us, but at least he passed the interview process perfectly.
 And everyone is pleased — yeah, we just were not lucky to get such a guy, the only one who we will blame is that guy who passed all exams and then failed. None of us, not the process — we believe it is ideal.
 
 The thing is, theoretical knowledge is just theoretical knowledge. You can have as many pet projects as you want, deploying them on 30 VPS you rented last night, and trying to high-load it and then add to your resume a label ("High-load experienced, worked in company X, had really high-loaded 30 distributed servers"). But this is just "imaginary."
@@ -232,12 +235,12 @@ And then you can ask more detailed questions — how do we achieve the expected 
 
 Here's an example from a small company and how they evolved their hiring process:
 
-- They discussed the requirements, the key points about the product they were working on, key technologies.
-- Whether you as a developer have experience with that and what you have solved.
-- What you like and don't.
-- Here's our process explanation.
-- Here's your buddy, who will handle your onboarding.
-- If during the interview everything is fine, they get a guy aboard for a trial period. If he's decent and not a liar about his experience, he will contribute to the product and strengthen the development team; otherwise, fired.
+- Discussed the requirements, the key points about the product, key technologies
+- Asked whether you have experience with that and what you have solved
+- Asked what you like and don't like
+- Explained their process
+- Introduced your buddy who will handle your onboarding
+- If during the interview everything is fine, they get a guy aboard for a trial period. If he's decent and not a liar about his experience, he will contribute to the product and strengthen the development team; otherwise, fired
 
 Hiring and then firing the incompetent during the trial period is cheaper than doing a 5-step interview for them, then waiting for the perfect one to come (real production experience, knowledge of all algorithms and system design). Sounds like a unicorn, doesn't it?
 
@@ -256,7 +259,7 @@ You know the team leader who is **READY** to get a new guy and onboard them.
 Let them interview based on **THEIR** needs (they are aware of context, tasks, stack, and everything else). They already know who they need, and a simple interview will do — they can spot during the interview whether the guy is a match or not. Otherwise, a trial period and real management will show if they are decent.
 Without burning your time and resources on FAANG interview processes, first ask critically — **WHY** do we need them?
 
-You have backlog, you have tasks to be done, find appropriate candidate to handle them. If they require architecting (or mostly nowadays re-architecting after someone), prepare a design interview to contain parts you expect to hear from the candidate. If your tasks are maintaining legacy and fast-prototyping something in production, hire an appropriate candidate. Waiting and burning resources to find a unicorn is like waiting for The Second Coming.
+You have a backlog, you have tasks to be done, find appropriate candidate to handle them. If they require architecting (or mostly nowadays re-architecting after someone), prepare a design interview to contain parts you expect to hear from the candidate. If your tasks are maintaining legacy and fast-prototyping something in production, hire an appropriate candidate. Waiting and burning resources to find a unicorn is like waiting for The Second Coming.
 
 ## Conclusion
 
