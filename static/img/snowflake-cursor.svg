@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g fill="none" stroke="#4a90d9" stroke-width="2" stroke-linecap="round">
+    <!-- Main axes -->
+    <line x1="16" y1="2" x2="16" y2="30"/>
+    <line x1="2" y1="16" x2="30" y2="16"/>
+    <line x1="5" y1="5" x2="27" y2="27"/>
+    <line x1="27" y1="5" x2="5" y2="27"/>
+    <!-- Branch details -->
+    <line x1="16" y1="6" x2="13" y2="9"/>
+    <line x1="16" y1="6" x2="19" y2="9"/>
+    <line x1="16" y1="26" x2="13" y2="23"/>
+    <line x1="16" y1="26" x2="19" y2="23"/>
+    <line x1="6" y1="16" x2="9" y2="13"/>
+    <line x1="6" y1="16" x2="9" y2="19"/>
+    <line x1="26" y1="16" x2="23" y2="13"/>
+    <line x1="26" y1="16" x2="23" y2="19"/>
+  </g>
+  <circle cx="16" cy="16" r="3" fill="#4a90d9"/>
+</svg>

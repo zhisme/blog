@@ -50,6 +50,8 @@ html,
 body {
   height: 100%;
   min-width: 360px;
+  /* Christmas cursor - remove after holidays */
+  cursor: url('/img/snowflake-cursor.svg') 16 16, auto;
 }
 
 body {
@@ -1114,6 +1116,21 @@ body.popup-show::after {
   justify-content: center;
   width: 120px;
   height: 120px;
+  position: relative;
+}
+/* Christmas hat - remove after holidays */
+.sidebar-person__avatar::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: -10px;
+  width: 90px;
+  height: 65px;
+  background: url('/img/TheresaKnott_Santa_Hat.svg') no-repeat center;
+  background-size: contain;
+  transform: rotate(-15deg);
+  z-index: 10;
+  pointer-events: none;
 }
 .sidebar-person__avatar img {
   width: 100%;
@@ -1129,6 +1146,13 @@ body.popup-show::after {
     margin-bottom: 0;
     margin-right: 16px;
   }
+  /* Smaller hat for 64px avatar */
+  .sidebar-person__avatar::before {
+    top: -18px;
+    left: -10px;
+    width: 50px;
+    height: 36px;
+  }
 }
 @media (max-width: 46.43625em) {
   .sidebar-person__avatar {
@@ -1136,6 +1160,13 @@ body.popup-show::after {
     height: 120px;
     margin-bottom: 16px;
     margin-right: 0;
+  }
+  /* Back to full size hat */
+  .sidebar-person__avatar::before {
+    top: -9px;
+    left: -10px;
+    width: 90px;
+    height: 65px;
   }
 }
 
@@ -1910,6 +1941,21 @@ body.popup-show::after {
 .article-author__pic {
   width: 56px;
   height: 56px;
+  position: relative;
+}
+/* Christmas hat - remove after holidays */
+.article-author__pic::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -5px;
+  width: 42px;
+  height: 30px;
+  background: url('/img/TheresaKnott_Santa_Hat.svg') no-repeat center;
+  background-size: contain;
+  transform: rotate(-15deg);
+  z-index: 10;
+  pointer-events: none;
 }
 .article-author__pic img {
   width: 100%;
