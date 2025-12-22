@@ -95,7 +95,13 @@ This site may link to other websites or embed content (e.g., YouTube, GitHub). T
 
 ---
 
-## 7. Updates
+## 7. AI-Generated Content
+
+Cover images and preview graphics on this site may be created using generative AI tools. These images are used for illustrative purposes only and do not represent real photographs or artworks.
+
+---
+
+## 8. Updates
 
 This Privacy Policy may be updated. Major changes will be posted here with an updated date.
 
