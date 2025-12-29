@@ -19,7 +19,7 @@
 <meta property="og:image:alt" content="{{ .Title }}">
 
 <!-- Twitter Cards -->
-<meta name="twitter:card" content="{{ if eq .Type "page" }}website{{ else }}article{{ end }}">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ .Title }}">
 {{ with .Params.description }}
   <meta name="twitter:description" content="{{ . }}">
