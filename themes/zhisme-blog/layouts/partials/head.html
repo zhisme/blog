@@ -10,9 +10,7 @@
 <!-- Open Graph (for social sharing) -->
 <meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:title" content="{{ .Title }}">
-{{ with .Params.description }}
-  <meta property="og:description" content="{{ . }}">
-{{ end }}
+<meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:type" content="{{ if eq .Type "page" }}website{{ else }}article{{ end }}">
 <meta property="og:image" content="{{ if (and .Page.File (os.FileExists (path.Join "content" .Page.File.Dir "og.jpg" )) ) }}{{ urls.JoinPath .Page.Permalink "og.jpg" }}{{ else }}{{ urls.JoinPath .Site.BaseURL "img/og.jpg" }}{{ end }}">
@@ -21,9 +19,7 @@
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ .Title }}">
-{{ with .Params.description }}
-  <meta name="twitter:description" content="{{ . }}">
-{{ end }}
+<meta name="twitter:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta name="twitter:image" content="{{ if (and .Page.File (os.FileExists (path.Join "content" .Page.File.Dir "og.jpg" )) ) }}{{ urls.JoinPath .Page.Permalink "og.jpg" }}{{ else }}{{ urls.JoinPath .Site.BaseURL "img/og.jpg" }}{{ end }}">
 <meta name="twitter:image:alt" content="{{ .Title }}">
 
