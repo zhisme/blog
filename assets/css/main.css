@@ -1841,6 +1841,14 @@ body.popup-show::after {
   border: 1px solid rgba(61, 61, 61, 0.16);
   border-spacing: 0px;
   border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 768px) {
+  .content table {
+    margin: 24px 0;
+  }
 }
 .content thead {
   background: #02BE86;
