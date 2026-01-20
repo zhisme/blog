@@ -10,14 +10,3 @@
     {{- end }}
   {{- end }}
 {{- end }}
-{{/* Christmas effects - remove after holidays */}}
-{{- with resources.Get "js/christmas.js" }}
-  {{- if eq hugo.Environment "development" }}
-    <script src="{{ .RelPermalink }}"></script>
-  {{- else }}
-    {{- $opts := dict "minify" true }}
-    {{- with . | minify | fingerprint }}
-      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
-    {{- end }}
-  {{- end }}
-{{- end }}
