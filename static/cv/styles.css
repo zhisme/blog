@@ -1,0 +1,433 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sidebar-bg: #590f0f;
+  --sidebar-text: #ffffff;
+  --heading-color: #1a1a1a;
+  --text-color: #333333;
+  --date-color: #777777;
+  --label-color: #1a1a1a;
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-color);
+  background: #e8e8e8;
+}
+
+/* Layout */
+.cv-container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  max-width: 950px;
+  margin: 40px auto;
+  background: #ffffff;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Main content */
+.cv-main {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 50px;
+}
+
+/* Sidebar is first in DOM but placed in column 2 via grid */
+.cv-sidebar {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Header */
+.cv-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.cv-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cv-title h1 {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--heading-color);
+  line-height: 1.1;
+}
+
+.cv-subtitle {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--date-color);
+  margin-top: 6px;
+}
+
+/* Sections */
+.cv-section {
+  margin-bottom: 32px;
+}
+
+.cv-section h2 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 1000;
+  color: var(--heading-color);
+  margin-bottom: 16px;
+}
+
+/* Job entries */
+.cv-job {
+  margin-bottom: 28px;
+}
+
+.cv-job:last-child {
+  margin-bottom: 0;
+}
+
+.cv-job h3 {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 4px;
+}
+
+.cv-date {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--date-color);
+  margin-bottom: 12px;
+}
+
+.cv-label {
+  font-weight: 600;
+  color: var(--label-color);
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+
+.cv-job p {
+  margin-bottom: 4px;
+}
+
+.cv-achievements {
+  margin: 4px 0 4px 18px;
+  padding: 0;
+}
+
+.cv-achievements li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+/* Sidebar */
+.cv-sidebar {
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 50px 30px;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.sidebar-section:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-section h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-section p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 2px;
+}
+
+.sidebar-section a {
+  color: var(--sidebar-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sidebar-section a:hover {
+  opacity: 0.8;
+}
+
+/* Sidebar links list */
+.sidebar-links {
+  list-style: none;
+}
+
+.sidebar-links li {
+  margin-bottom: 4px;
+}
+
+.sidebar-links a {
+  font-size: 13px;
+}
+
+/* Sidebar plain skill list */
+.sidebar-skills {
+  list-style: none;
+}
+
+.sidebar-skills li {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+/* Skill bars */
+.skill-item {
+  margin-bottom: 12px;
+}
+
+.skill-name {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.skill-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 3px;
+}
+
+/* Action buttons */
+.action-buttons {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-share {
+  background: #ffffff;
+  color: var(--heading-color);
+}
+
+.btn-download {
+  background: var(--sidebar-bg);
+  color: #ffffff;
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  background: var(--heading-color);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 101;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Print styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-container {
+    display: block;
+    max-width: none;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  /* Fixed sidebar repeats on every printed page, edge to edge */
+  .cv-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 100%;
+    background: var(--sidebar-bg);
+    padding: 30px 20px;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-sidebar .sidebar-section {
+    margin-bottom: 16px;
+  }
+
+  .cv-sidebar .sidebar-section h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    padding-top: 10px;
+  }
+
+  .cv-sidebar .sidebar-section p {
+    font-size: 11.5px;
+  }
+
+  .cv-sidebar .sidebar-links a {
+    font-size: 11.5px;
+  }
+
+  .cv-sidebar .sidebar-links li {
+    margin-bottom: 2px;
+  }
+
+  .cv-sidebar .sidebar-skills li {
+    font-size: 11.5px;
+    margin-bottom: 2px;
+  }
+
+  .cv-main {
+    grid-column: unset;
+    grid-row: unset;
+    margin-right: 230px;
+    padding: 30px 20px 20px 40px;
+  }
+
+  .cv-header {
+    margin-bottom: 24px;
+  }
+
+  .cv-section {
+    margin-bottom: 20px;
+  }
+
+  /* Force Employment History to start on page 2 */
+  .cv-section:nth-of-type(3) {
+    break-before: page;
+    page-break-before: always;
+    margin-top: 40px;
+  }
+
+  .cv-section h2 {
+    break-after: avoid;
+  }
+
+  .cv-job {
+    margin-bottom: 20px;
+    padding-top: 10px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cv-job h3 {
+    break-after: avoid;
+  }
+
+  .cv-job h3 {
+    margin-top: 20px;
+  }
+
+  .action-buttons,
+  .toast {
+    display: none !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    background: #ffffff;
+  }
+
+  .cv-container {
+    grid-template-columns: 1fr;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .cv-main {
+    padding: 30px 24px;
+  }
+
+  .cv-sidebar {
+    padding: 30px 24px;
+  }
+
+  .cv-title h1 {
+    font-size: 28px;
+  }
+
+  .action-buttons {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+}
