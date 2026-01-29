@@ -9,9 +9,4 @@
     {{- end }}
   </url>
   {{- end }}
-  <!-- Static pages not managed by Hugo -->
-  <url>
-    <loc>{{ .Site.BaseURL }}cv/</loc>
-    <lastmod>{{ now.Format "2006-01-02" }}</lastmod>
-  </url>
 </urlset>

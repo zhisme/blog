@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="{{ .Params.locale | default "en" }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} | @zhisme :: signal over noise</title>
+  <meta name="description" content="{{ .Params.summary_short }}">
+  <meta property="og:title" content="{{ .Title }} | @zhisme :: signal over noise">
+  <meta property="og:description" content="{{ .Params.summary_short }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  {{ $css := resources.Get "css/cv.css" }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}">
+</head>
+<body>
+  {{/* Default labels */}}
+  {{ $labels := dict
+    "contacts" "Contacts"
+    "links" "Links"
+    "leadership" "Leadership"
+    "technical" "Technical Skills"
+    "languages" "Languages"
+    "location" "Location"
+    "summary" "Professional Summary"
+    "education" "Education"
+    "employment" "Employment History"
+    "stack" "Tech stack"
+    "product" "Product"
+    "achievements" "Key achievements"
+    "share" "Share"
+    "download" "Download PDF"
+    "copied" "Link copied to clipboard"
+  }}
+  {{/* Russian labels */}}
+  {{ if eq .Params.locale "ru" }}
+    {{ $labels = dict
+      "contacts" "Контакты"
+      "links" "Ссылки"
+      "leadership" "Лидерство"
+      "technical" "Технические навыки"
+      "languages" "Языки"
+      "location" "Локация"
+      "summary" "О себе"
+      "education" "Образование"
+      "employment" "Опыт работы"
+      "stack" "Стек технологий"
+      "product" "Продукт"
+      "achievements" "Ключевые достижения"
+      "share" "Поделиться"
+      "download" "Скачать PDF"
+      "copied" "Ссылка скопирована"
+    }}
+  {{ end }}
+
+  {{ $isRu := eq .Params.locale "ru" }}
+  {{ $isTech := in .RelPermalink "tech-cv" }}
+  {{ $langPrefix := cond $isRu "/ru" "" }}
+
+  <div class="cv-switchers">
+    <div class="cv-type-switcher">
+      {{ if $isTech }}
+        <a href="{{ $langPrefix }}/cv/" class="cv-switch">Short</a>
+        <span class="cv-switch cv-switch--active">Detailed</span>
+      {{ else }}
+        <span class="cv-switch cv-switch--active">Short</span>
+        <a href="{{ $langPrefix }}/tech-cv/" class="cv-switch">Detailed</a>
+      {{ end }}
+    </div>
+
+    <a href="/" class="cv-home-link">← zhisme.com</a>
+
+    <div class="cv-lang-switcher">
+      {{ $basePath := cond $isTech "tech-cv" "cv" }}
+      {{ if $isRu }}
+        <a href="/{{ $basePath }}/" class="cv-switch">EN</a>
+        <span class="cv-switch cv-switch--active">RU</span>
+      {{ else }}
+        <span class="cv-switch cv-switch--active">EN</span>
+        <a href="/ru/{{ $basePath }}/" class="cv-switch">RU</a>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="cv-container">
+    <aside class="cv-sidebar">
+      {{ if .Params.education }}
+      <section class="sidebar-section">
+        <h3>{{ index $labels "education" }}</h3>
+        {{ range .Params.education }}
+        <p class="sidebar-education">
+          <strong>{{ .degree }}</strong><br>
+          {{ .school }}<br>
+          <span class="sidebar-date">{{ .dates }}</span>
+        </p>
+        {{ end }}
+      </section>
+      {{ end }}
+
+      <section class="sidebar-section">
+        <h3>{{ index $labels "contacts" }}</h3>
+        <p><a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></p>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>{{ index $labels "links" }}</h3>
+        <ul class="sidebar-links">
+          {{ range .Params.links }}
+          <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></li>
+          {{ end }}
+        </ul>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>{{ index $labels "leadership" }}</h3>
+        <ul class="sidebar-skills">
+          {{ range .Params.leadership_skills }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>{{ index $labels "technical" }}</h3>
+        <ul class="sidebar-skills">
+          {{ range .Params.technical_skills }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>{{ index $labels "languages" }}</h3>
+        <ul class="sidebar-skills">
+          {{ range .Params.languages }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>{{ index $labels "location" }}</h3>
+        <p>{{ .Params.location }}</p>
+      </section>
+    </aside>
+
+    <main class="cv-main">
+      <header class="cv-header">
+        <img src="{{ .Params.photo | default "/img/avatar.jpg" }}" alt="{{ .Params.name }}" class="cv-photo">
+        <div class="cv-title">
+          <h1>{{ .Params.name }}</h1>
+          <p class="cv-subtitle">{{ .Params.headline }}</p>
+        </div>
+      </header>
+
+      <section class="cv-section">
+        <h2>{{ index $labels "summary" }}</h2>
+        {{ with .Params.about }}
+          {{ range . }}
+          <p>{{ . | safeHTML }}</p>
+          {{ end }}
+        {{ end }}
+      </section>
+
+      <section class="cv-section">
+        <h2>{{ index $labels "employment" }}</h2>
+        {{ range .Params.jobs }}
+        <div class="cv-job">
+          <h3>{{ .title }} — {{ .company }}</h3>
+          <span class="cv-date">{{ .dates }}</span>
+          <p class="cv-label">{{ index $labels "stack" }}:</p>
+          <p>{{ .stack }}</p>
+          <p class="cv-label">{{ index $labels "product" }}:</p>
+          <p>{{ .product }}</p>
+          <p class="cv-label">{{ index $labels "achievements" }}:</p>
+          <ul class="cv-achievements">
+            {{ range .achievements }}
+            <li>{{ . | safeHTML }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </section>
+    </main>
+  </div>
+
+  <div class="action-buttons">
+    <button class="btn btn-share" onclick="shareCV()">{{ index $labels "share" }}</button>
+    <button class="btn btn-download" onclick="downloadPDF()">{{ index $labels "download" }}</button>
+  </div>
+
+  <div class="toast" id="toast">{{ index $labels "copied" }}</div>
+
+  <script>
+    function downloadPDF() {
+      window.print();
+    }
+
+    async function shareCV() {
+      var shareData = {
+        title: '{{ .Title }} | @zhisme :: signal over noise',
+        text: 'Check out my CV',
+        url: window.location.href
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          await copyToClipboard();
+        }
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          await copyToClipboard();
+        }
+      }
+    }
+
+    async function copyToClipboard() {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        showToast();
+      } catch (err) {
+        var input = document.createElement('input');
+        input.value = window.location.href;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        showToast();
+      }
+    }
+
+    function showToast() {
+      var toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(function() {
+        toast.classList.remove('show');
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

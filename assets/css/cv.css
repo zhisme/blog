@@ -23,6 +23,59 @@ body {
   background: #e8e8e8;
 }
 
+/* Home link (matching .more-link from main site) */
+.cv-home-link {
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--text-color);
+}
+
+.cv-home-link:hover {
+  text-decoration: none;
+}
+
+/* Switchers container */
+.cv-switchers {
+  max-width: 950px;
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.cv-type-switcher,
+.cv-lang-switcher {
+  display: flex;
+  gap: 4px;
+}
+
+.cv-switch {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 4px;
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+
+.cv-switch:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.cv-switch--active {
+  background: var(--sidebar-bg);
+  color: #fff;
+  cursor: default;
+}
+
+.cv-switch--active:hover {
+  background: var(--sidebar-bg);
+}
+
 /* Layout */
 .cv-container {
   display: grid;
@@ -175,6 +228,20 @@ body {
 }
 
 .sidebar-section a:hover {
+  opacity: 0.8;
+}
+
+.sidebar-education {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.sidebar-education strong {
+  font-weight: 600;
+}
+
+.sidebar-date {
+  font-size: 11px;
   opacity: 0.8;
 }
 
@@ -391,6 +458,7 @@ body {
     margin-top: 20px;
   }
 
+  .cv-switchers,
   .action-buttons,
   .toast {
     display: none !important;
