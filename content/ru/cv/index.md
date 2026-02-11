@@ -5,32 +5,32 @@ type: cv
 locale: ru
 
 name: "Евгений Жданов"
-headline: "Engineering Team Lead | Senior Software Engineer"
+headline: "Senior Software Engineer | Technical Lead"
 email: "evdev34@gmail.com"
 photo: "/cv/profile.jpg"
 location: "Москва, Удалённо (GMT +3)"
 
-summary_short: "Engineering Team Lead с 10-летним опытом в IT. Ruby, Go, React, Kubernetes."
+summary_short: "Engineering Team Lead с 10-летним опытом в разработке. Ruby/Rails, Go, Kubernetes."
 
 about:
-  - "<strong>Engineering Team Lead с 10-летним опытом в IT</strong> (8 лет разработчик, 2 года тимлид). Создавал платёжные системы для 10,000+ пользователей и B2B HR-платформы. Нанял и обучил 6 инженеров, спроектировал микросервисы, выпустил 100+ релизов."
-  - "Основной стек: Ruby/Rails, Go, React, PostgreSQL, Kubernetes."
+  - |
+    <strong>10 лет профессионального опыта в разработке, основной стек — Ruby/Rails.</strong> Последние 2 года — тимлид: примерно 40% код, 60% архитектура и координация.
+    Создавал платёжные интеграции, HR-платформы и команды вокруг них.
+    Эффективен, когда владею техническими решениями и работаю в небольшой команде.
+  - |
+    <strong>Инженерная философия:</strong> не доверяю теории, практика критерий истинности. То что не работает на проде не имеет смысла.
+    Предпочитаю тихих инженеров, которые выполняют задачи и деплоят на прод, а не продавцов успешного успеха.
+    Сперва строю процессы (тикет → review → CI → деплой), потому что хорошие процессы предотвращают пожары в зародыше.
 
 links:
   - name: "Блог"
     url: "https://zhisme.com"
-  - name: "Telegram-канал"
-    url: "https://t.me/zhisme_dev"
   - name: "LinkedIn"
     url: "https://www.linkedin.com/in/zhisme/"
+  - name: "Telegram"
+    url: "https://t.me/zhisme_dev"
   - name: "GitHub"
     url: "https://github.com/zhisme"
-
-leadership_skills:
-  - "Построение команды"
-  - "Технический найм"
-  - "Менторство"
-  - "Проектирование систем"
 
 technical_skills:
   - "Ruby / Rails"
@@ -51,31 +51,36 @@ education:
 
 jobs:
   - title: "Engineering Team Lead"
-    company: "RocketWork"
+    company: "ООО Рокет Ворк"
     dates: "Ноябрь 2023 — настоящее время"
-    stack: "Ruby/Rails, Go, React, PostgreSQL, Kubernetes, ArgoCD"
     product: "B2B HR-платформа для корпоративных клиентов."
     achievements:
-      - "<strong>Собрал команду из 5 человек</strong> с нуля, выстроил процессы"
-      - "<strong>Спроектировал 5 микросервисов</strong> с GitOps-деплоем"
-      - "<strong>Нанял 3 инженеров</strong> (50+ кандидатов)"
+      - "<strong>Довёл замороженный продукт до продакшна</strong> в одиночку, затем собрал команду из 5 человек"
+      - "<strong>Выстроил инженерный процесс с нуля</strong> — code review, CI/CD, еженедельные релизы"
+      - "<strong>Нанял 3 инженеров</strong> — собеседования, онбординг, ежедневное техническое руководство"
 
   - title: "Senior Software Engineer"
     company: "Emerchantpay"
     dates: "Январь 2021 — Ноябрь 2023"
-    stack: "Ruby/Rails, MySQL, React, Elasticsearch, AWS"
     product: "Платёжный шлюз для 10,000+ мерчантов."
     achievements:
-      - "<strong>Интегрировал 5+ банков</strong> через SOAP/REST API"
-      - "<strong>Устранил уязвимости OWASP</strong> в платёжном пайплайне"
-      - "<strong>Менторил 3 разработчиков</strong>"
+      - "<strong>Интегрировал латиноамериканские банки</strong> с нуля — обработка транзакций, платёжные формы"
+      - "<strong>Устранил уязвимости безопасности</strong> по результатам продакшн-аудитов"
+      - "<strong>Менторил 3 junior-разработчиков</strong>"
 
   - title: "Software Engineer"
     company: "Noveo"
     dates: "Июнь 2018 — Январь 2021"
-    stack: "Ruby/Rails, React, MongoDB, Elasticsearch"
-    product: "Корпоративная платформа обратной связи."
+    product: "Корпоративная платформа обратной связи для розничных сетей."
     achievements:
-      - "<strong>Ускорение запросов в 100 раз</strong> (MongoDB → Elasticsearch)"
-      - "<strong>Внедрил SSO</strong> (SAML 2.0)"
+      - "<strong>Сократил загрузку дашборда с 2 мин до 10 сек</strong> миграцией аналитического движка MongoDB => Elasticsearch"
+      - "<strong>Внедрил корпоративный SSO</strong> для клиентов (SAML 2.0)"
+
+  - title: "Junior Software Engineer"
+    company: "Magtuner SA (Лозанна, Швейцария)"
+    dates: "Март 2016 — Май 2018"
+    product: "Платформа интерактивного обучения с живым участием аудитории."
+    achievements:
+      - "<strong>Реализовал систему совместного редактирования на Elixir</strong> для параллельного доступа пользователей"
+      - "<strong>Full-stack разработка</strong> — Ember.js фронтенд, Rails бэкенд, система прав доступа к документам"
 ---

@@ -4,16 +4,16 @@ layout: cv
 type: cv
 
 name: "Evgeny Zhdanov"
-headline: "Engineering Team Lead | Senior Software Engineer"
+headline: "Senior Software Engineer | Technical Lead"
 email: "evdev34@gmail.com"
 photo: "/cv/profile.jpg"
 location: "Remote (GMT +3)"
 
-summary_short: "Engineering Team Lead with 10 years in software engineering. Ruby/Rails, Go, React, Kubernetes."
+summary_short: "Engineering Team Lead with 10 years in software engineering. Ruby/Rails, Go, Kubernetes."
 
 about:
   - "<strong>10 years in software engineering, last 2 as team lead.</strong> Built payment integrations at a gateway serving 10,000+ merchants. Took an HR platform from zero to production, then hired and led the team around it."
-  - "Core stack: Ruby/Rails, Go, React, PostgreSQL, Kubernetes. At my best when owning technical decisions and shipping with a small team."
+  - "Core stack: Ruby/Rails, Go, PostgreSQL, Kubernetes. At my best when owning technical decisions and shipping with a small team."
 
 links:
   - name: "Blog"
@@ -40,8 +40,8 @@ technical_skills:
   - "CI/CD"
 
 languages:
-  - "Russian"
-  - "English"
+  - "Russian (Native)"
+  - "English (Fluent)"
 
 education:
   - degree: "Bachelor's Degree"
