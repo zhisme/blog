@@ -465,37 +465,179 @@ body {
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive - Tablet */
+@media screen and (max-width: 768px) {
   body {
     background: #ffffff;
+    font-size: 14px;
+  }
+
+  /* Switchers: stack home link above, type/lang on sides */
+  .cv-switchers {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0 16px;
+    margin: 12px auto 0;
+  }
+
+  .cv-home-link {
+    order: -1;
+    width: 100%;
+    text-align: center;
   }
 
   .cv-container {
     grid-template-columns: 1fr;
-    margin: 0;
+    margin: 16px 0 0;
     box-shadow: none;
   }
 
+  /* Show main content first, sidebar second */
   .cv-main {
-    padding: 30px 24px;
+    order: 1;
+    grid-column: unset;
+    grid-row: unset;
+    padding: 28px 24px;
   }
 
   .cv-sidebar {
-    padding: 30px 24px;
+    order: 2;
+    grid-column: unset;
+    grid-row: unset;
+    padding: 28px 24px;
+  }
+
+  /* Header */
+  .cv-header {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .cv-photo {
+    width: 64px;
+    height: 64px;
   }
 
   .cv-title h1 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
+  .cv-subtitle {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  /* Sections */
+  .cv-section {
+    margin-bottom: 24px;
+  }
+
+  .cv-section h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  /* Jobs */
+  .cv-job {
+    margin-bottom: 22px;
+  }
+
+  .cv-job h3 {
+    font-size: 15px;
+  }
+
+  /* Sidebar sections on mobile: 2-column grid for compact layout */
+  .cv-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+  }
+
+  .sidebar-section {
+    margin-bottom: 20px;
+  }
+
+  /* Action buttons */
   .action-buttons {
     bottom: 16px;
     right: 16px;
+    left: 16px;
+    justify-content: flex-end;
   }
 
   .btn {
     padding: 10px 18px;
     font-size: 13px;
+  }
+
+  .toast {
+    right: 16px;
+    bottom: 80px;
+  }
+}
+
+/* Responsive - Small phones */
+@media screen and (max-width: 420px) {
+  body {
+    font-size: 13px;
+  }
+
+  .cv-switchers {
+    padding: 0 12px;
+  }
+
+  .cv-switch {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .cv-main {
+    padding: 20px 16px;
+  }
+
+  .cv-header {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .cv-photo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .cv-title h1 {
+    font-size: 22px;
+  }
+
+  .cv-section h2 {
+    font-size: 18px;
+  }
+
+  .cv-job h3 {
+    font-size: 14px;
+  }
+
+  /* Single column sidebar on very small screens */
+  .cv-sidebar {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+  }
+
+  .action-buttons {
+    bottom: 12px;
+    right: 12px;
+    left: auto;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .toast {
+    right: 12px;
+    bottom: 72px;
+    font-size: 12px;
   }
 }
