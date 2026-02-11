@@ -9,11 +9,11 @@ email: "evdev34@gmail.com"
 photo: "/cv/profile.jpg"
 location: "Remote (GMT +3)"
 
-summary_short: "Engineering Team Lead with 10 years in tech. Ruby, Go, React, Kubernetes."
+summary_short: "Engineering Team Lead with 10 years in software engineering. Ruby/Rails, Go, React, Kubernetes."
 
 about:
-  - "<strong>Engineering Team Lead with 10 years in tech</strong> (8 as software engineer, 2 leading teams). Built payment systems serving 10,000+ users and B2B HR platforms. Hired and mentored 6 engineers, architected microservices, delivered 100+ releases."
-  - "Core stack: Ruby/Rails, Go, React, PostgreSQL, Kubernetes."
+  - "<strong>10 years in software engineering, last 2 as team lead.</strong> Built payment integrations at a gateway serving 10,000+ merchants. Took an HR platform from zero to production, then hired and led the team around it."
+  - "Core stack: Ruby/Rails, Go, React, PostgreSQL, Kubernetes. At my best when owning technical decisions and shipping with a small team."
 
 links:
   - name: "Blog"
@@ -52,29 +52,34 @@ jobs:
   - title: "Engineering Team Lead"
     company: "RocketWork"
     dates: "November 2023 — Present"
-    stack: "Ruby/Rails, Go, React, PostgreSQL, Kubernetes, ArgoCD"
     product: "B2B HR automation platform for enterprise clients."
     achievements:
-      - "<strong>Built team of 5</strong> from zero, established engineering practices"
-      - "<strong>Architected 5 microservices</strong> with GitOps deployment"
-      - "<strong>Hired 3 engineers</strong> (50+ candidates screened)"
+      - "<strong>Took a stalled product to production</strong> as the only engineer, then built a team of 5"
+      - "<strong>Built engineering process from scratch</strong> — code review, CI/CD, weekly releases"
+      - "<strong>Hired 3 engineers</strong> — interviews, onboarding, day-to-day technical leadership"
 
   - title: "Senior Software Engineer"
     company: "Emerchantpay"
     dates: "January 2021 — November 2023"
-    stack: "Ruby/Rails, MySQL, React, Elasticsearch, AWS"
     product: "Payment gateway serving 10,000+ merchants."
     achievements:
-      - "<strong>Integrated 5+ banks</strong> via SOAP/REST APIs"
-      - "<strong>Fixed OWASP vulnerabilities</strong> in payment pipeline"
-      - "<strong>Mentored 3 developers</strong>"
+      - "<strong>Built Latin American bank integrations</strong> from scratch — transaction processing, payment forms"
+      - "<strong>Fixed security vulnerabilities</strong> found in production audits"
+      - "<strong>Mentored 3 junior developers</strong> through code reviews"
 
   - title: "Software Engineer"
     company: "Noveo"
     dates: "June 2018 — January 2021"
-    stack: "Ruby/Rails, React, MongoDB, Elasticsearch"
-    product: "Enterprise customer feedback platform."
+    product: "Enterprise customer feedback platform for retail chains."
     achievements:
-      - "<strong>100x query performance improvement</strong> (MongoDB → Elasticsearch)"
-      - "<strong>Implemented enterprise SSO</strong> (SAML 2.0)"
+      - "<strong>Cut dashboard load from 2 min to under 10 sec</strong> by migrating analytics engine"
+      - "<strong>Implemented enterprise SSO</strong> for corporate clients (SAML 2.0)"
+
+  - title: "Junior Software Engineer"
+    company: "Magtuner SA (Lausanne, Switzerland)"
+    dates: "March 2016 — May 2018"
+    product: "Real-time educational engagement platform with live audience participation."
+    achievements:
+      - "<strong>Built collaborative editing system in Elixir</strong> for concurrent user access"
+      - "<strong>Full-stack development</strong> — Ember.js frontend, Rails backend, document permission system"
 ---

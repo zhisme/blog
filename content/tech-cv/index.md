@@ -4,23 +4,23 @@ layout: cv
 type: tech-cv
 
 name: "Evgeny Zhdanov"
-headline: "Engineering Team Lead | Senior Software Engineer"
+headline: "Senior Software Engineer | Technical Lead"
 email: "evdev34@gmail.com"
 photo: "/cv/profile.jpg"
 location: "Remote (GMT +3)"
 
-summary_short: "Engineering Team Lead with 10 years in tech. Led teams building payment systems and HR automation platforms."
+summary_short: "Senior Software Engineer with 10 years of professional experience. Ruby/Rails core. Builds systems, ships them, leads the team."
 
 about:
   - |
-    <strong>Engineering Team Lead with 10 years in tech</strong> (8 as software engineer, 2 leading teams).
-    Built and shipped payment processing systems serving 10,000+ users and B2B HR automation platforms for enterprise clients.
-    Track record: hired and mentored 6 engineers, architected microservices infrastructure, delivered 100+ production releases.
+    <strong>10 years of professional experience in software engineering, mainly Ruby/Rails.</strong> Last 2 years as team lead — roughly 40% code, 60% architecture and coordination.
+    Built payment processing integrations, HR automation platforms, and the teams around them.
+    Looking for roles where I own technical decisions and ship with a small team.
   - |
-    <strong>Engineering philosophy:</strong> I believe in robust processes over ad-hoc management — well-designed pipelines
-    from ticket creation through CI/CD to production release matter more than heroics. Pragmatic, hands-on approach;
-    skeptical of theory disconnected from real code. Looking for teams that value shipping working software over ceremony.
-  - "Core stack: Ruby/Rails, Go, React, PostgreSQL, Kubernetes."
+    <strong>Engineering philosophy:</strong> I don't trust theory disconnected from production.
+    I work across the stack and pick up whatever the problem requires — language, protocol, or tool.
+    I hire quiet engineers who deliver over charismatic ones who write reports.
+    I build processes (ticket → review → CI → deploy) because good pipelines prevent fires better than heroics.
 
 links:
   - name: "Personal Blog"
@@ -31,14 +31,6 @@ links:
     url: "https://www.linkedin.com/in/zhisme/"
   - name: "GitHub"
     url: "https://github.com/zhisme"
-
-leadership_skills:
-  - "Team Building"
-  - "Technical Hiring"
-  - "Mentoring"
-  - "Code Review"
-  - "Sprint Planning"
-  - "System Design"
 
 technical_skills:
   - "Ruby / Rails"
@@ -52,11 +44,11 @@ technical_skills:
   - "AWS"
 
 languages:
-  - "Russian"
-  - "English"
+  - "Russian (Native)"
+  - "English (Fluent)"
 
 education:
-  - degree: "Bachelor's Degree"
+  - degree: "Bachelor's Degree in Computer Science"
     school: "Sevastopol State University"
     dates: "September 2014 — May 2018"
 
@@ -65,46 +57,45 @@ jobs:
     company: "RocketWork"
     dates: "November 2023 — Present"
     stack: "Ruby/Rails, Go, React, PostgreSQL, Kubernetes, ArgoCD, GitHub Actions, Grafana, Kibana, Sentry"
-    product: "B2B HR automation platform for enterprise clients: employee lifecycle management (hiring, offboarding, transfers), leave management, department hierarchy, and digitally-signed document generation."
+    product: "B2B HR automation — configurable personnel management system (hiring, offboarding, leave, document signing) for enterprise clients."
     achievements:
-      - "<strong>Built and led a cross-functional team of 5</strong> (4 engineers + 1 QA) from zero, establishing engineering culture and processes."
-      - "<strong>Architected microservices infrastructure</strong> across 5 services with GitOps deployment (ArgoCD + Kubernetes), enabling weekly releases."
-      - "<strong>Owned full hiring pipeline:</strong> screened 50+ candidates, conducted technical interviews, hired 3 engineers."
-      - "<strong>Established engineering practices:</strong> Git Flow, sprint planning, code review standards with <24h turnaround, reducing onboarding time for new hires."
-      - "<strong>Built comprehensive observability:</strong> Grafana dashboards tracking both infrastructure (memory, 2xx/4xx/5xx ratios, Yabeda Rails metrics) and business KPIs (completed workflows, document signatures, email/SMS delivery rates). Kibana for centralized logging, Sentry for error tracking."
-      - "<strong>Designed extensible workflow engine:</strong> refactored monolithic process handling into configurable stage/field constructor with JSON-driven frontend integration, enabling non-dev teams to create new HR workflows."
+      - "<strong>Took over a frozen product</strong> — codebase existed but had never reached production. Shipped it to paying customers as a single engineer, then built a team of 5 (4 devs + 1 QA)."
+      - "<strong>Built the entire dev process from scratch:</strong> Jira ticket workflow (everything is a ticket), Git Flow, code review with <24h turnaround, weekly release cycle via Helm + ArgoCD to Kubernetes."
+      - "<strong>Designed configurable HR workflow system</strong> — each company needs different forms, approval chains, and data fields for the same process (e.g., \"hiring\" varies per org). Built JSON-driven form constructor so non-developers configure workflows from admin UI, React frontend consumes the schema."
+      - "<strong>Picked up and shipped a Go microservice</strong> for electronic document signing (CryptoPro PDF signatures + watermarks) — was left unfinished by the previous team. Added PDF parsing, logging, request tracing, deployed to production."
+      - "<strong>Defined application-level observability:</strong> configured Yabeda Rails metrics, business KPI dashboards in Grafana (completed workflows, document signatures, delivery rates), request trace_id in Kibana for end-to-end debugging, Sentry for error tracking. Infrastructure setup handled by DevOps team."
+      - "<strong>Hired and managed 3 engineers</strong> — conducted technical interviews, onboarded, and directly led the team: assigned tasks, guided technical decisions, and unblocked problem-solving day-to-day."
 
   - title: "Senior Software Engineer"
     company: "Emerchantpay"
     dates: "January 2021 — November 2023"
     stack: "Ruby/Rails, MySQL, React, Elasticsearch, Jenkins, Docker, AWS"
-    product: "Payment gateway platform serving 10,000+ merchants. 15-year-old Rails monolith processing transactions across multiple banking integrations."
+    product: "Payment gateway serving 10,000+ merchants across multiple banking integrations. Large-scale Rails application with long production history."
     achievements:
-      - "<strong>Integrated 5+ Latin American banks</strong> via SOAP/XML/REST APIs, expanding payment coverage to new markets."
-      - "<strong>Led legacy modernization efforts:</strong> refactored critical payment flows using design patterns (Strategy, Factory), improving testability and reducing bug regression."
-      - "<strong>Fixed OWASP Top 10 vulnerabilities</strong> identified in security audits, hardening the payment processing pipeline."
-      - "<strong>Optimized slow database queries:</strong> rewrote N+1 queries and added proper indexing, measurably improving API response times."
-      - "<strong>Mentored 3 junior developers:</strong> conducted code reviews, pair programming sessions, established team coding standards."
-      - "<strong>Owned complex integrations end-to-end:</strong> from technical design through implementation, testing, and production deployment."
+      - "<strong>Built LATAM bank integrations from scratch</strong> — first one took 3-4 months. Consumed external XML/SOAP APIs for transaction processing, SFTP batch transfers with PGP encryption (private/public key pairs), Sidekiq cron for transaction state synchronization. Configured web payment forms for card payments on integrated providers."
+      - "<strong>Implemented transaction reconciliation:</strong> automated verification of amounts and states across systems where status could update from multiple sources. Processing, reconciliation, and cancellation flows across different bank APIs."
+      - "<strong>Fixed security vulnerabilities</strong> found in audits: path traversal on SFTP server (CWE-22), injection via unescaped quotes in XLSX parsing."
+      - "<strong>Incremental legacy cleanup</strong> during feature work — updating base classes, removing dead code. Not a grand rewrite, just responsible engineering in a codebase where touching anything unrelated could break live payments."
+      - "<strong>Mentored 3 junior developers</strong> through code reviews and pair programming."
 
   - title: "Software Engineer"
-    company: "Noveo (Client: French Enterprise)"
+    company: "Noveo (outsource for a major French retail analytics company)"
     dates: "June 2018 — January 2021"
     stack: "Ruby/Rails, React, TypeScript, MongoDB, MySQL, Redis, Elasticsearch, Docker, GitLab CI"
-    product: "Enterprise customer feedback platform — real-time survey collection and analytics for retail chains."
+    product: "Enterprise customer feedback platform — survey collection and analytics for retail chains."
     achievements:
-      - "<strong>Achieved 100x query performance improvement</strong> by migrating analytics from MongoDB aggregations to Elasticsearch, reducing dashboard load times from minutes to seconds."
-      - "<strong>Led major codebase refactor:</strong> extracted fat controllers/models into service objects following SOLID principles, improved test coverage with RSpec. Success led CEO to fund a second module rewrite."
-      - "<strong>Implemented enterprise SSO (SAML 2.0)</strong> enabling corporate clients to authenticate via their identity providers (Okta, Azure AD)."
-      - "<strong>Mentored 3 interns</strong> through code reviews and pair programming, 2 converted to full-time hires."
+      - "<strong>Migrated analytics from MongoDB to Elasticsearch,</strong> reducing dashboard load from ~2 minutes to 5-10 seconds for graphs and histograms over retail feedback data."
+      - "<strong>Refactored legacy codebase</strong> — extracted fat controllers/models into service objects. Client funded a second phase: rewriting the end-user questionnaire module to React + Rails API with modular architecture, after we'd already rebuilt the admin constructor."
+      - "<strong>Implemented SAML 2.0 SSO</strong> — designed DB schema for federated users so corporate clients authenticate via their identity providers (Okta, Azure AD) without separate credentials."
+      - "<strong>Mentored 3 interns</strong> through code reviews and pair programming; 2 were hired afterwards."
 
   - title: "Junior Software Engineer"
     company: "Magtuner SA (Lausanne, Switzerland)"
     dates: "March 2016 — May 2018"
     stack: "Ruby/Rails, Ember.js, Elixir, WebSockets, MySQL, Redis"
-    product: "Real-time educational engagement platform with live audience participation features."
+    product: "Real-time educational engagement platform with live audience participation."
     achievements:
-      - "<strong>Rebuilt product frontend and backend</strong> as part of major redesign, contributing to significant user growth post-launch."
-      - "<strong>Scaled system for high-traffic events</strong> including Children's Olympics, handling concurrent WebSocket connections under load."
-      - "<strong>Optimized SQL queries</strong> and upgraded legacy dependencies, improving application performance and maintainability."
+      - "<strong>Built collaborative editing lock/unlock system in Elixir</strong> for concurrent user access."
+      - "<strong>Built full-stack CRUD features</strong> (Ember.js frontend + Rails backend) and implemented document ACL permission system controlling access to shared resources."
+      - "<strong>Supported live events</strong> including Children's Olympics (~50 concurrent WebSocket connections)."
 ---

@@ -117,14 +117,16 @@
         </ul>
       </section>
 
+      {{ with .Params.leadership_skills }}
       <section class="sidebar-section">
         <h3>{{ index $labels "leadership" }}</h3>
         <ul class="sidebar-skills">
-          {{ range .Params.leadership_skills }}
+          {{ range . }}
           <li>{{ . }}</li>
           {{ end }}
         </ul>
       </section>
+      {{ end }}
 
       <section class="sidebar-section">
         <h3>{{ index $labels "technical" }}</h3>
@@ -174,8 +176,10 @@
         <div class="cv-job">
           <h3>{{ .title }} — {{ .company }}</h3>
           <span class="cv-date">{{ .dates }}</span>
+          {{ with .stack }}
           <p class="cv-label">{{ index $labels "stack" }}:</p>
-          <p>{{ .stack }}</p>
+          <p>{{ . }}</p>
+          {{ end }}
           <p class="cv-label">{{ index $labels "product" }}:</p>
           <p>{{ .product }}</p>
           <p class="cv-label">{{ index $labels "achievements" }}:</p>
