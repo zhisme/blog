@@ -1,10 +1,49 @@
+- title: "Software Consultant"
+  company:
+    en: "Self-Employed"
+    ru: "Индивидуальный Предприниматель"
+  dates:
+    en: "May 2025 — Present"
+    ru: "Май 2025 — настоящее время"
+  stack: "TypeScript, React, Ruby/Rails, Kubernetes, Helm, GitLab CI"
+  product:
+    en: "Contract development, technical consulting, and code review."
+    en_detailed: "Contract software development, technical consulting, and code review for software teams and returning clients."
+    ru: "Контрактная разработка, техническое консультирование и код-ревью."
+    ru_detailed: "Контрактная разработка, техническое консультирование и код-ревью для команд и постоянных клиентов."
+  achievements:
+    en:
+      - "<strong>Part-time contract work on an online tablature editor</strong> (TypeScript, full-stack) — 6-month engagement, AI-assisted development"
+      - "<strong>Migrated legacy Ember.js app to React</strong> for a returning client — project originally built in 2016"
+      - "<strong>Led FB/IG widget system project</strong> — development, Helm/K8s deployment, GitLab CI/CD from scratch, mentored a junior developer"
+      - "<strong>Hardened CI/CD for Ruby projects</strong> (rubocop, brakeman, strong-migrations); upgraded Rails to 8.1"
+    en_detailed:
+      - "<strong>Part-time contract work on an online music notation/tablature editor</strong> (TypeScript, frontend + backend) — 6-month engagement, hourly rate. Leveraged AI-assisted development with Claude for accelerated delivery."
+      - "<strong>Migrated legacy Ember.js application to React</strong> for a returning client (Magtuner) — project originally built in 2016. 3-month engagement using AI-assisted workflow: structured migration with markdown artifacts for continuity, rewrote all business logic to modern React."
+      - "<strong>Led FB/IG widget system project:</strong> end-to-end development, deployed via Helm to Kubernetes, set up GitLab CI/CD pipeline from scratch. Mentored an 18-year-old CS student on the project as per client requirements."
+      - "<strong>Hardened CI/CD for Ruby projects:</strong> configured rubocop, brakeman, and strong-migrations for automated code quality and security checks. Separately upgraded another project to Rails 8.1."
+      - "<strong>Open source:</strong> published copy_with_context.nvim (Neovim plugin) and tinylist (Kubernetes email API service)."
+      - "<strong>Published 10+ engineering articles</strong> on zhisme.com."
+    ru:
+      - "<strong>Контрактная работа над онлайн-редактором табулатур</strong> (TypeScript, full-stack) — 6-месячный проект, почасовая оплата, разработка с использованием AI"
+      - "<strong>Мигрировал легаси Ember.js приложение на React</strong> для постоянного клиента — проект, изначально созданный в 2016"
+      - "<strong>Руководил проектом виджетов для FB/IG</strong> — разработка, деплой через Helm/K8s, GitLab CI/CD с нуля, менторство junior-разработчика"
+      - "<strong>Усилил CI/CD для Ruby-проектов</strong> (rubocop, brakeman, strong-migrations); обновил Rails до 8.1"
+    ru_detailed:
+      - "<strong>Контрактная работа над онлайн-редактором нот/табулатур</strong> (TypeScript, фронтенд + бэкенд) — 6-месячный проект, почасовая оплата. Использовал AI-ассистированную разработку с Claude для ускорения delivery."
+      - "<strong>Мигрировал легаси Ember.js приложение на React</strong> для постоянного клиента (Magtuner) — проект, изначально созданный в 2016. 3-месячный проект с AI-ассистированным workflow: структурированная миграция с markdown-артефактами для непрерывности, полное переписывание бизнес-логики на современный React."
+      - "<strong>Руководил проектом виджетов для FB/IG:</strong> разработка от и до, деплой через Helm в Kubernetes, настройка GitLab CI/CD пайплайна с нуля. Менторил 18-летнего студента CS-курсов в рамках проекта по требованию клиента."
+      - "<strong>Усилил CI/CD для Ruby-проектов:</strong> настроил rubocop, brakeman и strong-migrations для автоматических проверок качества и безопасности кода. Отдельно обновил другой проект до Rails 8.1."
+      - "<strong>Open source:</strong> опубликовал copy_with_context.nvim (плагин для Neovim) и tinylist (Kubernetes email API сервис)."
+      - "<strong>Опубликовал 10+ инженерных статей</strong> на zhisme.com."
+
 - title: "Team Lead"
   company:
     en: "RocketWork"
     ru: "ООО Рокет Ворк"
   dates:
-    en: "November 2023 — Present"
-    ru: "Ноябрь 2023 — настоящее время"
+    en: "November 2023 — May 2025"
+    ru: "Ноябрь 2023 — Май 2025"
   stack: "Ruby/Rails, Go, React, PostgreSQL, Kubernetes, ArgoCD, GitHub Actions, Grafana, Kibana, Sentry"
   product:
     en: "B2B HR automation platform for enterprise clients."

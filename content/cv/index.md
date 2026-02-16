@@ -30,11 +30,6 @@ links:
   - name: "GitHub"
     url: "https://github.com/zhisme"
 
-leadership_skills:
-  - "Team Building"
-  - "Technical Hiring"
-  - "Mentoring"
-  - "System Design"
 
 technical_skills:
   - "Ruby / Rails"

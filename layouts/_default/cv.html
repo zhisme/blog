@@ -119,16 +119,6 @@
         </ul>
       </section>
 
-      {{ with .Params.leadership_skills }}
-      <section class="sidebar-section">
-        <h3>{{ index $labels "leadership" }}</h3>
-        <ul class="sidebar-skills">
-          {{ range . }}
-          <li>{{ . }}</li>
-          {{ end }}
-        </ul>
-      </section>
-      {{ end }}
 
       <section class="sidebar-section">
         <h3>{{ index $labels "technical" }}</h3>
