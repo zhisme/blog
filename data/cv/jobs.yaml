@@ -1,0 +1,131 @@
+- title: "Team Lead"
+  company:
+    en: "RocketWork"
+    ru: "ООО Рокет Ворк"
+  dates:
+    en: "November 2023 — Present"
+    ru: "Ноябрь 2023 — настоящее время"
+  stack: "Ruby/Rails, Go, React, PostgreSQL, Kubernetes, ArgoCD, GitHub Actions, Grafana, Kibana, Sentry"
+  product:
+    en: "B2B HR automation platform for enterprise clients."
+    en_detailed: "B2B HR automation — configurable personnel management system (hiring, offboarding, leave, document signing) for enterprise clients."
+    ru: "B2B HR-платформа для корпоративных клиентов."
+    ru_detailed: "B2B HR-автоматизация — конфигурируемая система управления персоналом (найм, увольнение, отпуска, подписание документов) для корпоративных клиентов."
+  achievements:
+    en:
+      - "<strong>Took a stalled product to production</strong> as the only engineer, then built a team of 5"
+      - "<strong>Built engineering process from scratch</strong> — code review, CI/CD, weekly releases"
+      - "<strong>Hired 3 engineers</strong> — interviews, onboarding, day-to-day technical leadership"
+    en_detailed:
+      - "<strong>Took over a frozen product</strong> — codebase existed but had never reached production. Shipped it to paying customers as a single engineer, then built a team of 5 (4 devs + 1 QA)."
+      - "<strong>Built the entire dev process from scratch:</strong> Jira ticket workflow (everything is a ticket), Git Flow, code review with <24h turnaround, weekly release cycle via Helm + ArgoCD to Kubernetes."
+      - "<strong>Designed configurable HR workflow system</strong> — each company needs different forms, approval chains, and data fields for the same process (e.g., \"hiring\" varies per org). Built JSON-driven form constructor so non-developers configure workflows from admin UI, React frontend consumes the schema."
+      - "<strong>Picked up and shipped a Go microservice</strong> for electronic document signing (CryptoPro PDF signatures + watermarks) — was left unfinished by the previous team. Added PDF parsing, logging, request tracing, deployed to production."
+      - "<strong>Defined application-level observability:</strong> configured Yabeda Rails metrics, business KPI dashboards in Grafana (completed workflows, document signatures, delivery rates), request trace_id in Kibana for end-to-end debugging, Sentry for error tracking. Infrastructure setup handled by DevOps team."
+      - "<strong>Hired and managed 3 engineers</strong> — conducted technical interviews, onboarded, and directly led the team: assigned tasks, guided technical decisions, and unblocked problem-solving day-to-day."
+    ru:
+      - "<strong>Довёл замороженный продукт до продакшна</strong> в одиночку, затем собрал команду из 5 человек"
+      - "<strong>Выстроил инженерный процесс с нуля</strong> — code review, CI/CD, еженедельные релизы"
+      - "<strong>Нанял 3 инженеров</strong> — собеседования, онбординг, ежедневное техническое руководство"
+    ru_detailed:
+      - "<strong>Принял замороженный продукт</strong> — кодовая база существовала, но до продакшна не дошла. Довёл до платящих клиентов в одиночку, затем собрал команду из 5 человек (4 разработчика + 1 QA)."
+      - "<strong>Выстроил весь процесс разработки с нуля:</strong> Jira workflow (всё — тикет), Git Flow, code review с turnaround <24ч, еженедельный релизный цикл через Helm + ArgoCD в Kubernetes."
+      - "<strong>Спроектировал конфигурируемый HR workflow-движок</strong> — каждой компании нужны разные формы, цепочки согласований и поля данных для одного и того же процесса (например, «найм» отличается в каждой организации). Создал JSON-конструктор форм, чтобы не-разработчики настраивали workflow из админки, React-фронтенд потребляет схему."
+      - "<strong>Подхватил и довёл до продакшна Go-микросервис</strong> для электронной подписи документов (CryptoPro PDF-подписи + водяные знаки) — остался незавершённым от предыдущей команды. Добавил парсинг PDF, логирование, трейсинг запросов, задеплоил в продакшн."
+      - "<strong>Настроил observability на уровне приложения:</strong> метрики Yabeda Rails, бизнес-KPI дашборды в Grafana (завершённые workflow, подписи документов, доставка уведомлений), trace_id запросов в Kibana для сквозной отладки, Sentry для трекинга ошибок. Инфраструктурную часть вела DevOps-команда."
+      - "<strong>Нанял и руководил 3 инженерами</strong> — проводил технические собеседования, онбордил, непосредственно руководил командой: ставил задачи, направлял технические решения, помогал разблокировать проблемы ежедневно."
+
+- title: "Senior Software Engineer"
+  company:
+    en: "Emerchantpay"
+    ru: "Emerchantpay"
+  dates:
+    en: "January 2021 — November 2023"
+    ru: "Январь 2021 — Ноябрь 2023"
+  stack: "Ruby/Rails, MySQL, React, Elasticsearch, Jenkins, Docker, AWS"
+  product:
+    en: "Payment gateway serving 10,000+ merchants."
+    en_detailed: "Payment gateway serving 10,000+ merchants across multiple banking integrations. Large-scale Rails application with long production history."
+    ru: "Платёжный шлюз для 10,000+ мерчантов."
+    ru_detailed: "Платёжный шлюз для 10,000+ мерчантов с множеством банковских интеграций. Крупное Rails-приложение с долгой историей в продакшне."
+  achievements:
+    en:
+      - "<strong>Built Latin American bank integrations</strong> from scratch — transaction processing, payment forms"
+      - "<strong>Fixed security vulnerabilities</strong> found in production audits"
+      - "<strong>Mentored 3 junior developers</strong> through code reviews"
+    en_detailed:
+      - "<strong>Built LATAM bank integrations from scratch</strong> — first one took 3-4 months. Consumed external XML/SOAP APIs for transaction processing, SFTP batch transfers with PGP encryption (private/public key pairs), Sidekiq cron for transaction state synchronization. Configured web payment forms for card payments on integrated providers."
+      - "<strong>Implemented transaction reconciliation:</strong> automated verification of amounts and states across systems where status could update from multiple sources. Processing, reconciliation, and cancellation flows across different bank APIs."
+      - "<strong>Fixed security vulnerabilities</strong> found in audits: path traversal on SFTP server (CWE-22), injection via unescaped quotes in XLSX parsing."
+      - "<strong>Incremental legacy cleanup</strong> during feature work — updating base classes, removing dead code. Not a grand rewrite, just responsible engineering in a codebase where touching anything unrelated could break live payments."
+      - "<strong>Mentored 3 junior developers</strong> through code reviews and pair programming."
+    ru:
+      - "<strong>Интегрировал латиноамериканские банки</strong> с нуля — обработка транзакций, платёжные формы"
+      - "<strong>Устранил уязвимости безопасности</strong> по результатам продакшн-аудитов"
+      - "<strong>Менторил 3 junior-разработчиков</strong>"
+    ru_detailed:
+      - "<strong>Интегрировал латиноамериканские банки с нуля</strong> — первая интеграция заняла 3-4 месяца. Работал с внешними XML/SOAP API для обработки транзакций, SFTP batch-трансферы с PGP-шифрованием (пары приватных/публичных ключей), Sidekiq cron для синхронизации статусов транзакций. Настроил веб-формы оплаты для карточных платежей."
+      - "<strong>Реализовал reconciliation транзакций:</strong> автоматическая сверка сумм и статусов между системами, где статус мог обновляться из нескольких источников. Потоки обработки, сверки и отмены через разные банковские API."
+      - "<strong>Устранил уязвимости безопасности</strong> по результатам аудитов: path traversal на SFTP-сервере (CWE-22), инъекция через неэкранированные кавычки в парсинге XLSX."
+      - "<strong>Поэтапная чистка легаси</strong> параллельно с фича-разработкой — обновление базовых классов, удаление мёртвого кода. Не грандиозный рерайт, а ответственная инженерия в кодовой базе, где любое случайное изменение могло сломать живые платежи."
+      - "<strong>Менторил 3 junior-разработчиков</strong> через code review и парное программирование."
+
+- title: "Software Engineer"
+  company:
+    en: "Noveo"
+    en_detailed: "Noveo (outsource for a major French retail analytics company)"
+    ru: "Noveo"
+    ru_detailed: "Noveo (аутсорс для крупной французской компании розничной аналитики)"
+  dates:
+    en: "June 2018 — January 2021"
+    ru: "Июнь 2018 — Январь 2021"
+  stack: "Ruby/Rails, React, TypeScript, MongoDB, MySQL, Redis, Elasticsearch, Docker, GitLab CI"
+  product:
+    en: "Enterprise customer feedback platform for retail chains."
+    en_detailed: "Enterprise customer feedback platform — survey collection and analytics for retail chains."
+    ru: "Корпоративная платформа обратной связи для розничных сетей."
+    ru_detailed: "Корпоративная платформа обратной связи — сбор опросов и аналитика для розничных сетей."
+  achievements:
+    en:
+      - "<strong>Cut dashboard load from 2 min to under 10 sec</strong> by migrating analytics engine"
+      - "<strong>Implemented enterprise SSO</strong> for corporate clients (SAML 2.0)"
+    en_detailed:
+      - "<strong>Migrated analytics from MongoDB to Elasticsearch,</strong> reducing dashboard load from ~2 minutes to 5-10 seconds for graphs and histograms over retail feedback data."
+      - "<strong>Refactored legacy codebase</strong> — extracted fat controllers/models into service objects. Client funded a second phase: rewriting the end-user questionnaire module to React + Rails API with modular architecture, after we'd already rebuilt the admin constructor."
+      - "<strong>Implemented SAML 2.0 SSO</strong> — designed DB schema for federated users so corporate clients authenticate via their identity providers (Okta, Azure AD) without separate credentials."
+      - "<strong>Mentored 3 interns</strong> through code reviews and pair programming; 2 were hired afterwards."
+    ru:
+      - "<strong>Сократил загрузку дашборда с 2 мин до 10 сек</strong> миграцией аналитического движка MongoDB => Elasticsearch"
+      - "<strong>Внедрил корпоративный SSO</strong> для клиентов (SAML 2.0)"
+    ru_detailed:
+      - "<strong>Мигрировал аналитику с MongoDB на Elasticsearch,</strong> сократив загрузку дашбордов с ~2 минут до 5-10 секунд для графиков и гистограмм по данным обратной связи."
+      - "<strong>Рефакторинг легаси-кодовой базы</strong> — вынес fat controllers/models в service objects. Клиент профинансировал вторую фазу: переписывание модуля анкет на React + Rails API с модульной архитектурой, после того как мы уже переделали админский конструктор."
+      - "<strong>Внедрил SAML 2.0 SSO</strong> — спроектировал схему БД для федеративных пользователей, чтобы корпоративные клиенты аутентифицировались через свои identity providers (Okta, Azure AD) без отдельных учётных данных."
+      - "<strong>Менторил 3 стажёров</strong> через code review и парное программирование; 2 были наняты в штат."
+
+- title: "Junior Software Engineer"
+  company:
+    en: "Magtuner SA (Lausanne, Switzerland)"
+    ru: "Magtuner SA (Лозанна, Швейцария)"
+  dates:
+    en: "March 2016 — May 2018"
+    ru: "Март 2016 — Май 2018"
+  stack: "Ruby/Rails, Ember.js, Elixir, WebSockets, MySQL, Redis"
+  product:
+    en: "Real-time educational engagement platform with live audience participation."
+    ru: "Платформа интерактивного обучения с живым участием аудитории."
+  achievements:
+    en:
+      - "<strong>Built collaborative editing system in Elixir</strong> for concurrent user access"
+      - "<strong>Full-stack development</strong> — Ember.js frontend, Rails backend, document permission system"
+    en_detailed:
+      - "<strong>Built collaborative editing lock/unlock system in Elixir</strong> for concurrent user access."
+      - "<strong>Built full-stack CRUD features</strong> (Ember.js frontend + Rails backend) and implemented document ACL permission system controlling access to shared resources."
+      - "<strong>Supported live events</strong> including Children's Olympics (~50 concurrent WebSocket connections)."
+    ru:
+      - "<strong>Реализовал систему совместного редактирования на Elixir</strong> для параллельного доступа пользователей"
+      - "<strong>Full-stack разработка</strong> — Ember.js фронтенд, Rails бэкенд, система прав доступа к документам"
+    ru_detailed:
+      - "<strong>Реализовал систему блокировки/разблокировки совместного редактирования на Elixir</strong> для параллельного доступа пользователей."
+      - "<strong>Разрабатывал full-stack CRUD-функционал</strong> (Ember.js фронтенд + Rails бэкенд) и реализовал ACL-систему прав доступа к документам для управления общими ресурсами."
+      - "<strong>Обеспечивал работу live-мероприятий</strong>, включая Детские Олимпийские игры (~50 параллельных WebSocket-соединений)."

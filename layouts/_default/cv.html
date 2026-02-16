@@ -62,6 +62,8 @@
   {{ $isRu := eq .Params.locale "ru" }}
   {{ $isTech := in .RelPermalink "tech-cv" }}
   {{ $langPrefix := cond $isRu "/ru" "" }}
+  {{ $lang := cond $isRu "ru" "en" }}
+  {{ $langDetail := printf "%s_detailed" $lang }}
 
   <div class="cv-switchers">
     <div class="cv-type-switcher">
@@ -172,19 +174,36 @@
 
       <section class="cv-section">
         <h2>{{ index $labels "employment" }}</h2>
-        {{ range .Params.jobs }}
+        {{ range $.Site.Data.cv.jobs }}
         <div class="cv-job">
-          <h3>{{ .title }} — {{ .company }}</h3>
-          <span class="cv-date">{{ .dates }}</span>
-          {{ with .stack }}
-          <p class="cv-label">{{ index $labels "stack" }}:</p>
-          <p>{{ . }}</p>
+          {{ $company := index .company $lang }}
+          {{ if $isTech }}
+            {{ $companyDetailed := index .company $langDetail }}
+            {{ if $companyDetailed }}{{ $company = $companyDetailed }}{{ end }}
+          {{ end }}
+          <h3>{{ .title }} — {{ $company }}</h3>
+          <span class="cv-date">{{ index .dates $lang }}</span>
+          {{ if $isTech }}
+            {{ with .stack }}
+            <p class="cv-label">{{ index $labels "stack" }}:</p>
+            <p>{{ . }}</p>
+            {{ end }}
+          {{ end }}
+          {{ $product := index .product $lang }}
+          {{ if $isTech }}
+            {{ $productDetailed := index .product $langDetail }}
+            {{ if $productDetailed }}{{ $product = $productDetailed }}{{ end }}
           {{ end }}
           <p class="cv-label">{{ index $labels "product" }}:</p>
-          <p>{{ .product }}</p>
+          <p>{{ $product }}</p>
+          {{ $achievements := index .achievements $lang }}
+          {{ if $isTech }}
+            {{ $achievementsDetailed := index .achievements $langDetail }}
+            {{ if $achievementsDetailed }}{{ $achievements = $achievementsDetailed }}{{ end }}
+          {{ end }}
           <p class="cv-label">{{ index $labels "achievements" }}:</p>
           <ul class="cv-achievements">
-            {{ range .achievements }}
+            {{ range $achievements }}
             <li>{{ . | safeHTML }}</li>
             {{ end }}
           </ul>
