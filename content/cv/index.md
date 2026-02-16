@@ -14,6 +14,11 @@ summary_short: "Engineering Team Lead with 10 years in software engineering. Rub
 about:
   - "<strong>10 years in software engineering, last 2 as team lead.</strong> Built payment integrations at a gateway serving 10,000+ merchants. Took an HR platform from zero to production, then hired and led the team around it."
   - "Core stack: Ruby/Rails, Go, PostgreSQL, Kubernetes. At my best when owning technical decisions and shipping with a small team."
+  - |
+    <strong>Engineering philosophy:</strong> I don't trust theory disconnected from production.
+    I work across the stack and pick up whatever the problem requires — language, protocol, or tool.
+    I hire quiet engineers who deliver over charismatic ones who write reports.
+    I build processes (ticket → review → CI → deploy) because good pipelines prevent fires better than heroics.
 
 links:
   - name: "Blog"
