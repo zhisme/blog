@@ -26,5 +26,6 @@ enableRobotsTXT = true
 [markup.goldmark]
 [markup.goldmark.renderer]
   unsafe = true
+  hardWraps = true
 [markup.goldmark.extensions]
   footnote = true
