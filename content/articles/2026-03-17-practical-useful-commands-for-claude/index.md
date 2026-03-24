@@ -80,7 +80,12 @@ For the full reference, it's quite a big article[^2].
 This one reads like "ALLOW ALL", meaning that it can accidentally wipe your filesystem, corrupt your OS, or just delete your databases. There's a rare case when you want this (or at least you should think hard about what prompt you are entering), but it can still be useful for doing something simple without interacting with permissions. Let's say you have some scenario where it asks you for many safe commands like read files, git commit them, verify status, verify deploy status, and so on. Non-destructive commands, I would say. This flag would help. Or you can run this flag in case your Claude CLI is running in some VM without access to your valuable files, and the maximum damage it can do is wipe your VM, which you can easily restore.
 With great power comes great responsibility. Be vigilant.
 
+## Cheat Sheet
+
+Useful and up-to-date cheat sheet[^3] I have found that maybe useful for you too.
+
 ## Footnotes
 
 [^1]: https://git-scm.com/docs/git-bisect
 [^2]: https://code.claude.com/docs/en/hooks
+[^3]: https://cc.storyfox.cz/
