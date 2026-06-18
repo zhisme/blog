@@ -133,3 +133,4 @@ hugo --minify          # Build for production (outputs to public/)
 - Don't create unnecessary files - prefer editing existing structure
 - **og.jpg requirements for Twitter/X cards**: Use **1200x630** (2:1 ratio) or **1024x1024** (1:1 ratio). Avoid 3:2 ratio (e.g., 1536x1024) as Twitter fails to render these. Format must be JPG, prefer cartoon style when generating
 - Do not generate text content for the blog, only assist in reviewing, editing author texts, and improving site structure or functionality as requested
+- When I ask to generate article, this means scaffolding only
