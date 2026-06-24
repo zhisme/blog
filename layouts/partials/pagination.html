@@ -9,7 +9,7 @@
         </li>
       {{ end }}
 
-      {{ range $pag.Pages }}
+      {{ range $pag.Pagers }}
         <li class="pagination-item">
           <a href="{{ .URL }}" class="pagination-link {{ if eq . $pag }}active{{ end }}">{{ .PageNumber }}</a>
         </li>
