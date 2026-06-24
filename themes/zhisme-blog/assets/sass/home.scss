@@ -733,10 +733,10 @@
     border: 1px solid rgba(61, 61, 61, 0.16);
     border-spacing: 0px;
     border-collapse: collapse;
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     @media(max-width: 768px) {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       margin: 24px 0;
     }
   }
