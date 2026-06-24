@@ -5175,7 +5175,7 @@
       new de(".categories", {
         modules: [he, pe],
         slidesPerView: "auto",
-        navigation: { nextEl: ".swiper-button-next-category" },
+        navigation: { nextEl: ".swiper-button-next-category", prevEl: ".swiper-button-prev-category" },
       });
     }
     function ge() {

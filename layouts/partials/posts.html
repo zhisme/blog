@@ -15,12 +15,12 @@
       {{ end }}
     </div>
 
-    {{ $categories := .Site.Taxonomies.categories }}
-    {{ if gt (len $categories) 5 }}
+    <button type="button" class="swiper-arrow swiper-button-prev swiper-button-prev-category">
+      <span class="icon" style="--icon: url('../img/icon/icon-arrow-left.svg');"></span>
+    </button>
     <button type="button" class="swiper-arrow swiper-button-next swiper-button-next-category">
       <span class="icon" style="--icon: url('../img/icon/icon-arrow-right.svg');"></span>
     </button>
-    {{ end }}
   </div>
 
   {{ $term := .Title }}
