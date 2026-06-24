@@ -1,0 +1,44 @@
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	height: 40px;
+	padding: 0 16px;
+	outline: 1px solid #3D3D3D;
+	background: #FFF;
+	font-family: 'SpaceMono';
+	line-height: 24px;
+	font-size: 16px;
+	letter-spacing: -.5px;
+	width: 100%;
+	&::placeholder{
+		opacity: .6;
+		font-family: 'SpaceMono';
+	}
+	&:hover{
+		outline: 2px solid #3D3D3D;
+	}
+	&:active{
+		outline: 2px solid #3D3D3D;
+		background: linear-gradient(0deg, rgba(61, 61, 61, 0.04) 0%, rgba(61, 61, 61, 0.04) 100%), #FFF;
+	}
+	&[disabled]{
+		opacity: .6;
+	}
+}
+textarea.input {
+	resize: none;
+	height: 140px;
+	padding: 16px;
+}
+
+.form-search__input{
+	font-size: 18px;
+	height: 58px;
+	padding-left: 48px;
+}

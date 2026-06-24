@@ -1,3 +1,29 @@
+@import "base/mixins";
+
+@import "fonts/fonts";
+
+$fontFamily: "Inter";
+$fontSize: rem(18);
+
+$mainColor: #3D3D3D;
+
+// Минимальная ширина страницы
+$minWidth: 360;
+
+// Ширина полотна (макета)
+$maxWidth: 1920;
+$maxWidthContainer: 1272px;
+
+// Брейк-поинты
+$pc: em(
+  $maxWidthContainer
+); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(742.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+
+@import "base/null";
+
 body {
   letter-spacing: -.48px;
   &::-webkit-scrollbar {
@@ -10,21 +36,50 @@ body {
   &::-webkit-scrollbar-thumb {
     background: var(--green);
   }
+  // Скролл заблокирован
   .lock & {
     overflow: hidden;
     touch-action: none;
   }
+  // Сайт загружен
   .loaded & {
   }
+}
+::selection {
+  //   background: green;
+  //   color: var(--whte);
 }
 
 .wrapper {
   min-height: 100%;
 
+  // Прижимаем footer
   > main {
     flex: 1 1 auto;
   }
+  // Фикс для слайдеров
   > * {
     min-width: 0;
   }
 }
+
+.container {
+  padding: 0 24px;
+  max-width: $maxWidthContainer;
+  box-sizing: border-box;
+  margin: 0 auto;
+  @media (max-width: $mobile) {
+    padding: 0 16px;
+  }
+}
+
+@import "base";
+@import "variables";
+
+@import "header";
+@import "footer";
+@import "home";
+
+@import "base/swiper";
+
+@import "base/overrides";

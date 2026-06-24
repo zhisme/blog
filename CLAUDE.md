@@ -24,9 +24,9 @@ hugo_blog/
 │   └── 404.html               # Custom 404 page
 ├── themes/zhisme-blog/        # Custom theme
 │   ├── layouts/               # Theme templates (_default, partials, shortcodes)
-│   └── assets/                # Theme SCSS source
+│   └── assets/sass/           # SCSS source partials (main.scss = entry)
 ├── assets/                     # Site-level assets
-│   ├── css/                   # Compiled CSS (style.min.css, main.css)
+│   ├── css/                   # cv.css only (standalone CV page styles)
 │   └── js/                    # JavaScript (app.min.js, main.js)
 ├── static/                     # Static files (served as-is)
 ├── archetypes/                # Content templates
@@ -73,7 +73,7 @@ keywords: ["keyword1", "keyword2"]  # For SEO
 - Custom built, not from Hugo themes gallery
 - License: MIT (see `themes/zhisme-blog/LICENSE`)
 - Layouts include custom partials for headers, footers, metadata
-- SCSS-based styling
+- SCSS-based styling: source partials in `themes/zhisme-blog/assets/sass/`, entry `main.scss`. Hugo compiles via libsass (`toCSS`, transpiler `libsass`) in `partials/head/css.html` → `public/css/style.css` (expanded in dev, minified+fingerprinted in prod). No committed compiled CSS — never hand-edit output, edit the partials. Requires Hugo **extended**.
 
 ## Development Workflow
 
@@ -100,7 +100,7 @@ hugo --minify          # Build for production (outputs to public/)
 ## Important Conventions
 
 1. **File Organization**: Keep articles self-contained in dated folders
-2. **Asset Handling**: Both minified and source versions in `assets/`
+2. **Asset Handling**: Styles are SCSS in `themes/zhisme-blog/assets/sass/`, compiled by Hugo at build (no committed CSS except `assets/css/cv.css`). JS in `assets/js/` keeps source + minified.
 3. **Layout Overrides**: Root `layouts/` overrides `themes/zhisme-blog/layouts/`
 4. **No Node Modules**: Pure Hugo, no npm/yarn build process needed
 5. **Clean URLs**: Use slugs, not dates in article URLs
@@ -118,8 +118,7 @@ hugo --minify          # Build for production (outputs to public/)
 ### Modifying Theme
 - Edit layouts in `themes/zhisme-blog/layouts/`
 - Or override in root `layouts/` directory
-- SCSS changes go in `themes/zhisme-blog/assets/sass/`
-- Rebuild CSS if needed (Hugo handles this automatically)
+- SCSS changes go in `themes/zhisme-blog/assets/sass/` partials; add new partials via `@import` in `main.scss`. Hugo recompiles automatically (`hugo server`). Output is `public/css/style.css` — do not edit it.
 
 ### Adding Custom Functionality
 - Custom partials: `layouts/partials/` or `themes/zhisme-blog/layouts/partials/`

@@ -1,0 +1,9 @@
+// Hide disqus ad iframes
+iframe[src*="ads-iframe"] {
+	display: none;
+}
+
+// Footnotes - prevent long URLs from breaking layout
+.footnotes a {
+	word-break: break-all;
+}
