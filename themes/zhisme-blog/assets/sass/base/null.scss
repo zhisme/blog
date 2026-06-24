@@ -1,0 +1,234 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	// outline: none;
+}
+a:focus,
+a:active {
+	// outline: none;
+}
+html,
+body {
+	height: 100%;
+	min-width: $minWidth + px;
+}
+body {
+	color: $mainColor;
+	line-height: 1.444;
+	font-family: $fontFamily;
+	font-size: $fontSize;
+	//text-rendering: optimizeLegibility;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+input,
+button,
+textarea {
+	font-family: $fontFamily;
+	font-size: inherit;
+}
+button {
+	cursor: pointer;
+	color: inherit;
+	background-color: inherit;
+}
+a {
+	color: inherit;
+	transition: all .25s linear;
+}
+a:link,
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+	max-width: 100%;
+}
+
+.wrapper{
+	padding: 40px 0 32px;
+	@media (max-width: $tablet) {
+		padding: 24px 0;
+	}
+	@media (max-width: $mobile) {
+		padding: 16px 0 24px;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.mb-8{
+	margin-bottom: 8px;
+}
+
+.mb-16{
+	margin-bottom: 16px;
+}
+
+.mb-24{
+	margin-bottom: 24px;
+}
+
+.family-mono{
+	font-family: 'SpaceMono';
+}
+
+.text-uppercase{
+	text-transform: uppercase;
+}
+
+.fw-700{
+	font-weight: 700;
+}
+
+.fw-500{
+	font-weight: 500;
+}
+
+.fw-600{
+	font-weight: 600;
+}
+
+.text-size-32{
+	font-size: 32px;
+}
+
+.text-size-24{
+	font-size: 24px;
+	line-height: 32px;
+	@media(max-width: $mobile) {
+		font-size: 20px;
+		line-height: 26px;
+	}
+}
+
+.text-size-16{
+	font-size: 16px;
+}
+
+
+.text-size-12{
+	font-size: 12px;
+}
+
+.letter-1{
+	letter-spacing: -1px;
+}
+
+.letter-0-5{
+	letter-spacing: -.5px;
+}
+
+h1{
+	font-size: 64px;
+	line-height: 1;
+	font-family: 'SpaceMono';
+	letter-spacing: -2px;
+	font-weight: 700;
+	@media (max-width: $tablet) {
+		font-size: 40px;
+	}
+	@media (max-width: $mobile) {
+		font-size: 32px;
+	}
+}
+
+h2{
+	font-size: 32px;
+	line-height: 1.1;
+	letter-spacing: -.5px;
+	font-weight: 700;
+	@media (max-width: $mobile) {
+		font-size: 28px;
+	}
+}
+
+h3{
+	font-size: 30px;
+	line-height: 1.1;
+	letter-spacing: -.5px;
+	font-weight: 700;
+	@media (max-width: $mobile) {
+		font-size: 24px;
+	}
+}
+
+h4{
+	font-size: 26px;
+	line-height: 1.1;
+	letter-spacing: -.5px;
+	font-weight: 700;
+	@media (max-width: $mobile) {
+		font-size: 22px;
+	}
+}
+
+h5{
+	font-size: 22px;
+	line-height: 1.1;
+	letter-spacing: -.5px;
+	font-weight: 700;
+	@media (max-width: $mobile) {
+		font-size: 18px;
+	}
+}
+
+h6{
+	font-size: 18px;
+	line-height: 1.2;
+	letter-spacing: -.5px;
+	font-weight: 700;
+	@media (max-width: $mobile) {
+		font-size: 16px;
+	}
+}
+
+.icon {
+	&::before {
+		content: "";
+		mask: var(--icon) center center/contain no-repeat;
+		-webkit-mask: var(--icon) center center/contain no-repeat;
+		width: 24px;
+		height: 24px;
+		display: block;
+		transition: 0.25s;
+		background: #3D3D3D;
+	}
+}
+
+.icon-head{
+	margin-right: 8px;
+	&:before{
+		background: #02BE86;
+	}
+}
