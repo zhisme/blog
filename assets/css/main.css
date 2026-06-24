@@ -338,12 +338,6 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
 }
-@media (max-width: 61.99875em) {
-  .form-search {
-    display: none;
-  }
-}
-
 .form-search__icon {
   position: absolute;
   left: 16px;
