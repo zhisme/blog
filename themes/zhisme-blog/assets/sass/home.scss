@@ -272,6 +272,17 @@
   @media(max-width: $mobile) {
     margin: 0 -16px;
   }
+  // swiper JS doesn't initialize; fall back to native horizontal scroll so
+  // all category chips stay reachable. &.swiper beats base .swiper{overflow:hidden}
+  &.swiper {
+    @media(max-width: $tablet) {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      &::-webkit-scrollbar { display: none; }
+    }
+  }
 }
 
 .categories-link{
