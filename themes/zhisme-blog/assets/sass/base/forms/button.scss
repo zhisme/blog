@@ -64,23 +64,6 @@
 	}
 }
 
-.button-white-bg{
-  background: white;
-  border: 1px solid transparent;
-  color: #3D3D3D;
-  &:hover{
-    color: #3D3D3D;
-    background: #eae9e9;
-  }
-  &:active{
-    background: #c9c8c8;
-  }
-  &[disbled] {
-    opacity: .6;
-    pointer-events: none;
-  }
-}
-
 .button-message{
   &:before{
     width: 28px;
