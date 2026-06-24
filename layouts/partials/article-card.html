@@ -21,8 +21,16 @@
   </div>
 
   <div class="article-pic-wrapper">
-    {{ with .Resources.GetMatch "index*" }}
-      <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="article-pic">
+    {{ with .Resources.GetMatch "index.{jpg,jpeg,png,webp}" }}
+      {{ $w := 1500 }}
+      {{ if lt .Width $w }}{{ $w = .Width }}{{ end }}
+      {{ $webp := .Resize (printf "%dx webp q80" $w) }}
+      {{ $jpg := .Resize (printf "%dx jpg q82" $w) }}
+      <picture>
+        <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+        <img src="{{ $jpg.RelPermalink }}" alt="{{ $.Title }}" class="article-pic"
+             width="{{ $jpg.Width }}" height="{{ $jpg.Height }}" loading="lazy" decoding="async">
+      </picture>
     {{ end }}
   </div>
 

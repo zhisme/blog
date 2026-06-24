@@ -9,7 +9,7 @@ Live at: https://zhisme.com/
 - **Theme**: Custom theme `zhisme-blog` (in `themes/zhisme-blog/`)
 - **Styling**: SCSS (compiled from `themes/zhisme-blog/assets/sass/main.scss`)
 - **Frontend**: Vanilla JavaScript (minimal, in `assets/js/`)
-- **Deployment**: GitHub Actions → VPS via SSH
+- **Deployment**: GitHub Actions → Docker image → Helm/Kubernetes (GitOps)
 - **Comments**: Disqus integration
 
 ## Project Structure
@@ -89,10 +89,13 @@ hugo --minify          # Build for production (outputs to public/)
 ```
 
 ### Deployment
-- Automatic via GitHub Actions on push to `master`
-- Workflow: `.github/workflows/deploy.yml`
-- Builds with Hugo, then copies `public/*` to VPS via SSH
-- VPS location: `/var/www/blog/`
+- Automatic via GitHub Actions on push to `master` (`.github/workflows/build-and-deploy.yml`)
+- Pipeline (GitOps):
+  1. **build-and-push**: builds Docker image via `Dockerfile` (runs `hugo --minify`, output baked into image), pushes to a container registry tagged with short commit SHA
+  2. **update-infra**: bumps the image tag in a separate private GitOps infra repo (Helm values), which a Kubernetes cluster reconciles to roll out the new image
+- PRs run `.github/workflows/ci.yml` (Hugo build smoke test, no deploy)
+- Image serving: built `public/` is served by nginx in the k8s deployment
+- Source images in `content/` are the truth; Hugo regenerates processed variants (webp/jpg) at build — `resources/_gen/` is a local cache, gitignored
 
 ## Important Conventions
 
