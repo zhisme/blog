@@ -1512,6 +1512,8 @@ body.popup-show::after {
   margin-bottom: 24px;
   margin-top: -8px;
   max-height: 500px;
+  width: auto;
+  height: auto;
 }
 
 .article-content {

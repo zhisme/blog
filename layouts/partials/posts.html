@@ -37,7 +37,7 @@
     {{ $filtered = $posts }}
   {{ end }}
 
-  {{ $pag := .Paginate $filtered 20 }}
+  {{ $pag := .Paginate $filtered 10 }}
 
   <div class="main-posts">
     <div class="main-posts__top">
