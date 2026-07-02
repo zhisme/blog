@@ -1,0 +1,13 @@
+# lychee link-checker config. See https://github.com/lycheeverse/lychee
+# Used by .github/workflows/link-check.yml
+
+# Treat rate-limit as OK, not broken
+accept = ["200", "429"]
+
+# Skip known false positives
+exclude = [
+  "linkedin\\.com",          # returns 999 to bots, never resolvable in CI
+  "/tinylist/api/subscribe", # newsletter POST endpoint, not a static page
+  "goatcounter\\.com",       # analytics beacon, TLS handshake quirk
+  "void\\(0\\)",             # javascript: no-op hrefs
+]
