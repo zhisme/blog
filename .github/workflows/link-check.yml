@@ -37,10 +37,21 @@ jobs:
             'public/**/*.html'
           fail: false # report only, never block
 
-      - name: Create issue on broken links
+      - name: Update or create broken-links issue
         if: github.event_name == 'schedule' && steps.lychee.outputs.exit_code != 0
-        uses: peter-evans/create-issue-from-file@v5
-        with:
-          title: Broken links detected
-          content-filepath: ./lychee/out.md
-          labels: broken-links
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          title="Broken links detected"
+          body="$(cat ./lychee/out.md)"
+          body="${body}"$'\n\n'"_Updated by link-check run [${GITHUB_RUN_ID}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}) on $(date -u '+%Y-%m-%d %H:%M UTC')._"
+
+          existing="$(gh issue list --label broken-links --state open --limit 1 --json number --jq '.[0].number')"
+
+          if [ -n "$existing" ]; then
+            echo "updating existing issue #$existing"
+            gh issue edit "$existing" --title "$title" --body "$body"
+          else
+            echo "no open issue, creating new"
+            gh issue create --title "$title" --body "$body" --label broken-links
+          fi
