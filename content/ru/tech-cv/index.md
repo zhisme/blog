@@ -10,17 +10,21 @@ email: "evdev34@gmail.com"
 photo: "/cv/profile.jpg"
 location: "Москва, Удалённо (GMT +3)"
 
-summary_short: "Senior Software Engineer с 10-летним опытом. Ruby/Rails — основной стек. Строит системы, запускает их, руководит командой."
+summary_short: "Senior Software Engineer с 10-летним опытом. Go и Ruby/Rails — основной стек, AI-инфраструктура. Строит системы, запускает их, руководит командой."
 
 about:
   - |
-    <strong>10 лет профессионального опыта в разработке, основной стек — Ruby/Rails.</strong> Последние 2 года — тимлид: примерно 40% код, 60% архитектура и координация.
+    <strong>10 лет профессионального опыта в разработке, основной стек — Go и Ruby/Rails.</strong> Последние 2 года — тимлид: примерно 40% код, 60% архитектура и координация.
     Создавал платёжные интеграции, HR-платформы и команды вокруг них.
     Эффективен, когда владею техническими решениями и работаю в небольшой команде.
   - |
+    <strong>Основатель и core maintainer OpenTalon</strong> (github.com/opentalon) — production-grade open source платформы AI-оркестрации на Go (Apache 2.0) для безопасной интеграции LLM в корпоративные процессы:
+    multi-provider routing (OpenAI / Anthropic / DeepSeek), prompt injection prevention, изолированная gRPC-плагинная архитектура, интеграция через MCP.
+    Соавтор <strong>Talon</strong> — языка логического программирования для экспертных систем (Prolog/Datalog-inspired) со встроенными ML-примитивами; пишу его компилятор на Go (Lexer, Parser, Query Planner, Runtime).
+  - |
     <strong>Инженерная философия:</strong> не доверяю теории, практика критерий истинности. То что не работает на проде не имеет смысла.
     Предпочитаю тихих инженеров, которые выполняют задачи и деплоят на прод, а не продавцов успешного успеха.
-    Сперва строю процессы (тикет → review → CI → деплой), потому что хорошие процессы не допускают пожаров.
+    Строю процессы, потому что процессы воспитывают дисциплину.
 
 links:
   - name: "Личный блог"
@@ -33,8 +37,12 @@ links:
     url: "https://github.com/zhisme"
 
 technical_skills:
-  - "Ruby / Rails"
   - "Go"
+  - "Ruby / Rails"
+  - "LLM-оркестрация / AI-агенты"
+  - "MCP (Model Context Protocol)"
+  - "gRPC / Protobuf"
+  - "Datalog / Datalevin"
   - "JavaScript / TypeScript"
   - "React"
   - "PostgreSQL / MySQL"

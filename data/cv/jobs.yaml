@@ -1,3 +1,52 @@
+- title: "Founder & Core Maintainer"
+  company:
+    en: "OpenTalon (open source AI platform)"
+    en_detailed: "OpenTalon — open source AI platform (github.com/opentalon)"
+    ru: "OpenTalon (open source AI-платформа)"
+    ru_detailed: "OpenTalon — open source AI-платформа (github.com/opentalon)"
+  dates:
+    en: "May 2025 — Present"
+    ru: "Май 2025 — настоящее время"
+  stack: "Go, gRPC, Protobuf, LLM APIs (OpenAI / Anthropic / DeepSeek), MCP, Datalog/Datalevin, PostgreSQL, SQLite, Kubernetes, Helm, GitHub Actions"
+  product:
+    en: "Open source AI orchestration platform in Go (Apache 2.0)."
+    en_detailed: "Production-grade open source platform for safe LLM orchestration and AI agents in enterprise workflows, written in Go (Apache 2.0). An alternative to commercial LLM orchestrators."
+    ru: "Open source платформа AI-оркестрации на Go (Apache 2.0)."
+    ru_detailed: "Production-grade open source платформа для безопасной LLM-оркестрации и AI-агентов в корпоративных процессах, на Go (Apache 2.0). Альтернатива коммерческим LLM-оркестраторам."
+  achievements:
+    en:
+      - "<strong>Founded and lead the platform</strong> — architecture, technical direction, public roadmap"
+      - "<strong>Built enterprise LLM orchestration</strong> — multi-provider routing (OpenAI / Anthropic / DeepSeek), prompt injection prevention, isolated gRPC plugins"
+      - "<strong>Co-author of Talon</strong> — a Prolog/Datalog-inspired language for expert systems; writing the compiler in Go"
+      - "<strong>Built opentalon-agents</strong> — persistent LLM-authored agents that run deterministically without a model at runtime"
+    en_detailed:
+      - "<strong>Founded and lead OpenTalon</strong> — own the architecture, technical direction, and public roadmap of the platform."
+      - "<strong>Built enterprise-grade LLM orchestration in Go:</strong> multi-provider routing (OpenAI / Anthropic Claude / DeepSeek) to control model spend, deterministic preprocessing, plugin isolation, and policy enforcement — everything a single large LLM call can't give you."
+      - "<strong>Core architectural idea — \"the LLM writes code, the runtime keeps it safe\"</strong> (after Cloudflare's Code Mode for MCP): the model emits scripts in the restricted Talon DSL rather than raw tool calls. The grammar physically cannot express an unsafe operation, so the sandbox is structural, not a policy we hope the model follows."
+      - "<strong>Implemented prompt injection prevention:</strong> every LLM request passes a security check first, and guard plugins sanitize tool results before the model sees them — covers the key OWASP LLM Top 10 risk, so one compromised integration can't poison the model context or reach other plugins."
+      - "<strong>Designed the plugin architecture for isolation:</strong> plugins are separate OS processes over gRPC + Protobuf, memory-isolated from the core, with no privilege escalation or lateral movement between plugins. Channel-aware auth for Teams/Slack scopes data and tool access per channel and user."
+      - "<strong>Built a content preparer / deterministic preprocessing layer:</strong> business validation before the LLM call — saves tokens, cuts latency, and moves compliance rules out of the prompt and into testable code. Integrated MCP (Model Context Protocol) as a fact source plus a host scheduler for periodic work."
+      - "<strong>Built opentalon-agents (persistent LLM-authored agents):</strong> the user describes a task in chat, the LLM writes the logic in Talon once, and the plugin executes it autonomously with no model at runtime — authoring is probabilistic, execution is cheap and deterministic. Edge-triggered watcher over EAV fact triplets with snapshot state for restart-safe runs; poll, webhook, and cron triggers with backoff. External gRPC plugin with its own state in SQLite/Postgres, everything group-scoped."
+      - "<strong>Co-author of Talon</strong> (github.com/opentalon/talon-language) — a declarative logic programming language inspired by Prolog/Datalog where rules read like English, so a domain expert can write and audit them without programming; the engine does forward inference over facts. Rule blocks: detect, forecast, recommend, rule — with predicates, Or/Not, full-text, aggregates + GroupBy, and rule-calls-rule."
+      - "<strong>Writing the Talon compiler in Go:</strong> lexer, parser, validator, query planner, runtime — with an AST, a query optimizer over Datalevin plans, a REPL, and a rule testing framework (.talon.test). FactStore on Datalevin (native Datalog, FTS, raft); every detection is explainable and auditable, returning a trace of which facts, which rule, which threshold."
+      - "<strong>Built lightweight ML primitives as language keywords</strong> (anomaly detection, forecasting, clustering, classification) — statistical primitives that run in milliseconds over structured data, with thresholds adaptively learned per tenant. Targets compliance-heavy domains (finance, insurance, healthcare, legal) and asset/fleet maintenance: the LLM parses unstructured input, deterministic rules guarantee regulatory compliance and escalation."
+    ru:
+      - "<strong>Основал платформу и веду её</strong> — архитектура, техническое направление, публичный roadmap"
+      - "<strong>Построил enterprise LLM-оркестрацию</strong> — multi-provider routing (OpenAI / Anthropic / DeepSeek), prompt injection prevention, изолированные gRPC-плагины"
+      - "<strong>Соавтор Talon</strong> — языка логического программирования для экспертных систем (Prolog/Datalog); пишу компилятор на Go"
+      - "<strong>Разработал opentalon-agents</strong> — persistent LLM-authored агенты, исполняются детерминированно без модели в рантайме"
+    ru_detailed:
+      - "<strong>Основатель и ведущий разработчик OpenTalon</strong> — веду техническое направление, архитектуру и публичный roadmap платформы."
+      - "<strong>Построил enterprise AI-оркестрацию на Go:</strong> multi-provider routing (OpenAI / Anthropic Claude / DeepSeek) для экономии на моделях, детерминированный препроцессинг, изоляция плагинов и enforcement политик — то, чего не даёт «один большой LLM-вызов»."
+      - "<strong>Ключевая идея архитектуры — «LLM пишет код, runtime держит его безопасным»</strong> (по мотивам Cloudflare Code Mode for MCP): модель генерирует не сырые tool-calls, а сценарии на ограниченном DSL Talon, грамматика которого физически не может выразить небезопасную операцию — sandbox структурный, а не «политика, которой мы надеемся, модель следует»."
+      - "<strong>Реализовал prompt injection prevention:</strong> каждый запрос к LLM проходит security-проверку первым, guard-плагины санитизируют tool-результаты до того, как их увидит модель — закрывает ключевой риск OWASP LLM Top 10; одна скомпрометированная интеграция не может отравить контекст модели или пробиться в другие."
+      - "<strong>Спроектировал безопасную плагинную архитектуру:</strong> плагины — отдельные OS-процессы через gRPC + Protobuf, изоляция памяти ядра, без эскалации привилегий и lateral movement между плагинами. Channel-aware аутентификация для Teams/Slack скоупит доступ к данным и инструментам по каналу и пользователю."
+      - "<strong>Разработал слой content preparers / deterministic preprocessing:</strong> бизнес-валидация перед LLM-вызовом — экономит токены, снижает latency, выносит compliance-правила из промпта в тестируемый код. Интегрировал MCP (Model Context Protocol) как источник фактов и встроенный host-scheduler для периодических задач."
+      - "<strong>Разработал opentalon-agents (persistent LLM-authored агенты):</strong> пользователь описывает задачу в чате словами, LLM однократно генерирует логику на Talon, плагин исполняет её автономно и детерминированно, без модели в рантайме (authoring вероятностный, исполнение — дешёвое и детерминированное). Edge-triggered watcher над EAV-триплетами фактов со snapshot-состоянием для restart-safe исполнения; триггеры poll, webhook, cron с backoff. Внешний gRPC-плагин с собственным стейтом в SQLite/Postgres, всё group-scoped."
+      - "<strong>Соавтор Talon</strong> (github.com/opentalon/talon-language) — декларативного языка логического программирования, вдохновлённого Prolog/Datalog: правила читаются как английский, доменный эксперт пишет и аудитирует их без программирования; движок делает forward-инференс над фактами. Блоки правил: detect, forecast, recommend, rule — с предикатами, Or/Not, full-text, aggregates + GroupBy, вызовом правил из правил."
+      - "<strong>Пишу компилятор Talon на Go:</strong> Lexer, Parser, Validator, Query Planner, Runtime — с AST, оптимизатором запросов (DatalevinQuery планы), REPL и собственным фреймворком тестирования правил (.talon.test). FactStore на Datalevin (нативный Datalog, FTS, raft); каждая детекция объяснима и аудируема — отдаёт trace: какие факты, какое правило, какой порог."
+      - "<strong>Встроил лёгкие ML-примитивы как ключевые слова языка</strong> (anomaly detection, forecasting, clustering, classification) — статистические примитивы, работают за миллисекунды на структурированных данных, пороги адаптивно обучаются на данных тенанта. Целевые сценарии — compliance-heavy домены (финансы, страхование, healthcare, legal) и asset/fleet-обслуживание: LLM парсит неструктурированный ввод, детерминированные правила гарантируют regulatory compliance и эскалацию."
+
 - title: "Software Consultant"
   company:
     en: "Self-Employed"
