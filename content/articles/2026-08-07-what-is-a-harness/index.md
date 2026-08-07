@@ -18,7 +18,7 @@ what is good and what is bad?"
 
 ## From testing
 
-The word isn't new. *Test harness* is a thirty-year-old term: the rig that runs the code under test, feeds it inputs, collects outputs, and says "pass / fail". Swap "code under test" for "model" and you get exactly what everyone is talking about now.
+The word isn't new. *Test harness*[^1] is a thirty-year-old term: the rig that runs the code under test, feeds it inputs, collects outputs, and says "pass / fail". Swap "code under test" for "model" and you get exactly what everyone is talking about now.
 
 Then there's the literal meaning: a harness is a set of straps for a horse. In this case, the horse is our model.
 
@@ -28,7 +28,7 @@ Then there's the literal meaning: a harness is a set of straps for a horse. In t
 
 There are two ways to improve a model, in the sense of answer quality, context handling, and "reasoning".
 
-1. **Fine-tuning** — retraining and friends. This used to be affordable only for giants, but today a LoRA on top of an open model is a weekend and a couple hundred bucks. Cheap doesn't mean easy though: you need data, labeling, and an understanding of what you're actually fixing. The money is no longer the problem, the labor is. Not everyone can afford it.
+1. **Fine-tuning** — retraining and friends. This used to be affordable only for giants, but today a LoRA[^2] on top of an open model is a weekend and a couple hundred bucks. Cheap doesn't mean easy though: you need data, labeling, and an understanding of what you're actually fixing. The money is no longer the problem, the labor is. Not everyone can afford it.
 
 2. **The harness** — the thing itself. Everything wrapped around the model. You don't touch the model, you touch everything around it.
 
@@ -66,9 +66,9 @@ The only exit is green. Red doesn't end the run (unless you are out of tokens), 
 
 ## What came before
 
-A year or two ago, advice on improving results came down to prompt engineering, prompt tuning, etc. Roughly: write your inputs better so you hit the right triggers. But not too much and not too little. Golden mean.
+A year or two ago, advice on improving results came down to prompt engineering, prompt tuning, etc. Roughly: write your inputs better so you hit the right triggers. But not too much and not too little. Golden mean[^3].
 
-Write too much and you ~~stack overflow~~ overflow the context window and get even more hallucinations. Write too little and you get nonsense: it starts asking clarifying questions and wanders off.
+Write too much and you ~~stack overflow~~ overflow the context window — models measurably lose track of what sits in the middle of a long input[^4] — and get even more hallucinations. Write too little and you get nonsense: it starts asking clarifying questions and wanders off.
 
 Except the harness didn't arrive *instead of* the prompt. The system prompt, `AGENTS.md`, tool descriptions — all of these are parts of the harness. The difference is elsewhere: a prompt is a recommendation, and it can be ignored. A harness makes some of those recommendations unavoidable. Not "instead of", but "on top of". And it holds — the model can't jump out of the straps.
 
@@ -94,7 +94,7 @@ Claude Code and Codex are first and foremost harnesses, not models. Tools with s
 
 ## Where it doesn't work
 
-The whole trick rests on one assumption: a cheap objective check exists. For code it does — compiler, linter, tests. Ready-made, free, written by someone else.
+The whole trick rests on one assumption: a cheap objective check exists. It's the same assumption the training people lean on when they reward a model only for answers a machine can verify[^5]. For code it holds — compiler, linter, tests. Ready-made, free, written by someone else.
 
 And for "write a good email"? There's no verifier. Writing one costs more than doing the task by hand. There the harness degenerates back into the prompt "do good". Or you need an expert who knows what a good email is and can pack it into a prompt: "always sign off with Best regards", and so on.
 
@@ -109,3 +109,10 @@ A harness is a set of deterministic, defined, unambiguous rules that the model b
 🔴 at least one validation tool red — 0, all bad
 
 Hope I dispelled a bit of the magic around the word "harness", which is being chanted everywhere these days.
+
+## Footnotes
+[^1]: https://en.wikipedia.org/wiki/Test_harness
+[^2]: https://arxiv.org/abs/2106.09685
+[^3]: https://en.wikipedia.org/wiki/Golden_mean_(philosophy)
+[^4]: https://arxiv.org/abs/2307.03172
+[^5]: https://arxiv.org/abs/2411.15124
