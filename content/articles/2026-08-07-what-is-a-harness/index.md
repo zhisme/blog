@@ -2,10 +2,10 @@
 title: 'What Is A Harness, Demystified'
 slug: 'what-is-a-harness-demystified'
 categories: ["Engineering"]
-tags: ["ai", "llm", "claude", "tools"]
+tags: ["ai", "tools"]
 intro: Harness, harness. You've probably heard this relatively new term by now. Where does it come from?
 description: A harness is a loop, tools the model acts with, a deterministic check on the result, and repetition until the check goes green. What the term means, where it came from, and when it degenerates back into a prompt.
-keywords: ["what is a harness", "llm harness", "agent harness", "test harness", "claude code harness", "deterministic verification llm", "ai agent tooling"]
+keywords: ["what is a harness", "llm harness", "ai harness", "test harness", "claude code harness", "deterministic verification llm", "ai agent tooling"]
 images: ["mayakovsky.jpg", "look_at_my_horse.jpg", "index.jpg"]
 ---
 
