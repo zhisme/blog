@@ -1,5 +1,5 @@
 # Build the Hugo static site
-FROM ghcr.io/gohugoio/hugo:v0.145.0
+FROM ghcr.io/gohugoio/hugo:v0.165.0
 
 # Set working directory
 WORKDIR /src
