@@ -18,6 +18,12 @@ jobs:
           hugo-version: '0.165.0'
           extended: true
 
+      - name: Install dart-sass
+        run: |
+          curl -sLo dart-sass.tar.gz https://github.com/sass/dart-sass/releases/download/1.102.0/dart-sass-1.102.0-linux-x64.tar.gz
+          tar -xzf dart-sass.tar.gz
+          echo "$PWD/dart-sass" >> "$GITHUB_PATH"
+
       - name: Build site
         run: hugo --minify
 

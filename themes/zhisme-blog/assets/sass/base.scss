@@ -1,6 +1,6 @@
-@import "base/forms/forms";
+@use "base/forms/forms";
 
-@import "base/popup";
+@use "base/popup";
 
 [class*="-ibg"] {
 	position: relative;

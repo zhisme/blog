@@ -1,5 +1,5 @@
 baseURL = 'https://zhisme.com/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = '@zhisme :: signal over noise'
 theme = 'zhisme-blog'
 enableRobotsTXT = true

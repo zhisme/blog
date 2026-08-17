@@ -1,3 +1,5 @@
+@use "vars" as *;
+
 .main-page{
   display: flex;
   @media(max-width: $tablet) {
