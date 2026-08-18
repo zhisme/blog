@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Font face helper
 @mixin font($font_name, $file_name, $weight, $style) {
 	@font-face {
@@ -11,10 +13,10 @@
 
 // REM
 @function rem($px) {
-	@return ($px / 16) + rem;
+	@return math.div($px, 16) + rem;
 }
 
 // EM
 @function em($px, $current: 16) {
-	@return ($px / $current) + em;
+	@return math.div($px, $current) + em;
 }

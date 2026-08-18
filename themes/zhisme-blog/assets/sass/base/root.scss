@@ -1,0 +1,50 @@
+@use "../vars" as *;
+
+body {
+  letter-spacing: -.48px;
+  &::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--greyWhte);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--green);
+  }
+  // Скролл заблокирован
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+  // Сайт загружен
+  .loaded & {
+  }
+}
+::selection {
+  //   background: green;
+  //   color: var(--whte);
+}
+
+.wrapper {
+  min-height: 100%;
+
+  // Прижимаем footer
+  > main {
+    flex: 1 1 auto;
+  }
+  // Фикс для слайдеров
+  > * {
+    min-width: 0;
+  }
+}
+
+.container {
+  padding: 0 24px;
+  max-width: $maxWidthContainer;
+  box-sizing: border-box;
+  margin: 0 auto;
+  @media (max-width: $mobile) {
+    padding: 0 16px;
+  }
+}

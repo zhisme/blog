@@ -73,7 +73,7 @@ keywords: ["keyword1", "keyword2"]  # For SEO
 - Custom built, not from Hugo themes gallery
 - License: MIT (see `themes/zhisme-blog/LICENSE`)
 - Layouts include custom partials for headers, footers, metadata
-- SCSS-based styling: source partials in `themes/zhisme-blog/assets/sass/`, entry `main.scss`. Hugo compiles via libsass (`toCSS`, transpiler `libsass`) in `partials/head/css.html` → `public/css/style.css` (expanded in dev, minified+fingerprinted in prod). No committed compiled CSS — never hand-edit output, edit the partials. Requires Hugo **extended**.
+- SCSS-based styling: source partials in `themes/zhisme-blog/assets/sass/`, entry `main.scss`. Hugo compiles via dartsass (`toCSS`, transpiler `dartsass`) in `partials/head/css.html` → `public/css/style.css` (expanded in dev, minified+fingerprinted in prod). Partials use `@use`, not `@import` — shared variables/breakpoints live in `sass/vars.scss`, imported per-file via `@use "vars" as *;` (or a relative path). No committed compiled CSS — never hand-edit output, edit the partials. Requires Hugo **extended** with the `dart-sass`/`sass` binary on `PATH`: locally via `brew install dart-sass` (may need `brew link dart-sass` and a `dart-sass` PATH entry if a conflicting `sass` gem shadows it); the official `ghcr.io/gohugoio/hugo` Docker image bundles it; GitHub Actions workflows (`ci.yml`, `link-check.yml`) install it explicitly from the `sass/dart-sass` releases since `peaceiris/actions-hugo` does not bundle it.
 
 ## Development Workflow
 

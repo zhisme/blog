@@ -171,7 +171,7 @@
 
       <section class="cv-section">
         <h2>{{ index $labels "employment" }}</h2>
-        {{ range $.Site.Data.cv.jobs }}
+        {{ range hugo.Data.cv.jobs }}
         <div class="cv-job">
           {{ $company := index .company $lang }}
           {{ if $isTech }}
