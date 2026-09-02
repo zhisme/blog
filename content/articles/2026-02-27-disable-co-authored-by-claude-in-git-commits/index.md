@@ -17,7 +17,8 @@ Open `~/.claude/settings.json` with your favorite editor and add this to your js
   // ...
   "attribution": {
     "commit": "",
-    "pr": ""
+    "pr": "",
+    "sessionUrl": false
   }
 }
 ```
@@ -28,7 +29,12 @@ This actually makes no sense and I agree with Rob Pike's take on that[^2]. It ju
 
 Happy vibe-coding!
 
+### Updated 02.09.2026
+
+People report[^3] that claude is going wild and now adds attribution of sessionURL in which the commit was made. For sure we can disable that too, instruction in solution section is updated to disable that too. So this guide is still up-to-date.
+
 ## Footnotes
 
-[^1]: https://code.claude.com/docs/en/settings#attribution-settings
+[^1]: https://code.claude.com/docs/en/settings-reference#attribution
 [^2]: https://groups.google.com/g/golang-dev/c/4Li4Ovd_ehE/m/UU87HnL5DgAJ
+[^3]: https://github.com/anthropics/claude-code/issues/66504
