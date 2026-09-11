@@ -5,7 +5,7 @@ type: cv
 locale: ru
 
 name: "Евгений Жданов"
-headline: "Senior Software Engineer | Technical Lead"
+headline: "Technical Lead | Senior Software Engineer (Go, AI/LLM)"
 email: "evdev34@gmail.com"
 photo: "/cv/profile.jpg"
 location: "Москва, Удалённо (GMT +3)"
@@ -17,10 +17,9 @@ about:
   - |
     <strong>10 лет профессионального опыта в разработке.</strong> Последние 2 года — тимлид: примерно 40% код, 60% архитектура и координация.
     Создавал платёжные интеграции, HR-платформы и команды вокруг них.
-    Эффективен, когда владею техническими решениями и работаю в небольшой команде.
   - |
     <strong>Сейчас — основатель и core maintainer OpenTalon</strong> — open source платформы AI-оркестрации на Go, и соавтор Talon, языка логического программирования для экспертных систем.
-    Безопасная LLM-оркестрация: multi-provider routing, prompt injection prevention, изолированные gRPC-плагины, MCP.
+    Безопасная LLM-оркестрация: multi-provider routing, prompt injection prevention, изолированные gRPC-плагины, MCP. Эффективен, когда владею техническими решениями и работаю в небольшой команде.
 
 links:
   - name: "Блог"
