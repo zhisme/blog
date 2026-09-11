@@ -5,34 +5,25 @@ type: tech-cv
 locale: ru
 
 name: "Евгений Жданов"
-headline: "Senior Software Engineer | Technical Lead"
+headline: "Senior Software Engineer (Go, AI) | AI & Platform Engineering"
 email: "evdev34@gmail.com"
 photo: "/cv/profile.jpg"
 location: "Москва, Удалённо (GMT +3)"
+filename: "Zhdanov_Evgeny_Senior_Software_Engineer"
 
 summary_short: "Senior Software Engineer с 10-летним опытом. Go и Ruby/Rails — основной стек, AI-инфраструктура. Строит системы, запускает их, руководит командой."
 
 about:
   - |
-    <strong>10 лет профессионального опыта в разработке, основной стек — Go и Ruby/Rails.</strong> Последние 2 года — тимлид: примерно 40% код, 60% архитектура и координация.
-    Создавал платёжные интеграции, HR-платформы и команды вокруг них.
-    Эффективен, когда владею техническими решениями и работаю в небольшой команде.
-  - |
-    <strong>Основатель и core maintainer OpenTalon</strong> (github.com/opentalon) — production-grade open source платформы AI-оркестрации на Go (Apache 2.0) для безопасной интеграции LLM в корпоративные процессы:
-    multi-provider routing (OpenAI / Anthropic / DeepSeek), prompt injection prevention, изолированная gRPC-плагинная архитектура, интеграция через MCP.
-    Соавтор <strong>Talon</strong> — языка логического программирования для экспертных систем (Prolog/Datalog-inspired) со встроенными ML-примитивами; пишу его компилятор на Go (Lexer, Parser, Query Planner, Runtime).
-  - |
-    <strong>Инженерная философия:</strong> не доверяю теории, практика критерий истинности. То что не работает на проде не имеет смысла.
-    Предпочитаю тихих инженеров, которые выполняют задачи и деплоят на прод, а не продавцов успешного успеха.
-    Строю процессы, потому что процессы воспитывают дисциплину.
+    <strong>10 лет профессионального опыта в Go и Ruby/Rails, последние 2 года — тимлид</strong> — примерно 40% код, 60% архитектура и координация. Создавал платёжные интеграции и HR-платформы, и команды вокруг них. Сейчас — <strong>основатель и core maintainer OpenTalon</strong> (github.com/opentalon), production-grade open source платформы AI-оркестрации на Go (Apache 2.0) для безопасной интеграции LLM в корпоративные процессы — multi-provider routing (OpenAI / Anthropic / DeepSeek), prompt injection prevention, изолированная gRPC-плагинная архитектура, интеграция через MCP — и соавтор <strong>Talon</strong>, языка логического программирования для экспертных систем (Prolog/Datalog-inspired) со встроенными ML-примитивами; пишу его компилятор на Go (Lexer, Parser, Query Planner, Runtime).
 
 links:
-  - name: "Личный блог"
+  - name: "Блог"
     url: "https://zhisme.com"
-  - name: "Telegram-канал"
-    url: "https://t.me/zhisme_dev"
   - name: "LinkedIn"
     url: "https://www.linkedin.com/in/zhisme/"
+  - name: "Telegram"
+    url: "https://t.me/zhisme_dev"
   - name: "GitHub"
     url: "https://github.com/zhisme"
 
@@ -52,8 +43,8 @@ technical_skills:
   - "AWS"
 
 languages:
-  - "Русский"
-  - "Английский"
+  - "Русский — родной"
+  - "Английский — C2 (Proficient)"
 
 education:
   - degree: "Бакалавр"

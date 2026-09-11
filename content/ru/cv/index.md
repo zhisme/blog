@@ -5,10 +5,11 @@ type: cv
 locale: ru
 
 name: "Евгений Жданов"
-headline: "Senior Software Engineer | Technical Lead"
+headline: "Technical Lead | Senior Software Engineer (Go, AI/LLM)"
 email: "evdev34@gmail.com"
 photo: "/cv/profile.jpg"
 location: "Москва, Удалённо (GMT +3)"
+filename: "Zhdanov_Evgeny_Senior_Software_Engineer"
 
 summary_short: "Engineering Team Lead с 10-летним опытом в разработке. Go, Ruby/Rails, LLM-оркестрация, Kubernetes."
 
@@ -16,14 +17,9 @@ about:
   - |
     <strong>10 лет профессионального опыта в разработке.</strong> Последние 2 года — тимлид: примерно 40% код, 60% архитектура и координация.
     Создавал платёжные интеграции, HR-платформы и команды вокруг них.
-    Эффективен, когда владею техническими решениями и работаю в небольшой команде.
   - |
     <strong>Сейчас — основатель и core maintainer OpenTalon</strong> — open source платформы AI-оркестрации на Go, и соавтор Talon, языка логического программирования для экспертных систем.
-    Безопасная LLM-оркестрация: multi-provider routing, prompt injection prevention, изолированные gRPC-плагины, MCP.
-  - |
-    <strong>Инженерная философия:</strong> не доверяю теории, практика критерий истинности. То что не работает на проде не имеет смысла.
-    Предпочитаю тихих инженеров, которые выполняют задачи и деплоят на прод, а не продавцов успешного успеха.
-    Строю процессы, потому что процессы воспитывают дисциплину.
+    Безопасная LLM-оркестрация: multi-provider routing, prompt injection prevention, изолированные gRPC-плагины, MCP. Эффективен, когда владею техническими решениями и работаю в небольшой команде.
 
 links:
   - name: "Блог"
@@ -46,8 +42,8 @@ technical_skills:
   - "CI/CD"
 
 languages:
-  - "Русский"
-  - "Английский"
+  - "Русский — родной"
+  - "Английский — C2 (Proficient)"
 
 education:
   - degree: "Бакалавр"
