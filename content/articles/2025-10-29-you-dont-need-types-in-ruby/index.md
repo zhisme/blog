@@ -70,7 +70,7 @@ It’s not about enforcing constraints — it’s about designing objects that *
 
 Adding types to Ruby isn’t new. Many have tried. Most have failed.
 
-* **RBS** – Introduced with [Ruby 3](https://www.ruby-lang.org/en/news/2019/12/25/ruby-3-0-0-preview1/) as part of the “Ruby 3x3” initiative. It aimed to formalize type definitions but never gained much real-world traction.
+* **RBS** – Introduced with [Ruby 3](https://www.ruby-lang.org/en/news/2020/12/25/ruby-3-0-0-released/) as part of the “Ruby 3x3” initiative. It aimed to formalize type definitions but never gained much real-world traction.
 * **dry-types** – Part of the [dry-rb](https://dry-rb.org/) ecosystem. It adds runtime type constraints but at a cost: slower performance.
 * **typed-ruby**, **RTC**, **Rubype** – early academic or community efforts that never made it.
 * **Sorbet** – the most popular attempt so far, backed by Stripe. It mixes static and runtime checks but at the expense of speed and simplicity/readability.

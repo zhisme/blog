@@ -42,4 +42,4 @@ This will add the plugin to your Claude-code, install the status bar (point 3) a
 Enjoy!
 
 ## Footnotes
-[^1]: https://github.com/JuliusBrussee/caveman/blob/main/caveman/SKILL.md
+[^1]: https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/SKILL.md
