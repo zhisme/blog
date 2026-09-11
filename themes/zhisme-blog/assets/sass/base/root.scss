@@ -1,5 +1,41 @@
 @use "../vars" as *;
 
+:root {
+  --ink: #3D3D3D;
+  --bg: #FFF;
+  --bg-alt: #EDEDED;
+  --bg-subtle: #F6F6F6;
+  --accent: #02BE86;
+  --accent-active: #04a273;
+  --accent-soft: rgba(2, 190, 134, 0.08);
+  --focus-ring: #93DBFF;
+  --shadow: rgba(0, 0, 0, 0.24);
+  --overlay-04: rgba(61, 61, 61, 0.04);
+  --overlay-08: rgba(61, 61, 61, 0.08);
+  --overlay-16: rgba(61, 61, 61, 0.16);
+  --overlay-40: rgba(61, 61, 61, 0.40);
+  --chip-bg: #3D3D3D;
+  --chip-bg-hover: #313131;
+  --chip-bg-active: #252424;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --ink: #EDEDED;
+  --bg: #121010;
+  --bg-alt: #2A2828;
+  --bg-subtle: #232121;
+  --accent-soft: rgba(2, 190, 134, 0.16);
+  --shadow: rgba(255, 255, 255, 0.08);
+  --overlay-04: rgba(255, 255, 255, 0.04);
+  --overlay-08: rgba(255, 255, 255, 0.08);
+  --overlay-16: rgba(255, 255, 255, 0.16);
+  --overlay-40: rgba(255, 255, 255, 0.40);
+  --chip-bg-hover: #4A4A4A;
+  --chip-bg-active: #575757;
+  color-scheme: dark;
+}
+
 body {
   letter-spacing: -.48px;
   &::-webkit-scrollbar {
@@ -7,10 +43,10 @@ body {
     width: 5px;
   }
   &::-webkit-scrollbar-track {
-    background: var(--greyWhte);
+    background: var(--bg-alt);
   }
   &::-webkit-scrollbar-thumb {
-    background: var(--green);
+    background: var(--accent);
   }
   // Скролл заблокирован
   .lock & {

@@ -24,7 +24,8 @@ body {
 	min-width: $minWidth + px;
 }
 body {
-	color: $mainColor;
+	color: var(--ink);
+	background: var(--bg);
 	line-height: 1.444;
 	font-family: $fontFamily;
 	font-size: $fontSize;
@@ -224,13 +225,13 @@ h6{
 		height: 24px;
 		display: block;
 		transition: 0.25s;
-		background: #3D3D3D;
+		background: var(--ink);
 	}
 }
 
 .icon-head{
 	margin-right: 8px;
 	&:before{
-		background: #02BE86;
+		background: var(--accent);
 	}
 }

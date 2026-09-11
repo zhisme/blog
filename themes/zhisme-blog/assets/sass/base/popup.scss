@@ -55,7 +55,7 @@ body.popup-show::after {
 	visibility: hidden;
 	transform: scale(0);
 	transition: transform 0.3s ease 0s;
-	background-color: white;
+	background-color: var(--bg);
 	padding: 40px;
 	width: 100%;
 	max-width: 600px;
@@ -88,12 +88,12 @@ body.popup-show::after {
 	}
 	&:hover{
 		&:before{
-			background: #02BE86;
+			background: var(--accent);
 		}
 	}
 	&:active{
 		&:before{
-			background: #04a273;
+			background: var(--accent-active);
 		}
 	}
 }
@@ -103,7 +103,7 @@ body.popup-show::after {
 	align-items: center;
 	padding-bottom: 40px;
 	margin-bottom: 40px;
-	border-bottom: 2px solid #3D3D3D;
+	border-bottom: 2px solid var(--ink);
 	@media(max-width: $mobile) {
 		align-items: flex-start;
 		margin-bottom: 24px;

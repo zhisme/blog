@@ -15,7 +15,7 @@
   &:focus {
     &:after {
       content: '';
-      border: 4px solid #93DBFF;
+      border: 4px solid var(--focus-ring);
       position: absolute;
       background: transparent;
       top: -4px;
@@ -32,16 +32,16 @@
 
 .button-green {
   color: white;
-  background: #02BE86;
+  background: var(--accent);
   border: 1px solid transparent;
 
   &:hover {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), #02BE86;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%), var(--accent);
 	  color: white;
   }
 
   &:active {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #02BE86;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), var(--accent);
   }
 
   &[disbled] {
@@ -51,14 +51,14 @@
 }
 
 .button-white{
-	color: black;
-	border: 1px solid #3D3D3D;
+	color: var(--ink);
+	border: 1px solid var(--ink);
 	&:hover{
-		color: black;
-		background: rgba(61, 61, 61, 0.08);
+		color: var(--ink);
+		background: var(--overlay-08);
 	}
 	&:active{
-		background: rgba(61, 61, 61, 0.16);
+		background: var(--overlay-16);
 	}
 	&[disbled] {
 		opacity: .6;
@@ -67,6 +67,7 @@
 }
 
 .button-message{
+  margin-right: 8px;
   &:before{
     width: 28px;
     height: 28px;
@@ -84,7 +85,7 @@
   .icon{
     width: 24px;
     height: 24px;
-    background: #3D3D3D;
+    background: var(--ink);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -99,7 +100,7 @@
 
 .swiper-button-prev{
   left: 0;
-  background: linear-gradient(135deg, #FFF 50%, rgba(255, 255, 255, 0.00) 100%);
+  background: linear-gradient(135deg, var(--bg) 50%, rgba(255, 255, 255, 0.00) 100%);
   .icon{
     padding-right: 1px;
   }
@@ -107,7 +108,7 @@
 
 .swiper-button-next{
   right: 0;
-  background: linear-gradient(270deg, #FFF 50%, rgba(255, 255, 255, 0.00) 100%);
+  background: linear-gradient(270deg, var(--bg) 50%, rgba(255, 255, 255, 0.00) 100%);
   .icon{
     padding-left: 1px;
   }

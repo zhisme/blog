@@ -9,8 +9,8 @@ textarea {
 .input {
 	height: 40px;
 	padding: 0 16px;
-	outline: 1px solid #3D3D3D;
-	background: #FFF;
+	outline: 1px solid var(--ink);
+	background: var(--bg);
 	font-family: 'SpaceMono';
 	line-height: 24px;
 	font-size: 16px;
@@ -21,11 +21,11 @@ textarea {
 		font-family: 'SpaceMono';
 	}
 	&:hover{
-		outline: 2px solid #3D3D3D;
+		outline: 2px solid var(--ink);
 	}
 	&:active{
-		outline: 2px solid #3D3D3D;
-		background: linear-gradient(0deg, rgba(61, 61, 61, 0.04) 0%, rgba(61, 61, 61, 0.04) 100%), #FFF;
+		outline: 2px solid var(--ink);
+		background: linear-gradient(0deg, var(--overlay-04) 0%, var(--overlay-04) 100%), var(--bg);
 	}
 	&[disabled]{
 		opacity: .6;
