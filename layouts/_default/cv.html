@@ -71,6 +71,7 @@
   {{ $langPrefix := cond $isRu "/ru" "" }}
   {{ $lang := cond $isRu "ru" "en" }}
   {{ $langDetail := printf "%s_detailed" $lang }}
+  {{ $printFilename := .Params.filename | default "Zhdanov_Evgeny_Senior_Software_Engineer" }}
 
   <div class="cv-switchers">
     <div class="cv-type-switcher">
@@ -98,116 +99,90 @@
   </div>
 
   <div class="cv-container">
-    <aside class="cv-sidebar">
-      {{ if .Params.education }}
-      <section class="sidebar-section">
-        <h3>{{ index $labels "education" }}</h3>
-        {{ range .Params.education }}
-        <p class="sidebar-education">
-          <strong>{{ .degree }}</strong><br>
-          {{ .school }}<br>
-          <span class="sidebar-date">{{ .dates }}</span>
-        </p>
-        {{ end }}
-      </section>
+    <header class="cv-header">
+      <img src="{{ .Params.photo | default "/img/avatar.jpg" }}" alt="{{ .Params.name }}" class="cv-photo">
+      <div class="cv-title">
+        <h1>{{ .Params.name }}</h1>
+        <p class="cv-subtitle">{{ .Params.headline }}</p>
+      </div>
+    </header>
+
+    <section class="cv-contact-bar">
+      <span><a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></span>
+      <span>{{ .Params.location }}</span>
+      {{ range .Params.links }}
+      <span><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></span>
       {{ end }}
+    </section>
 
-      <section class="sidebar-section">
-        <h3>{{ index $labels "contacts" }}</h3>
-        <p><a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></p>
-      </section>
+    <section class="cv-section">
+      <h2>{{ index $labels "summary" }}</h2>
+      {{ with .Params.about }}
+        {{ range . }}
+        <p>{{ . | safeHTML }}</p>
+        {{ end }}
+      {{ end }}
+    </section>
 
-      <section class="sidebar-section">
-        <h3>{{ index $labels "links" }}</h3>
-        <ul class="sidebar-links">
-          {{ range .Params.links }}
-          <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></li>
-          {{ end }}
-        </ul>
-      </section>
+    <section class="cv-section cv-facts">
+      <div class="cv-fact">
+        <h2>{{ index $labels "technical" }}</h2>
+        <p>{{ delimit .Params.technical_skills " · " }}</p>
+      </div>
 
+      <div class="cv-fact">
+        <h2>{{ index $labels "languages" }}</h2>
+        <p>{{ delimit .Params.languages " · " }}</p>
+      </div>
 
-      <section class="sidebar-section">
-        <h3>{{ index $labels "technical" }}</h3>
-        <ul class="sidebar-skills">
-          {{ range .Params.technical_skills }}
-          <li>{{ . }}</li>
-          {{ end }}
-        </ul>
-      </section>
+      {{ if .Params.education }}
+      <div class="cv-fact">
+        <h2>{{ index $labels "education" }}</h2>
+        {{ range .Params.education }}
+        <p><strong>{{ .degree }}</strong>, {{ .school }} <span class="cv-date">({{ .dates }})</span></p>
+        {{ end }}
+      </div>
+      {{ end }}
+    </section>
 
-      <section class="sidebar-section">
-        <h3>{{ index $labels "languages" }}</h3>
-        <ul class="sidebar-skills">
-          {{ range .Params.languages }}
-          <li>{{ . }}</li>
-          {{ end }}
-        </ul>
-      </section>
-
-      <section class="sidebar-section">
-        <h3>{{ index $labels "location" }}</h3>
-        <p>{{ .Params.location }}</p>
-      </section>
-    </aside>
-
-    <main class="cv-main">
-      <header class="cv-header">
-        <img src="{{ .Params.photo | default "/img/avatar.jpg" }}" alt="{{ .Params.name }}" class="cv-photo">
-        <div class="cv-title">
-          <h1>{{ .Params.name }}</h1>
-          <p class="cv-subtitle">{{ .Params.headline }}</p>
-        </div>
-      </header>
-
-      <section class="cv-section">
-        <h2>{{ index $labels "summary" }}</h2>
-        {{ with .Params.about }}
-          {{ range . }}
-          <p>{{ . | safeHTML }}</p>
+    <section class="cv-section">
+      <h2>{{ index $labels "employment" }}</h2>
+      {{ range hugo.Data.cv.jobs }}
+      <div class="cv-job">
+        {{ $company := index .company $lang }}
+        {{ if $isTech }}
+          {{ $companyDetailed := index .company $langDetail }}
+          {{ if $companyDetailed }}{{ $company = $companyDetailed }}{{ end }}
+        {{ end }}
+        <h3>{{ .title }} — {{ $company }}</h3>
+        <span class="cv-date">{{ index .dates $lang }}</span>
+        {{ if $isTech }}
+          {{ with .stack }}
+          <p class="cv-label">{{ index $labels "stack" }}:</p>
+          <p>{{ . }}</p>
           {{ end }}
         {{ end }}
-      </section>
-
-      <section class="cv-section">
-        <h2>{{ index $labels "employment" }}</h2>
-        {{ range hugo.Data.cv.jobs }}
-        <div class="cv-job">
-          {{ $company := index .company $lang }}
-          {{ if $isTech }}
-            {{ $companyDetailed := index .company $langDetail }}
-            {{ if $companyDetailed }}{{ $company = $companyDetailed }}{{ end }}
-          {{ end }}
-          <h3>{{ .title }} — {{ $company }}</h3>
-          <span class="cv-date">{{ index .dates $lang }}</span>
-          {{ if $isTech }}
-            {{ with .stack }}
-            <p class="cv-label">{{ index $labels "stack" }}:</p>
-            <p>{{ . }}</p>
-            {{ end }}
-          {{ end }}
-          {{ $product := index .product $lang }}
-          {{ if $isTech }}
-            {{ $productDetailed := index .product $langDetail }}
-            {{ if $productDetailed }}{{ $product = $productDetailed }}{{ end }}
-          {{ end }}
-          <p class="cv-label">{{ index $labels "product" }}:</p>
-          <p>{{ $product }}</p>
-          {{ $achievements := index .achievements $lang }}
-          {{ if $isTech }}
-            {{ $achievementsDetailed := index .achievements $langDetail }}
-            {{ if $achievementsDetailed }}{{ $achievements = $achievementsDetailed }}{{ end }}
-          {{ end }}
-          <p class="cv-label">{{ index $labels "achievements" }}:</p>
-          <ul class="cv-achievements">
-            {{ range $achievements }}
-            <li>{{ . | safeHTML }}</li>
-            {{ end }}
-          </ul>
-        </div>
+        {{ $product := index .product $lang }}
+        {{ if $isTech }}
+          {{ $productDetailed := index .product $langDetail }}
+          {{ if $productDetailed }}{{ $product = $productDetailed }}{{ end }}
         {{ end }}
-      </section>
-    </main>
+        <p class="cv-label">{{ index $labels "product" }}:</p>
+        <p>{{ $product }}</p>
+        {{ $achievements := index .achievements $lang }}
+        {{ if $isTech }}
+          {{ $achievementsDetailed := index .achievements $langDetail }}
+          {{ if $achievementsDetailed }}{{ $achievements = $achievementsDetailed }}{{ end }}
+        {{ end }}
+        <p class="cv-label">{{ index $labels "achievements" }}:</p>
+        <ul class="cv-achievements">
+          {{ range $achievements }}
+          <li>{{ . | safeHTML }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </section>
   </div>
 
   <div class="action-buttons">
@@ -219,7 +194,10 @@
 
   <script>
     function downloadPDF() {
+      var originalTitle = document.title;
+      document.title = {{ $printFilename | jsonify }};
       window.print();
+      document.title = originalTitle;
     }
 
     async function shareCV() {

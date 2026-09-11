@@ -9,6 +9,7 @@ headline: "Senior Software Engineer | Technical Lead"
 email: "evdev34@gmail.com"
 photo: "/cv/profile.jpg"
 location: "Москва, Удалённо (GMT +3)"
+filename: "Zhdanov_Evgeny_Senior_Software_Engineer"
 
 summary_short: "Engineering Team Lead с 10-летним опытом в разработке. Go, Ruby/Rails, LLM-оркестрация, Kubernetes."
 
@@ -20,10 +21,6 @@ about:
   - |
     <strong>Сейчас — основатель и core maintainer OpenTalon</strong> — open source платформы AI-оркестрации на Go, и соавтор Talon, языка логического программирования для экспертных систем.
     Безопасная LLM-оркестрация: multi-provider routing, prompt injection prevention, изолированные gRPC-плагины, MCP.
-  - |
-    <strong>Инженерная философия:</strong> не доверяю теории, практика критерий истинности. То что не работает на проде не имеет смысла.
-    Предпочитаю тихих инженеров, которые выполняют задачи и деплоят на прод, а не продавцов успешного успеха.
-    Строю процессы, потому что процессы воспитывают дисциплину.
 
 links:
   - name: "Блог"
@@ -46,8 +43,8 @@ technical_skills:
   - "CI/CD"
 
 languages:
-  - "Русский"
-  - "Английский"
+  - "Русский — родной"
+  - "Английский — C2 (Proficient)"
 
 education:
   - degree: "Бакалавр"
