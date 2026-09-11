@@ -5175,6 +5175,7 @@
       new de(".categories", {
         modules: [he, pe],
         slidesPerView: "auto",
+        threshold: 5,
         navigation: { nextEl: ".swiper-button-next-category", prevEl: ".swiper-button-prev-category" },
       });
     }
@@ -5184,6 +5185,7 @@
         document.querySelector(".sidebar-articles") &&
         (e = new de(".sidebar-articles", {
           modules: [he, pe],
+          threshold: 5,
           navigation: { nextEl: ".swiper-button-next-article" },
           breakpoints: {
             320: { slidesPerView: 1, spaceBetween: 16 },
