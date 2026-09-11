@@ -13,6 +13,20 @@
       </footer>
     </div>
 
+    <script>
+    (function () {
+      var btns = document.querySelectorAll(".js-theme-toggle");
+      if (!btns.length) return;
+      btns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", next);
+          localStorage.setItem("theme", next);
+        });
+      });
+    })();
+    </script>
+
     {{ if eq hugo.Environment "production" }}
       {{ partial "comment-count.html" . }}
 
