@@ -810,9 +810,13 @@
     padding: 40px;
     background: var(--bg-subtle);
     word-break: break-word;
+    overflow-x: auto;
     @media(max-width: $mobile) {
       padding: 20px;
     }
+  }
+  pre code.language-text{
+    line-height: 1.15;
   }
   p code{
     background: var(--bg-alt);

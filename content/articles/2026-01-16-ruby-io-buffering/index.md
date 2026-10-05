@@ -38,7 +38,7 @@ When Ruby (and most languages using libc) write to stdout, the buffering behavio
 
 **On localhost with `rails server`:**
 
-```
+```text
 Ruby process → stdout (TTY) → Your terminal
                     ↑
             Line-buffered: flushes on every newline
@@ -47,7 +47,7 @@ Ruby process → stdout (TTY) → Your terminal
 
 **In Docker container:**
 
-```
+```text
 Ruby process → stdout (pipe) → Docker daemon → JSON log file → Filebeat(promtail) → Loki → Elasticsearch → Kibana
                     ↑
             Block-buffered: waits until buffer is full (4-16KB) depends on environment
@@ -99,7 +99,7 @@ logger.info("Hello world!")
 
 Here's what happens under the hood:
 
-```
+```text
 logger.info("Hello world!")
     ↓
 Logger formats message
@@ -126,7 +126,7 @@ eventually reaches Kibana
 
 ## Full picture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │ Container                                                       │
 │  ┌─────────┐    ┌─────────┐                                     │
