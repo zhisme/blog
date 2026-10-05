@@ -36,7 +36,7 @@ In latest version I handled rewritting it fully to lua from vimscript. Plugin st
 
 I'm planning to add 1 important feature: add context integration with remote repo URL [github issue](https://github.com/zhisme/copy_with_context.nvim/issues/1).
 The idea is when copying file to include the URL to the file in the remote repository. You can link directly to the file in the repository.
-```
+```ruby
 3: puts "Hello World"
 # README.md:3
 # repo URL: https://github.com/zhisme/copy_with_context.vim/blob/master/README.md?plain=1#L3

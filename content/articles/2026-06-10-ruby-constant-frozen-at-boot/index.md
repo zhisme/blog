@@ -120,7 +120,7 @@ This is why a restart "fixes" it. A restart re-evaluates the class body, the row
 now exists, the constant gets a real id. Until the next time the stars line up
 wrong.
 
-```
+```text
 deploy
   ├── pod A boots ──▶ request ──▶ load GatewayRouter ──▶ row absent ──▶ const = nil  (sick for life)
   └── pod B boots ──▶ (slower) ──▶ load GatewayRouter ──▶ row present ──▶ const = 3   (healthy)
