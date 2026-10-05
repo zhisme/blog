@@ -40,14 +40,14 @@ Three parts, all mandatory. One script is not a harness, it's a tool. One linter
 
 Without a harness the path is a straight line, and nobody ever checks the end of it:
 
-```
+```text
 task ──▶ model ──▶ answer ──▶ you hope it's right
                                 (find out in prod)
 ```
 
 With a harness it's a loop that can't be left through the side door:
 
-```
+```text
 task ──▶ model ──▶ tool call ──▶ result
                                    │
                                    ▼
