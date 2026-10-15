@@ -2,7 +2,7 @@
 title: 'Decision models. Is determinism great again?'
 slug: 'decision-models'
 categories: ["Engineering"]
-tags: ["llm", "ai", "decision models", "software engineering"]
+tags: ["llm", "ai", "decision-models", "software-engineering"]
 intro: We are programmers, right? We all came from a deterministic, logical world. With LLMs we lose determinism. Decision models talk in typed structures instead.
 description: LLMs answer in prose and give a different answer on every run. Decision models answer typed questions with labels and probabilities you can write if-else logic on.
 keywords: ["decision models", "llm", "determinism", "software engineering"]
