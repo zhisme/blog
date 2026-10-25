@@ -55,6 +55,11 @@ keywords: ["keyword1", "keyword2"]  # For SEO
 - Images/assets co-located in the same folder
 - Date can be inferred from filename (configured in `frontmatter.date`)
 
+### Links
+- Links go in footnotes, not inline: `text[^1]` in the body, `[^1]: https://...` (raw URL) under a `## Footnotes` section at the end of the article
+- Number footnotes in order of first appearance
+- Links to own articles follow the same rule, with the full URL: `https://zhisme.com/articles/<slug>/`
+
 ### Topics & Categories
 - Primary focus: software engineering, developer tools, pragmatic engineering
 - Common categories: Engineering, Philosophy, Tools
