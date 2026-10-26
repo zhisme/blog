@@ -1,6 +1,7 @@
 ---
 title: 'Why code review needs an AI triage layer'
 slug: 'why-code-review-needs-ai-triage-layer'
+pinned: true
 categories: ["Engineering"]
 tags: ["ai", "llm", "code-review", "decision-models", "software-engineering"]
 intro: We are used to compilers/linters/formatters of our beloved programming language. In the era of neural net (AI) we want to get the best of the world and make reviews more machinery and more "smart". How do we achieve that?
