@@ -217,6 +217,36 @@ body {
   line-height: 1.5;
 }
 
+/* Markdown CV body */
+.cv-body h2:not(:first-child) {
+  margin-top: 28px;
+}
+
+.cv-body h3 {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 16px 0 4px;
+}
+
+.cv-body p {
+  margin-bottom: 8px;
+}
+
+.cv-body ul {
+  margin: 4px 0 4px 18px;
+}
+
+.cv-body li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.cv-body li p {
+  margin-bottom: 0;
+}
+
 /* Action buttons */
 .action-buttons {
   position: fixed;

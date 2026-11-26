@@ -15,7 +15,7 @@ summary_short: "Senior Software Engineer с 10-летним опытом. Go и 
 
 about:
   - |
-    <strong>10 лет профессионального опыта в Go и Ruby/Rails, последние 2 года — тимлид</strong> — примерно 40% код, 60% архитектура и координация. Создавал платёжные интеграции и HR-платформы, и команды вокруг них. Сейчас — <strong>основатель и core maintainer OpenTalon</strong> (github.com/opentalon), production-grade open source платформы AI-оркестрации на Go (Apache 2.0) для безопасной интеграции LLM в корпоративные процессы — multi-provider routing (OpenAI / Anthropic / DeepSeek), prompt injection prevention, изолированная gRPC-плагинная архитектура, интеграция через MCP — и соавтор <strong>Talon</strong>, языка логического программирования для экспертных систем (Prolog/Datalog-inspired) со встроенными ML-примитивами; пишу его компилятор на Go (Lexer, Parser, Query Planner, Runtime).
+    <strong>10 лет профессионального опыта в Go и Ruby/Rails, последние 2 года — тимлид</strong> — примерно 40% код, 60% архитектура и координация. Создавал платёжные интеграции и HR-платформы, и команды вокруг них. Сейчас — <strong>основатель и core maintainer OpenTalon</strong> (github.com/opentalon), production-grade open source платформы AI-оркестрации на Go (Apache 2.0) для безопасной интеграции LLM в корпоративные процессы — multi-provider routing (OpenAI / Anthropic / DeepSeek), prompt injection prevention, изолированная gRPC-плагинная архитектура, интеграция через MCP — и соавтор <strong>Talon</strong>, языка логического программирования для экспертных систем (Prolog/Datalog-inspired) со встроенными ML-примитивами; пишу его компилятор на Go (Lexer, Parser, Query Planner, Runtime). Также выпустил <strong>Talooner</strong> (talooner.com) — коммерческое AI-ревью кода на том же движке, ежедневно используется в двух компаниях и работает в их инфраструктуре.
 
 links:
   - name: "Блог"
@@ -44,7 +44,7 @@ technical_skills:
 
 languages:
   - "Русский — родной"
-  - "Английский — C2 (Proficient)"
+  - "Английский — C1 (Proficient)"
 
 education:
   - degree: "Бакалавр"

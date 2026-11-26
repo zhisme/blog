@@ -109,12 +109,16 @@
 
     <section class="cv-contact-bar">
       <span><a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></span>
+      {{ with .Params.phone }}<span>{{ . }}</span>{{ end }}
       <span>{{ .Params.location }}</span>
       {{ range .Params.links }}
       <span><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a></span>
       {{ end }}
     </section>
 
+    {{ if .Content }}
+    <section class="cv-section cv-body">{{ .Content }}</section>
+    {{ else }}
     <section class="cv-section">
       <h2>{{ index $labels "summary" }}</h2>
       {{ with .Params.about }}
@@ -183,6 +187,7 @@
       </div>
       {{ end }}
     </section>
+    {{ end }}
   </div>
 
   <div class="action-buttons">

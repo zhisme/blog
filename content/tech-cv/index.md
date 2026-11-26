@@ -14,7 +14,7 @@ summary_short: "Senior Software Engineer with 10 years of professional experienc
 
 about:
   - |
-    <strong>10 years of professional experience in Go and Ruby/Rails, last 2 as team lead</strong> — roughly 40% code, 60% architecture and coordination. Built payment processing integrations and HR automation platforms, and the teams around them. Currently <strong>founder and core maintainer of OpenTalon</strong> (github.com/opentalon), a production-grade open source AI orchestration platform in Go (Apache 2.0) for safe LLM integration into enterprise workflows — multi-provider routing (OpenAI / Anthropic / DeepSeek), prompt injection prevention, isolated gRPC plugin architecture, MCP integration — and co-author of <strong>Talon</strong>, a Prolog/Datalog-inspired logic programming language for expert systems with built-in ML primitives, writing its compiler in Go (lexer, parser, query planner, runtime).
+    <strong>10 years of professional experience in Go and Ruby/Rails, last 2 as team lead</strong> — roughly 40% code, 60% architecture and coordination. Built payment processing integrations and HR automation platforms, and the teams around them. Currently <strong>founder and core maintainer of OpenTalon</strong> (github.com/opentalon), a production-grade open source AI orchestration platform in Go (Apache 2.0) for safe LLM integration into enterprise workflows — multi-provider routing (OpenAI / Anthropic / DeepSeek), prompt injection prevention, isolated gRPC plugin architecture, MCP integration — and co-author of <strong>Talon</strong>, a Prolog/Datalog-inspired logic programming language for expert systems with built-in ML primitives, writing its compiler in Go (lexer, parser, query planner, runtime). Also shipped <strong>Talooner</strong> (talooner.com), a commercial AI code review built on the same engine — in daily use at two companies, running inside their own infrastructure.
 
 links:
   - name: "Blog"
@@ -43,7 +43,7 @@ technical_skills:
 
 languages:
   - "Russian (Native)"
-  - "English (C2 — Proficient)"
+  - "English (C1 — Proficient)"
 
 education:
   - degree: "Bachelor's Degree in Computer Science"

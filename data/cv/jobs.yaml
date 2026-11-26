@@ -9,19 +9,21 @@
     ru: "Май 2025 — настоящее время"
   stack: "Go, gRPC, Protobuf, LLM APIs (OpenAI / Anthropic / DeepSeek), MCP, Datalog/Datalevin, PostgreSQL, SQLite, Kubernetes, Helm, GitHub Actions"
   product:
-    en: "Open source AI orchestration platform in Go (Apache 2.0)."
-    en_detailed: "Production-grade open source platform for safe LLM orchestration and AI agents in enterprise workflows, written in Go (Apache 2.0). An alternative to commercial LLM orchestrators."
-    ru: "Open source платформа AI-оркестрации на Go (Apache 2.0)."
-    ru_detailed: "Production-grade open source платформа для безопасной LLM-оркестрации и AI-агентов в корпоративных процессах, на Go (Apache 2.0). Альтернатива коммерческим LLM-оркестраторам."
+    en: "Open source AI orchestration platform in Go (Apache 2.0), and Talooner — commercial AI code review built on it."
+    en_detailed: "Production-grade open source platform for safe LLM orchestration and AI agents in enterprise workflows, written in Go (Apache 2.0). An alternative to commercial LLM orchestrators. Talooner (talooner.com) is the commercial product on the same engine: deterministic AI code review for GitHub and GitLab."
+    ru: "Open source платформа AI-оркестрации на Go (Apache 2.0) и Talooner — коммерческое AI-ревью кода на её базе."
+    ru_detailed: "Production-grade open source платформа для безопасной LLM-оркестрации и AI-агентов в корпоративных процессах, на Go (Apache 2.0). Альтернатива коммерческим LLM-оркестраторам. Talooner (talooner.com) — коммерческий продукт на том же движке: детерминированное AI-ревью кода для GitHub и GitLab."
   achievements:
     en:
       - "<strong>Founded and lead the platform</strong> — architecture, technical direction, public roadmap"
       - "<strong>Built enterprise LLM orchestration</strong> — multi-provider routing (OpenAI / Anthropic / DeepSeek), prompt injection prevention, isolated gRPC plugins"
+      - "<strong>Shipped Talooner</strong> — commercial AI code review for GitHub/GitLab on the same engine; runs inside the customer's infrastructure, in daily use at two companies"
       - "<strong>Co-author of Talon</strong> — a Prolog/Datalog-inspired language for expert systems; writing the compiler in Go"
       - "<strong>Built opentalon-agents</strong> — persistent LLM-authored agents that run deterministically without a model at runtime"
     en_detailed:
       - "<strong>Founded and lead OpenTalon</strong> — own the architecture, technical direction, and public roadmap of the platform."
       - "<strong>Built enterprise-grade LLM orchestration in Go:</strong> multi-provider routing (OpenAI / Anthropic Claude / DeepSeek) to control model spend, deterministic preprocessing, plugin isolation, and policy enforcement — everything a single large LLM call can't give you."
+      - "<strong>Shipped Talooner — AI code review for agent-assisted development</strong> (talooner.com): delivered end-to-end to two companies, runs inside the customer's infrastructure so code and diffs never leave their perimeter. Policy is a versioned ruleset in the customer repo, read from the base branch, so a PR cannot rewrite the rules it is judged by; the model is called only where a rule asks for it and its answer re-enters the engine as a fact — one commit plus one ruleset gives one verdict, a rerun is a cache hit with no token spend. Benchmark on a real MR (200 files, +7,000 / −1,000 lines): ~30 s and ~$0.10 versus $5.5–28 for a chat-model review."
       - "<strong>Core architectural idea — \"the LLM writes code, the runtime keeps it safe\"</strong> (after Cloudflare's Code Mode for MCP): the model emits scripts in the restricted Talon DSL rather than raw tool calls. The grammar physically cannot express an unsafe operation, so the sandbox is structural, not a policy we hope the model follows."
       - "<strong>Implemented prompt injection prevention:</strong> every LLM request passes a security check first, and guard plugins sanitize tool results before the model sees them — covers the key OWASP LLM Top 10 risk, so one compromised integration can't poison the model context or reach other plugins."
       - "<strong>Designed the plugin architecture for isolation:</strong> plugins are separate OS processes over gRPC + Protobuf, memory-isolated from the core, with no privilege escalation or lateral movement between plugins. Channel-aware auth for Teams/Slack scopes data and tool access per channel and user."
@@ -33,11 +35,13 @@
     ru:
       - "<strong>Основал платформу и веду её</strong> — архитектура, техническое направление, публичный roadmap"
       - "<strong>Построил enterprise LLM-оркестрацию</strong> — multi-provider routing (OpenAI / Anthropic / DeepSeek), prompt injection prevention, изолированные gRPC-плагины"
+      - "<strong>Выпустил Talooner</strong> — коммерческое AI-ревью кода для GitHub/GitLab на том же движке; работает в инфраструктуре клиента, ежедневно используется в двух компаниях"
       - "<strong>Соавтор Talon</strong> — языка логического программирования для экспертных систем (Prolog/Datalog); пишу компилятор на Go"
       - "<strong>Разработал opentalon-agents</strong> — persistent LLM-authored агенты, исполняются детерминированно без модели в рантайме"
     ru_detailed:
       - "<strong>Основатель и ведущий разработчик OpenTalon</strong> — веду техническое направление, архитектуру и публичный roadmap платформы."
       - "<strong>Построил enterprise AI-оркестрацию на Go:</strong> multi-provider routing (OpenAI / Anthropic Claude / DeepSeek) для экономии на моделях, детерминированный препроцессинг, изоляция плагинов и enforcement политик — то, чего не даёт «один большой LLM-вызов»."
+      - "<strong>Выпустил Talooner — AI-ревью кода для агентской разработки</strong> (talooner.com): внедрил end-to-end в две компании, ревью идёт в инфраструктуре клиента, код и диффы не покидают контур. Политика — версионируемый ruleset в репозитории клиента, читается из base-ветки, поэтому PR не может переписать правила, по которым его судят; модель вызывается только там, где правило об этом просит, а её ответ возвращается в движок фактом — один коммит плюс одни правила дают один вердикт, повторный прогон на том же коммите — cache hit без расхода токенов. Бенчмарк на реальном MR (200 файлов, +7 000 / −1 000 строк): ~30 с и ~$0.10 против $5.5–28 у ревью чат-моделью."
       - "<strong>Ключевая идея архитектуры — «LLM пишет код, runtime держит его безопасным»</strong> (по мотивам Cloudflare Code Mode for MCP): модель генерирует не сырые tool-calls, а сценарии на ограниченном DSL Talon, грамматика которого физически не может выразить небезопасную операцию — sandbox структурный, а не «политика, которой мы надеемся, модель следует»."
       - "<strong>Реализовал prompt injection prevention:</strong> каждый запрос к LLM проходит security-проверку первым, guard-плагины санитизируют tool-результаты до того, как их увидит модель — закрывает ключевой риск OWASP LLM Top 10; одна скомпрометированная интеграция не может отравить контекст модели или пробиться в другие."
       - "<strong>Спроектировал безопасную плагинную архитектуру:</strong> плагины — отдельные OS-процессы через gRPC + Protobuf, изоляция памяти ядра, без эскалации привилегий и lateral movement между плагинами. Channel-aware аутентификация для Teams/Slack скоупит доступ к данным и инструментам по каналу и пользователю."
